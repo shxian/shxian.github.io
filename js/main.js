@@ -1,40 +1,31 @@
-/*=============== SHOW MENU ===============*/
-const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close')
+// 主 JavaScript 文件
+// 可以在这里添加交互功能
 
-/*===== MENU SHOW =====*/
-/* Validate if constant exists */
-if(navToggle){
-    navToggle.addEventListener('click', () =>{
-        navMenu.classList.add('show-menu')
-    })
-}
+document.addEventListener('DOMContentLoaded', function() {
+  function setupCollapse(headerSelector, contentSelector, attr) {
+    var headers = document.querySelectorAll(headerSelector);
+    headers.forEach(function(header) {
+      header.addEventListener('click', function() {
+        var key = header.getAttribute(attr);
+        var content = document.querySelector(contentSelector + '[' + attr + '="' + key + '"]');
+        if (!content) return;
+        var icon = header.querySelector('.year-icon');
+        var isExpanded = header.getAttribute('aria-expanded') === 'true';
+        
+        if (isExpanded) {
+          content.style.display = 'none';
+          header.setAttribute('aria-expanded', 'false');
+          if (icon) icon.style.transform = 'rotate(0deg)';
+        } else {
+          content.style.display = 'block';
+          header.setAttribute('aria-expanded', 'true');
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+  }
+  
+  setupCollapse('.year-header', '.year-content', 'data-year');
+  setupCollapse('.tag-header', '.tag-content', 'data-tag');
+});
 
-/*===== MENU HIDDEN =====*/
-/* Validate if constant exists */
-if(navClose){
-    navClose.addEventListener('click', () =>{
-        navMenu.classList.remove('show-menu')
-    })
-}
-
-/*=============== REMOVE MENU MOBILE ===============*/
-const navLink = document.querySelectorAll('.nav__link')
-
-function linkAction(){
-    const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
-    navMenu.classList.remove('show-menu')
-}
-navLink.forEach(n => n.addEventListener('click', linkAction))
-
-/*=============== SCROLL REVEAL ANIMATION ===============*/
-const sr = ScrollReveal({
-    distance: '90px',
-    duration: 3000,
-})
-
-sr.reveal(`.home__data`, {origin: 'top', delay: 400})
-sr.reveal(`.home__img`, {origin: 'bottom', delay: 600})
-sr.reveal(`.home__footer`, {origin: 'bottom', delay: 800})

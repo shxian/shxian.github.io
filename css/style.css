@@ -1,389 +1,180 @@
-@charset "utf-8";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root
-{
-    --font-color-0: #e00000;
-    --font-color-1: #252525;
-    --font-color-2: #333;
-    --font-color-3: #aaa;
-    --bg-color-1: #eee;
-    --line-1: #eee;
-    --line-2: #ddd;
-}
-p
-{
-    word-wrap: break-word;
-    white-space: pre-wrap;
-}
-
-body
-{
-    font-family: "Montserrat", "SF UI Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", "Helvetica Neue", Helvetica, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-    font-size: 16px;
-    line-height: 1.75;
-    letter-spacing: 0.6px;
-    color: var(--font-color-2);
-    /* background: #111; */
-}
-a
-{
-    text-decoration: none;
-    color: var(--font-color-3);
+/* 自定义样式 */
+@layer base {
+  body {
+    @apply bg-white text-black;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  a {
+    @apply no-underline;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
-.paper
-{
-    /* padding: 4vw; */
-}
-.paper-main
-{
-    width: 100%;
-    /* max-width: 880px; */
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 72px 8vw 24px;
-    background: #fff;
-    border-radius: 24px;
-    background: #fff;
-}
-
-.header
-{
-    padding-bottom: 48px;
-    margin-bottom: 48px;
-    border-bottom: 1px solid var(--line-1);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: center;
-}
-.logo
-{
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--font-color-1);
-    margin-bottom: 23px;
-    flex: 0 0 100%;
-}
-.nav
-{
-    margin: 0 0 4px;
-    flex: 0 0 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: center;
-}
-.nav li
-{
-    padding: 2px 0;
-    margin-right: 24px;
-}
-.nav li:last-of-type
-{
-    margin-right: 0;
-}
-.nav li a
-{
-    color: var(--font-color-1);
-    opacity: .7;
-    transition: opacity ease-in-out .5s;
-}
-.nav li a:hover
-{
-    opacity: 1;
-    transition: opacity ease-in-out .5s;
-}
-
-.post-header
-{
-    margin-bottom: 48px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: center;
-}
-.post-header .logo
-{
-    font-size: 2rem;
-}
-.post-header .go-home
-{
-    display: block;
-    padding: 10px 20px 8px;
-    border-radius: 18px;
-    background: #fff;
-    border: 1px solid #eee;
-    margin: 8px 0;
-    transition: background ease-in-out .5s;
-}
-.post-header .go-home:hover
-{
-    background: var(--bg-color-1);
-    transition: background ease-in-out .5s;
-}
-.post-header .go-home svg
-{
-    transform: translateX(0);
-    transition: transform ease-in-out .5s;
-}
-.post-header .go-home:hover svg
-{
-    transform: translateX(-4px);
-    transition: transform ease-in-out .5s;
-}
-
-.post-list
-{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-}
-.post
-{
-    width: 100%;
-    padding-bottom: 48px;
-    margin-bottom: 48px;
-    border-bottom: 1px dashed var(--line-2);
-}
-.post-title
-{
-    display: inline-block;
-    font-size: 1.6rem;
-    font-weight: 600;
-    line-height: 1.5;
-    margin-bottom: 12px;
-    color: var(--font-color-1);
-    /*transition: color ease-in-out .5s;*/
-}
-.post-title:hover
-{
-    color: var(--font-color-0);
-    transition: color ease-in-out .5s;
-}
-.post-except
-{
-    word-break: break-all;
-    margin-bottom: 12px;
-}
-.read-more
-{
-    padding: 0 4px;
-    color: var(--font-color-0);   
-}
-.read-more:before,
-.read-more:after
-{
-    display: inline-block;
-    transition: transform ease-in-out .5s;
-}
-.read-more:before
-{
-    content: "{ ";
-}
-.read-more:after
-{
-    content: " }";
-}
-.read-more:hover:before
-{
-    transform: translateX(-4px);
-    transition: transform ease-in-out .25s;
-}
-.read-more:hover:after
-{
-    transform: translateX(4px);
-    transition: transform ease-in-out .25s;
-}
-.post-date
-{
-    font-size: 0.875rem;
-    color: var(--font-color-3);
+@layer components {
+  .link-hover {
+    @apply transition-colors duration-200 hover:text-gray-600;
+  }
+  
+  .card {
+    @apply border border-black p-4 transition-shadow duration-200 hover:shadow-lg;
+  }
+  
+  /* 响应式容器 */
+  .content-container {
+    @apply max-w-4xl mx-auto px-4;
+  }
+  
+  /* 文章内容样式 */
+  .prose {
+    @apply text-black;
+  }
+  
+  .prose a {
+    @apply text-black underline hover:text-gray-600;
+  }
+  
+  .prose code {
+    @apply bg-gray-100 px-1 py-0.5 rounded text-sm;
+  }
+  
+  .prose pre {
+    @apply bg-gray-100 p-4 rounded-lg overflow-x-auto;
+  }
+  
+  .prose pre code {
+    @apply bg-transparent p-0;
+  }
+  
+  .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    @apply font-bold text-black mt-8 mb-4;
+  }
+  
+  .prose p {
+    @apply mb-4 leading-relaxed;
+  }
+  
+  .prose ul, .prose ol {
+    @apply mb-4 ml-6;
+  }
+  
+  .prose li {
+    @apply mb-2;
+  }
+  
+  .prose blockquote {
+    @apply border-l-4 border-black pl-4 italic my-4;
+  }
+  
+  .prose img {
+    @apply max-w-full h-auto rounded-lg my-4;
+  }
+  
+  /* shadcn UI 风格的分页组件 */
+  .pagination-wrapper {
+    @apply flex justify-center mt-8;
+  }
+  
+  .pagination-content {
+    @apply flex items-center gap-1 list-none m-0 p-0;
+  }
+  
+  .pagination-item {
+    @apply list-none;
+  }
+  
+  .pagination-link,
+  .pagination-previous,
+  .pagination-next,
+  .pagination-ellipsis {
+    @apply inline-flex items-center justify-center h-9 w-9 text-sm font-medium text-black transition-colors;
+  }
+  
+  .pagination-link {
+    @apply hover:text-gray-600;
+  }
+  
+  .pagination-link.pagination-active {
+    @apply text-black underline underline-offset-4;
+  }
+  
+  .pagination-previous,
+  .pagination-next {
+    @apply hover:text-gray-600;
+  }
+  
+  .pagination-disabled {
+    @apply text-gray-400 cursor-not-allowed pointer-events-none;
+  }
+  
+  .pagination-ellipsis {
+    @apply text-gray-400;
+  }
+  
+  /* Tab 切换组件 */
+  .tab-container {
+    @apply flex items-center gap-4;
+  }
+  
+  .tab-item {
+    @apply px-0 py-1.5 text-sm md:text-base font-medium text-gray-500 transition-colors;
+  }
+  
+  .tab-item:hover {
+    @apply text-black;
+  }
+  
+  .tab-item.tab-active {
+    @apply text-black font-semibold;
+  }
+  
+  /* 确保 article 和 footer 中的链接无下划线 */
+  article a,
+  footer a {
+    @apply no-underline;
+  }
+  
+  /* 年份折叠组件 */
+  .year-group,
+  .tag-group {
+    @apply border-none;
+  }
+  
+  .year-header,
+  .tag-header {
+    @apply w-full flex items-center justify-between py-2 text-left bg-transparent border-none cursor-pointer;
+    @apply text-sm md:text-base font-semibold text-black;
+    @apply hover:text-gray-600 transition-colors;
+  }
+  
+  .year-title,
+  .tag-title {
+    @apply flex-1;
+  }
+  
+  .year-icon {
+    @apply transition-transform duration-200 text-gray-500;
+    transform: rotate(0deg);
+  }
+  
+  .year-header[aria-expanded="true"] .year-icon,
+  .tag-header[aria-expanded="true"] .year-icon {
+    transform: rotate(180deg);
+  }
+  
+  .year-content,
+  .tag-content {
+    @apply overflow-hidden;
+    transition: all 0.3s ease-in-out;
+  }
 }
 
-.paginator
-{
-    font-size: 0.875rem;
-    width: 100%;
-    margin: 0 auto 24px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-.paginator *
-{
-    display: block;
-    padding: 8px 16px;
-    border-radius: 18px;
-    background: #fff;
-    border: 1px solid #eee;
-}
-.paginator .space
-{
-    display: block;
-    padding: 8px 16px;
-    border-radius: 18px;
-    background: #fff;
-    border: none;
-}
-.paginator a
-{
-    margin: 4px;
-    color: var(--font-color-2);
-    transition: color ease-in-out .5s;
-}
-.paginator a:hover
-{
-    color: var(--font-color-0);
-    transition: color ease-in-out .5s;
-}
-.paginator .current
-{
-    color: var(--font-color-0);
-    border: 1px solid var(--font-color-0);
-}
-
-.footer
-{
-    padding: 24px 0;
-    font-size: 0.875rem;
-    color: var(--font-color-3);
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-content: center;
-}
-.footer span
-{
-    text-align: center;
-    margin-bottom: 8px;
-}
-.footer a
-{
-    color: var(--font-color-3);
-    transition: color ease-in-out .5s;
-}
-.footer a:hover
-{
-    color: var(--font-color-0);
-    transition: color ease-in-out .5s;
-}
-
-.post-main
-{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 24px;
-}
-.post-main-title
-{
-    flex: 0 0 100%;
-    margin-bottom: 12px;
-    font-size: 1.6rem;
-    font-weight: 600;
-    line-height: 1.5;
-    color: var(--font-color-1);
-}
-.post-meta
-{
-    font-size: 0.875rem;
-    color: var(--font-color-3);
-    flex: 0 0 100%;
-    margin-bottom: 15px;
-}
-
-.archive
-{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: normal;
-}
-.archive li
-{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-content: center;
-    padding: 12px 0;
-}
-.archive li:nth-child(odd)
-{
-    background: #fafafa;
-}
-.archive li:nth-child(even)
-{
-    background: #fff;
-}
-.archive li span
-{
-    width: 108px;
-    color: var(--font-color-2);
-}
-.archive-main
-{
-    flex: 0 1 calc( 100% - 108px );
-}
-.archive-title
-{
-    color: var(--font-color-1);
-    /*transition: color ease-in-out .5s;*/
-}
-.archive-title:hover
-{
-    color: var(--font-color-0);
-    transition: color ease-in-out .5s;
-}
-
-
-
-
-
-/* 文章分类 */
-.tags {
-    margin-bottom: 32px;
-}
-
-.tags a {
-    display: inline-block;
-    box-sizing: border-box;
-    padding: 0 1em;
-    height: 28px;
-    line-height: 28px;
-    border-radius: 28px;
-    background-color:#000;
-    color: #fff;
-    text-decoration: none
-}
-
-.tags a+a {
-    margin-left: .2em
-}
-
-.tags .new {
-    --color: #3778FF;
-    color: #fff
-}
-
-.tags .update {
-    --color: #E016C4;
-    color: #fff
-}
-
-.tags .fix,.tags .bugfix {
-    --color: #FF4772;
-    color: #fff
-}
