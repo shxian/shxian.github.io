@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">遥远的距离</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">遥远的距离</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年11月26日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>空镜头，日式古代小楼的房顶倾斜地向下，占据了画面的下半部分，上半部分，是一条河兀自横流，一艘小船在河上，孤独，漫游。也许是清晨，黑白的画面有种灰蒙蒙的感觉，音乐很澄净，似有若无。镜头一转，轰隆的火车声噗噗向前，铁轨在延伸，从尾道通往大阪直至东京，在东京，烟囱鳞次栉比，高低不平，相同的是排放出黑色的烟，黑色地在空中扩散，在人的脑后，在人看不见的地方。  </p>
 <p>看完《东京物语》时，有种绝望的感觉，尽管整部影片的基调都显得平淡，没有跌宕起伏，没有冲突，没有高潮，就像乡下小镇尾道那娓娓而流的小河一般。但是小津在平淡中始终透露着一股对立的无奈，不论是儿女和父母之间亲情的疏远，还是关于人随着时间的流逝越变越显得自私，小津似乎没有刻意地苛责谁的过错，而只是安然地表现出这样的状态，没有判断，没有孰是孰非。可正是这样写实的，长镜头和空镜头的表现却在我心上制造了另一种空灵，一种你无法捕捉的关于生活的悲哀，毕竟，有些事确实是人力所不能逮的。  </p>
 <p>东京和尾道之间的距离是火车可以到达的，但父母和子女之间的心的距离却是彼此无法触及的。影片开头的时候，我一直无法理解的是，为何当老夫妻到儿子家中的时候，他们之间有着那种毫无亲昵的生疏感，原本我以为这是日本的风俗所致，所以他们相互之间客客气气地，严格遵守着彼此之间的距离，不断地相互鞠躬，寒暄。但随着影片的发展，我慢慢地觉得，可能这是小津导演刻意的一种安排吧，也或许这是真正的现实，当几十年的抚养幻化成老人的孤独，在老人和子女之间的鸿沟已被时间定义。  </p>

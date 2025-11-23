@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">小说的扯淡</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">小说的扯淡</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年05月27日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>昨晚和今天白天花了六七个小时看完了《灵山》，一个感觉就是，高大爷您能好好地说话么。当然，我知道高大爷您不会好好说话的。如果您能够好好说话，那么炸药奖自然就不会和您有什么关系。在炸药奖的颁奖词当中，提及高大爷时说道他开创了一种新的文学形式，新的风格，在我看来，是一种莫名其妙的意识流。甚至其中流于形式的意味重于小说本身能够带给我们的任何消息。其实我不是在和高大爷过不去，高大爷同土共互不相容的事情我看到还高兴不已呢。但一码归一码，虽然平时我不是个有原则的人，这件事情上我倒是还觉得自己挺有原则的。当然，这只是因为我并不喜欢《灵山》而已。  </p>
 <p>小说应该是什么样子的？这个问题有点让人头大，不同的人有不同的喜好。有人喜好古典小说，现实主义充满了细节的描写和想象，作者为读者铺开一个现实的世界，有人则认为这样的方式太过迂腐，时间地点人物起因经过结果，大爷您这是在写小学的记叙文吧，他们喜欢的是那种虚幻的结构主义，越看不懂越深奥越觉得有水平，如果一篇小说淡如止水充满了可以轻易想见的细节的，可以轻易被解读的，都被认为是毫无意义的。当然，这都是极端情况，在这论及只是想提醒，人所能达到的极端状态是多么的不宽容和自以为是。  </p>
 <p>世界斗转星移，该死人死了，不该死的人也死了一大堆，小说的形式自然也在不断地向前发展。流派越来越多，形式越来越复杂，所表达的思想越来越趋同于魔幻主义，这是学院派的作者和老不死的专家们所喜闻乐见的。大众越看不懂越好，被评论家们猜测得越多越能够成为传世经典。文笔可以依靠辞藻的堆砌，无病呻吟，思想可以依靠结构和形式的变化，随意搭建，任何可以达到忽悠大众，娱乐专家甚至欺骗自己的做法，乐之所至，连自己兴许都未曾察觉。我这是在开创新的文学形式呢，这又是新的一种小说流派，以前它叫做鸳鸯蝴蝶派，现在叫做蛋黄派，只要你先给了它一个名字你就给了它生命，以后它属于你。你强奸了小说，小说强奸了你。  </p>

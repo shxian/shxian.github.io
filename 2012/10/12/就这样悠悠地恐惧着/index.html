@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">就这样悠悠地恐惧着</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">就这样悠悠地恐惧着</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年10月12日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>不知道我对他人的恐惧始于何时，印象中从小学的时候开始，每当我需要站在台上发言，甚至不过在自己的座位上站起来发言的时候，我都会感觉到来自自己内心的挣扎和恐惧，这样的挣扎和恐惧是不由自主的，我甚至还未在脑中意识到它存在时，它便已在我的身上滋长，而我则像个束手就擒的犯人一样被它征服。从小到大，有无数次，我试图依靠自我宽慰和所谓信念的力量试图去瓦解和克服这样的不适，但我始终没有任何的进步。一方面，因为我原本锻炼的机会就少之又少，另一方面，当机会不小心出现的时候，我又多在自己的纠结和挣扎当中眼睁睁地看着它流失，却又在过后暗自后悔不已。  </p>
 <p>记得小学某时候，一个不知道何种东西的选拔需要在台上作自我展示，选拔的场所就在教室楼下，而我从教室到楼下的一路上都在作着各种不知所措的颤抖，我无法控制自己，只是任由肌肉不停地抽搐，身体不停地颤抖，甚至当我开始说话的时候我的声音当中都伴随着一种不能自已的恐惧，而当别人问我是不是因为紧张的时候，我还是硬着头皮说了声不是。这是我记忆中仅存的场景，而之后我到底上台的时候说了些什么，表演了些什么，或者我甚至根本到最后因为过于紧张和恐惧根本没有上台，我已经不得而知了。  </p>
 <p>直到我长大到足以慢慢分析自己的时候，有一天，我盯着黑夜中的天空，那些闪烁的星星在流云的遮掩下忽隐忽现，一阵凉风吹过我的身上，我正在院子当中无所事事，那个念头就这样猝不及防地窜入了我的脑中，其实我的恐惧只是因为我的懦弱，是因为我不敢暴露我的无知。很久很久以前，当我想到这样一个词语的时候，从来不肯轻易地让自己和它沾边，自欺欺人的逃离就像看到了魔鬼一般，我不敢直视的东西终于在多年以后再次回到我的身边，我只好心不甘情不愿地这样说服了自己，至少我知道了是吧？然后呢？  </p>

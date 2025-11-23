@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">在厦门</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">在厦门</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2013年05月28日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>高速公路开通之后，离厦门也就一两个小时车程的距离，尽管如此，我至今不过去过三次。一次是初中时的集体旅游，一次是高中时的集体旅游，再有一次，就是去年夏天去堂弟宿舍蹭上了近一个星期，一个人晃悠过几天之后在某个晚上坐着一大老板的车悻悻地回家了。近乡总难以产生距离遥远时的诱惑和魔力，就像失去后才更容易珍惜，太容易得到的东西我们也都很少能主动地出击。  </p>
 <p>厦门，在全国各地的小清新眼中心中是天堂般的圣地，因小而精，甚至拥有了比所谓人间天堂苏杭更享负的盛名。人们提到厦门时，总能联系到舒适，淡然，温和等中性偏佳的词汇，对于奔波于大城市节奏的人来说，这里是他们放松自己，自我安慰的地方，对于厌倦了小城市拥挤肮脏的人来说，这里是一片圣地般的净土，映照着他们逃离生活的种种美好愿望。而于我，这里只是一处离家很近的地方，一处你们趋之若鹜却对我毫无影响的地方，我甚至对其产生不了太多的期盼，只是兀自让自己在生命的狂流中错过它，遗失它，并不因此而悲伤遗憾。我并不过分喜欢厦门，也不会讨厌它，只是他人心中关于它的惊艳和美好统统与我无关。可即便如此，当我试图逃离日常生活的烦钝时，它还是成了我唯一的选择，因为近，因为堂弟在那，因为如此便少了许多和家人之间的不和及所需的解释。  </p>
 <p>去年的夏天只是一如既往的颓废，几次同学相聚的宿醉不过是回光返照式的挣扎，见面时似乎还能絮絮叨叨如同过往，但时间带来的心理丧失也已在重聚之后建立起来，因为多数人，早已在生命当中失去了交集，勉强地见面其实并未能带来任何好处。除此之外，那个夏天还在某网站维持了一段时间的实习，说来水分过多以及这之后给我带来的一系列连锁反应都让我已不愿再提及和回忆。于是剩下了厦门，那个他人梦中的地方，以及我在那里持续不断的孤独和挣扎，幻灭和无奈。  </p>

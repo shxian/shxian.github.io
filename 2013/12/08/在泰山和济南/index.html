@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">在泰山和济南</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">在泰山和济南</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2013年12月08日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>我记得两年多以前的十月份，我搭着火车去泰安的时候，手里正捧着一本《追忆似水年华》，阳光美好，正照在我的身上和书上。我的对面坐着一个丰满的姑娘，姿色不错，一路都在和男朋友打电话，不忌旁人地说着各种甜言蜜语。我后来默默睡着了，醒来时候忘记自己到底怎么睡着了。《追忆似水年华》太厚太沉，我早已忘记自己到底当初是带着怎样的情怀上的火车，姑娘还在讲电话，我不时撇了她几眼，阳光还是很美好，却只是余晖。火车在齐鲁大地轰轰而过，慢慢驶进一个又小又破的火车站时，天已经黑了。  </p>
 <p>我和同伴简单吃完晚饭，逛了下泰安市。泰安的中心市区还算，尽管城小路窄楼不高，但还是可以看到旅游对经济发展带来的刺激，灯光璀璨，车流众多，一副繁华景象。十月中下，天还不算太冷，却尤记得路上一老奶奶身着大衣，费力向我推销泰山地图，我匆匆走过看了一眼却没有买，至今仍旧觉有愧疚，我本该买的吧。没有过多停留，我和同伴便搭出租车到了泰山山脚下，岱庙以上，开始夜爬泰山之旅了。  </p>
 <p>现在想来，夜爬的好处在于，不论如何抬头网上看，所面对的只是一片漆黑，不需要望着没有尽头的石阶。因为不明所以，只好低头注意脚下石阶，闷头往上爬，时不时休息一下，就这样熬过四五个小时的登山。即便到了十月份了，夜爬泰山之人依旧众多，学生为主。刚开始时，我还胜似闲庭信步，颇为得意，慢慢石阶越来越陡，能立足之地越来越小，我也变得小心翼翼，心理负担再加上身体负担，使得后程颇为艰难，好在中天门作为暂缓之处，抵消了些许疲惫。  </p>

@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">江西之旅</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">江西之旅</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2011年08月05日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>还在车上时，阔别四个月的城市的夜灯绚烂得让我有点不知所措。窗外，一如既往的脏乱吵，可是，当我下了车，迈开第一步，第一次准备过马路时，却感觉到，这样的脏乱吵竟会是这样的可爱。记得妙觉师父曾在推上说，石狮和全国其他的中小城市一样，车站都十分地脏，让外人到来的第一印象都显得非常糟糕，那时候，我的确是引以为耻的。黄章晋曾在某篇文章中说，如果没有故人作纽带，故乡更多只是一种单纯的物理存在。可是，我现在却惊讶地发现，不论怎样的脏乱吵，我却被深深地沦陷在了所谓的故乡的情节中。不论是否存在故人，无论在外人的眼中这个城市将要遭受怎样的鄙视和无情的批评，我不会把它仅仅视为一个单纯的物理存在。不过，我倒又很怀疑的是，我是否仅是由于阔别而导致的情感上的偏差和误解般地认识了自己。  </p>
 <p>一段不算艰辛的旅程，却也少了惊奇和趣味，而导致惊奇和趣味缺乏的重要原因当然是艳遇的不知所踪。陈丹青在某次做飞机的时候，身边坐着的是范冰冰，而那时他还不认识她，只是为着她的相貌倾倒，在座位上寂寞夹带着燥热难耐，欣赏着她沉睡的模样，直到后来下了飞机之后在某张报纸上看到时他才知道坐在他旁边的原来就是她。陌生的地方，陌生的人，我估计很多人都会有在路上碰到艳遇的类似于童话故事般的想法吧，反正我是偶尔在脑海中像幽灵般地飘过这样的想法。只可惜，坐了那么多的汽车和火车，身边来来去去换了许多的人，艳遇的机会却如同抓不到的空气一样，似乎唾手可得却又无从寻找踪迹。  </p>
 <p>正如还没见到雪时的念念叨叨，还未到达某个地方时总会在心中预先装满期待，甚至偶尔还会意淫着进行各种各样的想象，把全世界最唯美最动人的情景都安插到自己的经历当中，自我满足。在未到婺源之前，我从图书馆搬了上十本书，虽然囫囵吞枣，但我起码记住了这样几个字，中国最美的村庄。尽管我实在对此持保留态度，但是我却又还是抱着愿意去试试看的心态，我想，他们不至于那么瞎扯吧，瞎扯也该有个限度吧，至少，即使我并无法同他们产生共鸣，也只能说明我的鉴赏能力不足，或者只是由于我和他们就是存在差别而已，而这，并无法构成我讨伐他们的理由。这么的，我也就决定去了。毕竟，那最美的两个字还是那么地惹眼，就像路过的美女一样。可事实上，后来我又在另外一本书上看到，中国最美的村庄，湖南凤凰。好吧，我承认，我不排除我有记错或者误会他们的可能，毕竟也许他们认为的是一个是中国最美的村庄一个是中国最美的城镇，而我胡乱一瞥就这么地误会和鄙视他们了。可是，到底是谁的错呢了？  </p>

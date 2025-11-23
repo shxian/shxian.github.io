@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">关于自由主义</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">关于自由主义</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2013年04月24日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>连岳最近在腾讯的《大家》写了两篇文章阐述他心中的自由主义，第二篇说得更直白些，就是个人之上，再无其他价值。自然，如他所预料的，难免找来他人的批评，说这只是个人主义，是一种逃避社会责任的选择，直接导致的将是虚无。但连岳也说了，个人之上，再无其他价值，自由只能由此衍生。自由只能源于个人，这才是连岳试图说明的。  </p>
 <p>哈耶克在《自由秩序原理》中将他所讨论的自由区别于政治自由，内在自由和能力上的自由，正是在于这三者自由有可能使人坠入被奴役的深渊。因而，尽管哈耶克并不愿意承认，但他的自由是消极意义上的。哈耶克认为，人的自由在于他有一个不受他人强制的私域，在这一范围内人将获得自由。这样笼统地说可能失于精确，但我想连岳正是在这一意义上和哈耶克是一致的，人的自由在于个体的选择是完全自主的。  </p>
 <p>因为天朝的现状，让身居其中的人更易于陷入被道德绑架的境地，也背负了太多莫须有的社会责任。有些人不畏强权，甚至献身，牺牲了自己的家庭，为着他们心中的崇高付出了太多，这是一种选择，自然也值得尊敬；有些人遁入体制，自以为屈指之力可能有所改变，却在岁月蹉跎之中无法再追回当初的自己，这也是一种选择；有些人专注于自己的小生活，在可能的将发生巨变的一滩浑水当中心安理得地度日。如同昆德拉在《笑忘录》中所写一老人，与他人那天是坦克，于她那天确实一个关于梨子的日子。因为远近，因为角度，生活在不同人中是支离破碎的，倘若政治支配了生活，社会逾越了个人，那么个人自不再是自由的。  </p>

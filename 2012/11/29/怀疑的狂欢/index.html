@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">怀疑的狂欢</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">怀疑的狂欢</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年11月29日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>前几天终于看完了《往事与随想》，上下两大卷近一千五百字的大书，从刚开学的九月底决定开始翻阅这本书的，在这中间，断断续续，时快时慢地在学校的库本图书室当中翻阅，偶尔心情极佳状态极好，将书一字一句地推敲，有时状态差的时候，也就随意翻阅过几页，纯当自己看过了，亏得这样的时候不算太多。当然，每次翻阅完毕一本大书都像又完成了一项任务一样松了口气，虽然事后又会发觉自己过于囫囵吞枣了，收获不算太多，但每次倒还是都自欺欺人地继续下去了，好像生活又翻过了崭新的一页。  </p>
 <p>作为一本个人回忆性质的编撰而成的大书，书中自有赫尔岑自己的私人生活，也充满了他对时代，对社会，对身边的人的观察，思考，理解。赫尔岑的角度是客观的，冷静的，带点中立的，如果放在现在的天朝，估计会被讥讽为理中客的，当然，他对俄罗斯专制沙皇的厌恶是显而易见的。赫尔岑既保有对激进的革命分子的怀疑，同样也对以人民的意愿作为标语的各种革命活动选择旁观的态度。年轻的时候，赫尔岑曾两度被流放，离开莫斯科，直到后来，流亡海外，四处为家。也许是过于颠沛的生活造就了赫尔岑对多数人对对数事物的怀疑，太过轻信别人，太自以为是，都不是什么好事。  </p>
 <p>对于天朝的多数人来说，赫尔岑就是个大大的警醒，理中客并非没有态度，没有选择，有时候只是一种靠着一种怀疑的自我支持，不论是新左派民粹的自我支持还是所谓右派口号式的键盘革命都不得不面对的一个问题是，他们真的会让整个国家变得更好吗？我们可以完全忽略可能带来的更惨烈的结果选择牺牲，选择放弃，选择被愚弄吗？至在现在，我还看不到那些可能的更好的结果，这其实是一种很大的悲哀，要么在猪圈当中继续生活下去，要么面对一个未来同样迷乱的猪圈，只是换了主人，同样脏乱  </p>

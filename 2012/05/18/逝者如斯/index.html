@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">逝者如斯</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">逝者如斯</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年05月18日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>逝者如斯夫，不舍昼夜。你站在江头望着滚滚江水东流逝，后面的浪花淹没了前面的浪花，浪花共同淘尽了英雄，你说，人不可能踏进同一条河流。在你眼前的河水可能是几千年前在此地经过的河水，经历了千万年的轮回和循环过后，重新又来到你所伫立的地方，你也许并不知晓其中的因果，却无法武断地将其斥为单纯地早已流逝的时光，当它带着自己重新返还时，你不能简单地排斥它，就好像你掌握了时间的真理一般。时间如水，汇入大海，蒸发，凝结又降落，生命如舟，在时间的河流上无限循环地漂泊下去。那逆行的时钟并不只是象征着时间返回到了过往，而是时间本身就是一场循环，无论如何它都是这样继续下去，无法面对儿子在战争中死去的盲人钟表匠看不到那隐藏在时间中的秘密，他的感受到逆行为止，于是他只能驾着小舟离去，再也没有出现。</p>
 <p>本杰明的生命是一场逆行的奇迹，他从一出生就身体狰狞，面如魔鬼，仿佛行将就木，医生宣布他活不了多久了，他却顺利地生活了下来，从无法走路到身体逐渐强壮，从老人般衰弱到青年人般健康。他的生命同别人完全相反，在应该年轻的时候衰老，在应该衰老的时候年轻，可是他的生活同别人没什么区别，他遇到爱情，享受亲情和友情，他在该孤独的时候感到孤独，在想要大醉的时候会喝得酩酊大醉，在需要性的时候带着一张年老的面具却有着年轻人的活力，时间逆行改变着他的外表，却无法改变人之为人他的所有体验。有人到来，有人离开，有人死去，面对到来，面对离开，面对死亡，这也是本杰明的生活。</p>
 <p>本杰明的降生也是场上帝的闹剧。对于本杰明的父亲来讲，这更无异于一场诅咒，出生与死亡同时到来，死亡的是自己娇美年轻的妻子，出生的却是自己妖怪衰老的儿子，他在黑夜中的惊恐是对生命对时间对意外对黑暗的惊恐，这不同寻常的降生就像黑夜中追赶他的警察般让他感到恐惧。但他终于没有将自己的孩子投身于河流当中，孩子活了下来，上帝的闹剧渐渐演化成了一场生命的奇迹，即使最后也难免正常地归于沉寂。当母亲带着本杰明上教堂时，牧师真的如同假借于上帝之后般，让本杰明那扭曲纤弱的双腿勉强地站立了起来，本杰明像耶稣一样站立着复苏，但有得必有失，牧师在赞美过上帝的荣耀过后却倒在了自己的圣台之上，生与死再次交汇，仿佛生即是死，死便意味着生。  </p>

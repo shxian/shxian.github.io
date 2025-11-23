@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">互联网停车的现在及可能</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">互联网停车的现在及可能</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2016年04月09日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>本文以一个行业从业者和观察者的角度，描述关于互联网停车行业的是与非，这当中有笔者从业经验和个人见解，也有综合了行业报道和报告之后的整理。当中所涉及到的停车方面的政策、数据和行业情况，均来源于网络。</p>
 <h3 id="概况"><a href="#概况" class="headerlink" title="概况"></a>概况</h3><p>根据网络上的公开数据，汽车后市场的市场规模达到了7000亿元。而用最简单的估算法去预测停车市场的规模，按照一个车主每年的停车费用假设为3000元，那么中国1.4亿以上的车主计算的话中国互联网停车市场的规模达到了3000-4000亿元，这些话很多从业者在公开场合都说过。但中国目前一二线城市的停车难问题也确实达到了让人难以忍受的地步，数据显示，北上广深等大城市的停车位缺口在一半以上，而厦门、重庆、杭州等相对一线的城市也在停车资源上面临很大问题，而按照国际目前标准的车辆和车位比应为1：1.2。  </p>
 <p>去年8月份时，发改委联合停车资源相关的七大部委发布了《关于加强城市停车设施建设的指导意见》，其中提到了停车智能化和信息化一项。包括各地要加快对城市停车资源的调查，建立停车基础数据库，并实时更新数据并对外开放共享。响应这一指导意见，各地也根据自己的实地情况进一步制定了相关政策，比如厦门便发布了关于在2016年厦门市停车场信息实行联网管理的通知，上海则在去年发布了拥有300个停车场数据的上海停车的App等。  </p>

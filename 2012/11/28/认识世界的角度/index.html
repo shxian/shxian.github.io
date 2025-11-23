@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">认识世界的角度</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">认识世界的角度</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年11月28日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>卡尔维诺在《我们的祖先》的后记当中写到，“你们既然是随心所欲解释这三个故事的行家里手，就不应该被此刻我对它们的诞生所做的证言所束缚。”最近着手胡乱涂写些许书评和影评的时候，时常为自己的智商感觉到着急，偶尔思虑过多，觉得未免太于刻意，偶尔却又为自己没能看出作者的意图而灰心丧气，到最后，看到卡尔维诺的这句话的时候才恍然大悟，也许不论是文学作品还是影视作品，并不需要一个唯一的答案，统一的解读，你能从中解读出多少，以怎样的角度解读都是种运气，除非是过于谬误让人无法忍受了。  </p>
 <p>在作者，文本，读者和世界的关系当中，彼此间是联系却又是隔阂的，就像无法被完全恰当转述的历史一般，每一层转化都在加深彼此之间的距离，只是这种距离却又是相互依存的，并非那么天马行空。也许当文本被作者创作完毕的时候，它便以独立出来了，它依附于作者的创意，却又在字里行间当中自我独立出来，读者可以从中发发现某些甚至作者本身并未在意的创意，这种新的发现可能是刻意的，也可能是一种纯粹的偶然。总归，文本和读者之间的关系并非完全依赖于作者，由此读者在这样的自我理解当中开始面对自己脑中的世界。作者的创作和解读只是一种认识世界的途径和角度，但偶然性和随意性却为读者创造了一个更广阔的世界，在这个世界当中，各种角度的挣扎和宣泄构造了非议，却更加真实。  </p>
 <p>当然，这并不意味着我们可以随心所欲地发挥自己的想象去捏造事实，而是在这一过程当中，我们始终把握着一条尽可能准确的线，我们可能沿着线的边缘捉襟见肘地游走，却不会偏离太多，否则，那不过是一种荒谬罢了。卡尔维诺接着说道，“我希望它被看成是现代人的祖先家系图，在其中的每一张脸上有我们身边人们的某些特征，你们的，我自己的。”  </p>

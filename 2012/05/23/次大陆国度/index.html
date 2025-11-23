@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">次大陆国度</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">次大陆国度</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年05月23日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>“在西方人眼里，我们的文明是高深的玄学，恰如演奏钢琴在双耳失聪的人看来，只有指尖的跳动而没有和声。”泰戈尔曾这样反驳道西方人对印度文明简单的判断。但时至今日，大多数人提起印度，印象所及仍旧有限。神秘的信仰，剧烈的宗教冲突，残忍的种姓制度，广大的贫民窟，落后的基础设施建设，残缺的民主制度，正在腾飞的印度经济和硅谷当中天才的印度人，当然，还有恒河旁边难以理解的就地焚尸和在各种成分汇合的恒河水中享受圣浴。印度留下了太多表面和模糊的印象，神秘而落后，残忍和肮脏，似乎印度活在和其他国家的不同次元，他们一边融入，一边又从不被同化，无论现代文明怎样试图传播，印度人在接受的同时，仍旧保持着自己的宗教信仰不曾动摇。就像历史上他们一路走来，被侵略，被殖民，但从来都不曾抛却本民族的特性。印度就像一个面团，他本身由不同成分的材料捏合而成，外来的文明左一拳右一拳地在它上面留下了烙印，却无法将它击垮。西亚和希腊来过，留下了希腊化的各式建筑和雕塑，穆斯林王朝统治了印度几百年的时间，他们存在却无法同化，英国人殖民过，留下了议会民主和文官制度。但无论如何，印度从未被彻底同化，从未消失。  </p>
 <p>汤普逊曾说过，世界上所有的聚合影响，印度教的，伊斯兰教的，基督教的，世俗的，斯大林主义的，自由主义的，毛泽东主义的，民主社会主义的，甘地主义的，普遍存在于这一社会。凡是在西方或东方被思考的思想，无一不活跃于某些印度人的心灵当中。这一方面说明了印度文化本身强大的吸收功能，但也造就了印度社会复杂的宗教和民族情况，导致纷乱，杀戮和仇恨似乎不曾离开过印度这片南亚次大陆的土地，孕育于印度本土的，外来的思想由于彼此信念的不同，在信念的名义之下相互残杀和贬低，宗教不宽容和种姓的歧视仍旧像鬼魅一样飘散在印度的空气当中。1984年，在下令印度军队攻入锡克教徒的金庙过后不久，英迪拉甘地被自己身边的两个锡克教保镖杀害，在她身亡过后，印度全国掀起了锡克教徒的暴动，无数人因此牺牲和流离失所。  </p>
 <p>奈保尔在书中写过：“人一旦有了历史意识的觉醒，就不再只凭本能过日子，而开始以外人的眼光来看自己以及自己所属的团体，也开始产生某种愤怒。如今，印度到处弥漫着这种愤怒，印度人经历了普遍的觉醒，但每个人最先觉察到的是自己的团体或社群，每个团体都认为自己的觉醒与众不同，每个团体都想把自己的愤怒跟其他团体的愤怒区别开来。”事实上，在1950年有安培多伽尔博士主导的印度宪法的修订当中，就已经将世俗主义作为一个主要的目标列入印度的宪法，但显然，几千年来信仰的积累并不能被宪法上简单的几句话轻易改变。印度宗教之间的冲突在独立之后更加剧烈的发生，缺少了赶走英国殖民者的共同目标，印度人将目光转移到自己人身上。尤其是印度教徒，凭借着在印度社会当中占据绝大多数的有利地位，印度教和穆斯林，锡克教和耆那教之间的冲突不断发生。而国民志愿团和世界印度教大会作为印度教政治化的组织，则逐步在印度社会中发挥作用，在九十年代国大党影响下降过后，有着印度教背景的印度人民党曾经两度上台组成政府。甚至出现过许多极端的唯印度教人士企图修改历史教科书，将印度的历史诉说成完全由印度教发展而来的荒谬。  </p>

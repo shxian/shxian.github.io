@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">我的梦想是一堆狗屎</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">我的梦想是一堆狗屎</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2011年08月05日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>烟花炮竹在轰炸了十几分钟便已宣告结束，我站在家后的山上，看着这熟悉的村庄，突然的落寞。想起去年也在此时随老妈到山上的观音庙，也碰到了刚碰到的那人，只是，一晃一年又过去了，而今年，没有人能让我牵挂着要去钟声敲响的那时在电话里头同她相见。岁月汩汩流去，老是想着海子所说，该得到的尚未得到，该丧失的早已丧失。  </p>
 <p>而此时，窗外早已是一片寂静，除了我身上的一袭新衣，装满了灯光的房屋，以及，意识不时提醒着我之外，这不过是个同所有日子一样的夜晚。许多事情许多东西不过因为人赋予了它意义才具有了那种让人难以释怀的意义，从某种程度上说，意义实在是一件很庸人自扰的事情。可是，我干过的非要赋予事情意义的事情却也不少，现在想想羞愧不堪的同时，却又大加感慨，年华如此脆弱。老姐带点惊讶又不屑地说，这就是年刀哦？仿佛年刀犯了什么不可饶恕的过错，却又死不悔改一根筋一往无前。我心里想说，这就是年刀啊。对我来说，年刀对我来说，就只是一家人能聚在一起，然后彼此心知肚明，今天是年刀啊，这就够了。  </p>
 <p>晚上看了语路计划的十二个视频，没有震撼，没有感动，没有自责，却老有种不可释怀的感觉郁结在我的胸口。云里雾里，我就像在通过凹凸镜观察自己一样，每次都看不到一个真实而完整的自己，或者，我只是不敢站在一面平面镜前，谨慎详致地审视自己。想起看《证词》的时候，面对那些笔尖触摸得到的苦难和恐怖，我心如止水，就像有了免疫力般，我的脑袋和心灵早已拥有了同鼻子一样的适应能力，我内心深处滴滴答答发出的声响时时刻刻都在提醒着我那是怎样难以企及的苦难，而我的思绪却如同死去的身体般冰冷。感动或者苦难，似乎都已无法再激荡我的情绪。  </p>

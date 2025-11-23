@@ -24,150 +24,183 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12 space-y-10">
-  <div>
-    <a href="/" class="text-xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12 space-y-6 md:space-y-10">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
       妩媚楼日记
     </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
   </div>
-  <!-- Tab 切换 -->
-  <div class="tab-container mt-3">
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item tab-active py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mt-3 hidden md:flex">
     <a href="/" class="tab-item tab-active">首页</a>
     <a href="/archives" class="tab-item">归档</a>
     <a href="/tags" class="tab-item">标签</a>
     <a href="/about" class="tab-item">关于</a>
   </div>
   
-  <div class="space-y-3">
+  <div class="space-y-4 md:space-y-3">
     
       
         <article class="pb-3">
-          <div class="flex items-baseline gap-3">
-            <time class="text-xs md:text-sm text-gray-500 tracking-wide uppercase min-w-[110px]" datetime="2012-06-27">
-              2012.06.27
-            </time>
-            <h2 class="text-sm md:text-base font-semibold text-black">
-              <a href="/2012/06/27/%E7%A2%8E%E8%AF%AD/" class="text-black hover:text-gray-700 transition-colors">
+          <div class="flex flex-col md:flex-row md:items-baseline md:gap-3 space-y-1 md:space-y-0">
+            <h2 class="order-1 md:order-2 text-base md:text-sm font-semibold text-black leading-relaxed">
+              <a href="/2012/06/27/%E7%A2%8E%E8%AF%AD/" class="text-black hover:text-gray-700 transition-colors py-1">
                 碎语
               </a>
             </h2>
+            <time class="order-2 md:order-1 text-sm md:text-xs text-gray-500 tracking-wide uppercase md:min-w-[110px]" datetime="2012-06-27">
+              2012.06.27
+            </time>
           </div>
         </article>
       
         <article class="pb-3">
-          <div class="flex items-baseline gap-3">
-            <time class="text-xs md:text-sm text-gray-500 tracking-wide uppercase min-w-[110px]" datetime="2012-06-07">
-              2012.06.07
-            </time>
-            <h2 class="text-sm md:text-base font-semibold text-black">
-              <a href="/2012/06/07/%E4%BA%94%E5%8F%B0%E5%B1%B1%EF%BC%8C%E6%9C%AA%E7%AB%9F%E7%9A%84%E5%BE%92%E6%AD%A5%E4%B9%8B%E6%97%85/" class="text-black hover:text-gray-700 transition-colors">
+          <div class="flex flex-col md:flex-row md:items-baseline md:gap-3 space-y-1 md:space-y-0">
+            <h2 class="order-1 md:order-2 text-base md:text-sm font-semibold text-black leading-relaxed">
+              <a href="/2012/06/07/%E4%BA%94%E5%8F%B0%E5%B1%B1%EF%BC%8C%E6%9C%AA%E7%AB%9F%E7%9A%84%E5%BE%92%E6%AD%A5%E4%B9%8B%E6%97%85/" class="text-black hover:text-gray-700 transition-colors py-1">
                 五台山，未竟的徒步之旅
               </a>
             </h2>
+            <time class="order-2 md:order-1 text-sm md:text-xs text-gray-500 tracking-wide uppercase md:min-w-[110px]" datetime="2012-06-07">
+              2012.06.07
+            </time>
           </div>
         </article>
       
         <article class="pb-3">
-          <div class="flex items-baseline gap-3">
-            <time class="text-xs md:text-sm text-gray-500 tracking-wide uppercase min-w-[110px]" datetime="2012-06-05">
-              2012.06.05
-            </time>
-            <h2 class="text-sm md:text-base font-semibold text-black">
-              <a href="/2012/06/05/%E5%9B%9E%E9%A1%BE%E4%B8%8E%E6%80%9D%E7%B4%A2/" class="text-black hover:text-gray-700 transition-colors">
+          <div class="flex flex-col md:flex-row md:items-baseline md:gap-3 space-y-1 md:space-y-0">
+            <h2 class="order-1 md:order-2 text-base md:text-sm font-semibold text-black leading-relaxed">
+              <a href="/2012/06/05/%E5%9B%9E%E9%A1%BE%E4%B8%8E%E6%80%9D%E7%B4%A2/" class="text-black hover:text-gray-700 transition-colors py-1">
                 回顾与思索
               </a>
             </h2>
+            <time class="order-2 md:order-1 text-sm md:text-xs text-gray-500 tracking-wide uppercase md:min-w-[110px]" datetime="2012-06-05">
+              2012.06.05
+            </time>
           </div>
         </article>
       
         <article class="pb-3">
-          <div class="flex items-baseline gap-3">
-            <time class="text-xs md:text-sm text-gray-500 tracking-wide uppercase min-w-[110px]" datetime="2012-06-03">
-              2012.06.03
-            </time>
-            <h2 class="text-sm md:text-base font-semibold text-black">
-              <a href="/2012/06/03/%E9%82%A3%E4%BA%9B%E5%85%B3%E4%BA%8E%E6%AD%BB%E4%BA%A1%E7%9A%84%E5%9B%9E%E5%BF%86/" class="text-black hover:text-gray-700 transition-colors">
+          <div class="flex flex-col md:flex-row md:items-baseline md:gap-3 space-y-1 md:space-y-0">
+            <h2 class="order-1 md:order-2 text-base md:text-sm font-semibold text-black leading-relaxed">
+              <a href="/2012/06/03/%E9%82%A3%E4%BA%9B%E5%85%B3%E4%BA%8E%E6%AD%BB%E4%BA%A1%E7%9A%84%E5%9B%9E%E5%BF%86/" class="text-black hover:text-gray-700 transition-colors py-1">
                 那些关于死亡的回忆
               </a>
             </h2>
+            <time class="order-2 md:order-1 text-sm md:text-xs text-gray-500 tracking-wide uppercase md:min-w-[110px]" datetime="2012-06-03">
+              2012.06.03
+            </time>
           </div>
         </article>
       
         <article class="pb-3">
-          <div class="flex items-baseline gap-3">
-            <time class="text-xs md:text-sm text-gray-500 tracking-wide uppercase min-w-[110px]" datetime="2012-05-31">
-              2012.05.31
-            </time>
-            <h2 class="text-sm md:text-base font-semibold text-black">
-              <a href="/2012/05/31/%E5%85%B3%E4%BA%8E%E5%BA%B7%E7%BA%B3%E5%88%A9/" class="text-black hover:text-gray-700 transition-colors">
+          <div class="flex flex-col md:flex-row md:items-baseline md:gap-3 space-y-1 md:space-y-0">
+            <h2 class="order-1 md:order-2 text-base md:text-sm font-semibold text-black leading-relaxed">
+              <a href="/2012/05/31/%E5%85%B3%E4%BA%8E%E5%BA%B7%E7%BA%B3%E5%88%A9/" class="text-black hover:text-gray-700 transition-colors py-1">
                 关于康纳利
               </a>
             </h2>
+            <time class="order-2 md:order-1 text-sm md:text-xs text-gray-500 tracking-wide uppercase md:min-w-[110px]" datetime="2012-05-31">
+              2012.05.31
+            </time>
           </div>
         </article>
       
         <article class="pb-3">
-          <div class="flex items-baseline gap-3">
-            <time class="text-xs md:text-sm text-gray-500 tracking-wide uppercase min-w-[110px]" datetime="2012-05-27">
-              2012.05.27
-            </time>
-            <h2 class="text-sm md:text-base font-semibold text-black">
-              <a href="/2012/05/27/%E5%B0%8F%E8%AF%B4%E7%9A%84%E6%89%AF%E6%B7%A1/" class="text-black hover:text-gray-700 transition-colors">
+          <div class="flex flex-col md:flex-row md:items-baseline md:gap-3 space-y-1 md:space-y-0">
+            <h2 class="order-1 md:order-2 text-base md:text-sm font-semibold text-black leading-relaxed">
+              <a href="/2012/05/27/%E5%B0%8F%E8%AF%B4%E7%9A%84%E6%89%AF%E6%B7%A1/" class="text-black hover:text-gray-700 transition-colors py-1">
                 小说的扯淡
               </a>
             </h2>
+            <time class="order-2 md:order-1 text-sm md:text-xs text-gray-500 tracking-wide uppercase md:min-w-[110px]" datetime="2012-05-27">
+              2012.05.27
+            </time>
           </div>
         </article>
       
         <article class="pb-3">
-          <div class="flex items-baseline gap-3">
-            <time class="text-xs md:text-sm text-gray-500 tracking-wide uppercase min-w-[110px]" datetime="2012-05-23">
-              2012.05.23
-            </time>
-            <h2 class="text-sm md:text-base font-semibold text-black">
-              <a href="/2012/05/23/%E6%AC%A1%E5%A4%A7%E9%99%86%E5%9B%BD%E5%BA%A6/" class="text-black hover:text-gray-700 transition-colors">
+          <div class="flex flex-col md:flex-row md:items-baseline md:gap-3 space-y-1 md:space-y-0">
+            <h2 class="order-1 md:order-2 text-base md:text-sm font-semibold text-black leading-relaxed">
+              <a href="/2012/05/23/%E6%AC%A1%E5%A4%A7%E9%99%86%E5%9B%BD%E5%BA%A6/" class="text-black hover:text-gray-700 transition-colors py-1">
                 次大陆国度
               </a>
             </h2>
+            <time class="order-2 md:order-1 text-sm md:text-xs text-gray-500 tracking-wide uppercase md:min-w-[110px]" datetime="2012-05-23">
+              2012.05.23
+            </time>
           </div>
         </article>
       
         <article class="pb-3">
-          <div class="flex items-baseline gap-3">
-            <time class="text-xs md:text-sm text-gray-500 tracking-wide uppercase min-w-[110px]" datetime="2012-05-20">
-              2012.05.20
-            </time>
-            <h2 class="text-sm md:text-base font-semibold text-black">
-              <a href="/2012/05/20/%E6%97%B6%E9%97%B4%E7%9A%84%E5%9B%B4%E5%A2%99/" class="text-black hover:text-gray-700 transition-colors">
+          <div class="flex flex-col md:flex-row md:items-baseline md:gap-3 space-y-1 md:space-y-0">
+            <h2 class="order-1 md:order-2 text-base md:text-sm font-semibold text-black leading-relaxed">
+              <a href="/2012/05/20/%E6%97%B6%E9%97%B4%E7%9A%84%E5%9B%B4%E5%A2%99/" class="text-black hover:text-gray-700 transition-colors py-1">
                 时间的围墙
               </a>
             </h2>
+            <time class="order-2 md:order-1 text-sm md:text-xs text-gray-500 tracking-wide uppercase md:min-w-[110px]" datetime="2012-05-20">
+              2012.05.20
+            </time>
           </div>
         </article>
       
         <article class="pb-3">
-          <div class="flex items-baseline gap-3">
-            <time class="text-xs md:text-sm text-gray-500 tracking-wide uppercase min-w-[110px]" datetime="2012-05-18">
-              2012.05.18
-            </time>
-            <h2 class="text-sm md:text-base font-semibold text-black">
-              <a href="/2012/05/18/%E9%80%9D%E8%80%85%E5%A6%82%E6%96%AF/" class="text-black hover:text-gray-700 transition-colors">
+          <div class="flex flex-col md:flex-row md:items-baseline md:gap-3 space-y-1 md:space-y-0">
+            <h2 class="order-1 md:order-2 text-base md:text-sm font-semibold text-black leading-relaxed">
+              <a href="/2012/05/18/%E9%80%9D%E8%80%85%E5%A6%82%E6%96%AF/" class="text-black hover:text-gray-700 transition-colors py-1">
                 逝者如斯
               </a>
             </h2>
+            <time class="order-2 md:order-1 text-sm md:text-xs text-gray-500 tracking-wide uppercase md:min-w-[110px]" datetime="2012-05-18">
+              2012.05.18
+            </time>
           </div>
         </article>
       
         <article class="pb-3">
-          <div class="flex items-baseline gap-3">
-            <time class="text-xs md:text-sm text-gray-500 tracking-wide uppercase min-w-[110px]" datetime="2012-05-09">
-              2012.05.09
-            </time>
-            <h2 class="text-sm md:text-base font-semibold text-black">
-              <a href="/2012/05/09/%E5%B0%81%E5%BB%BA%E4%B9%B1%E8%80%83/" class="text-black hover:text-gray-700 transition-colors">
+          <div class="flex flex-col md:flex-row md:items-baseline md:gap-3 space-y-1 md:space-y-0">
+            <h2 class="order-1 md:order-2 text-base md:text-sm font-semibold text-black leading-relaxed">
+              <a href="/2012/05/09/%E5%B0%81%E5%BB%BA%E4%B9%B1%E8%80%83/" class="text-black hover:text-gray-700 transition-colors py-1">
                 封建乱考
               </a>
             </h2>
+            <time class="order-2 md:order-1 text-sm md:text-xs text-gray-500 tracking-wide uppercase md:min-w-[110px]" datetime="2012-05-09">
+              2012.05.09
+            </time>
           </div>
         </article>
       

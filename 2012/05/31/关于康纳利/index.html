@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">关于康纳利</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">关于康纳利</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年05月31日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>初识康纳利是在《美国往事》当中，小萝莉的她回眸一笑那幅图片不知倾倒了多少青涩的少年和猥琐的大叔，后来在《美丽心灵》和《梦之安魂曲》当中再次见到她时却失望不少，大抵女大真的十八变吧，有人承蒙上帝眷顾，丑小鸭变天鹅，有人却遭上帝戏弄，越长大越往矬。当然，用这词来形容康纳利肯定是不适合的，但是如果看到她十几岁时的那幅摸样再看看她长大时的摸样自然会失落不少的，婴儿肥的脸颊和妩媚的双眼夹带着天使和魔鬼的双重因素，简直让人欲罢不能。不过，在我看了她在《血钻》当中的战地女记者的角色之后，我关于她的印象又彻底改变了。老实说，她刚出现的时候，我还是没能确认那竟然是她，只是模模糊糊觉得有点熟悉，貌似是某个我曾经对着照片流口水的影星，于是我立马一查才发现竟然是她，然后接下来在观影的过程中就开始像个脑残粉一样期待她的出现了。  </p>
 <p>影片中关于她的最美片段就在于，她和莱昂纳多带着黑人去找他关在难民营里面的妻儿的时候。他们刚下了飞机，走向铁丝网围城的难民营，士兵看守的难民营里面在大白天当中黑压压地全是饱受战火摧残的人民和临时搭建的房屋。镜头转到康纳利的身上，她右肩背着摄像机，身穿一件蓝色的衬衫和蓝色的牛仔裤，脖子上挂着一张貌似是记者证的证件牌，慢慢地走向难民营士兵的前面，她的衬衫扣子没有扣好，风吹起可以看到她的小肚子，而她的右酥胸则随着她往前走若隐若现，直到她停下来和士兵说话仍旧因为身体的动作而显现出她的酥胸让我目不转睛。那是我看到的她最美的时候，比美国往事中她峻冷的那一笑还让我倾倒。  </p>
 <p>好吧，其实上述都不是我想说的废话。纯粹是我说出口的废话而已。《血钻》揭露了残酷的现实，童子军，少年兵，生活在战火中不能自主的非洲人民，这是片被上帝遗忘的土地，而有些人却注定在这里生存。上帝给了他们丰富的资源，却成了上帝赋予他们的不能承受之重。他们的灾难源于丰富，更源于匮乏。人民无法依赖自己强大起来去对抗那些以人民的名义伤害人民的无耻统治者，只能继续在他们疯狂的统治底下被无情地消耗自己的生命。This is Africa。红色的土壤预示着红色的血液，黑色的皮肤和白色的钻石无法相容，当我们还在为着操蛋的生命而无限纠结的时候，有些人时时刻刻面对着生命的威胁，下一秒，可能就是地狱和人间的不同境遇。说道这里，有些人就喜欢话锋一转，想想我们亲爱的祖国，热爱的党，非洲的人民被操过千百遍，依旧爱那片土地如初恋，我们不过被操过好几十年，又有何可以抱怨的地方呢。多想想这片土地的好吧，这样稳定而河蟹的操可是难能可贵的，在无尽的操中勇敢地生活下去，用无尽的爱意去享受无尽的操。  </p>

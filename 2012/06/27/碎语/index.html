@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">碎语</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">碎语</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年06月27日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>某天晚上，天津和帝都同时电闪雷鸣，雨下得很大。此刻那么宁静，却让我开始怀念起那些汹涌澎湃的日子。即使生活如同一潭死水，但天气却在风雨飘摇中让我感觉到了生命的气息。《一一》当中，洋洋躲进阶梯教室时，在门口看到了女同学掀起裙子后的内裤，大屏幕上正在解释说，科学家认为生命的起源就源于数十亿年前的一个闪电。闪电的开始也是爱的萌芽。  </p>
 <p>上个星期每天看了一部杨德昌和侯孝贤的电影。相比来说，侯孝贤的电影除了《悲情城市之外》，《风归来的人》和《恋恋风尘》都太淡了，就像一杯白开水一般，你喝下他就像在喝下一场生命，它不可或缺，但你却没法在瞬间感觉到那么浓重的味道。而《悲情城市》当中即使描写到二二八事件的时候，依然是梁朝伟所扮演的聋子作为主角在经受着，就像《一一》中的阿婆一样，一个听不到一个没法感觉到，但事情还在继续发生，生活仍旧在持续。这也是多数人所认识到的，当杨德昌走过了八九十年代到了千禧年的时候，他开始变得温和了，不再像之前那样充满了锐气。在《独立年代》当中对儒家的看似圆滑的待人处事方式的困惑，在《麻将》当中变成了这个世界之后两种人，要么傻子要么骗子。这个世界没有人真正知道自己到底想要什么，每个人都在等着别人来告诉自己，到底想要的是什么。  </p>
 <p>杨德昌通过自己的电影想要传递出他所认识的生活，所悟出的道理，在电影的行进当中似乎都是悲观的，人与人之间充满了勾心斗角，争权夺利，却又在电影结束的时候给了人们以希望，《独立年代》中琪琪和小明终究没有放弃两个人之间的感情，《麻将》里，伦伦和马特拉在人声嘈杂的街道上找到了彼此，拥吻。杨德昌的电影就像是一杯啤酒，喝下之后肚子涨得难受，似乎一下子很难接受杨德昌试图想要表达的他的说教，但是当你喝得足够多的时候，你就会发现自己已经浑身带满了酒气。  </p>

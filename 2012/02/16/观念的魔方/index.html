@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">观念的魔方</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">观念的魔方</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年02月16日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>小学的时候，上自然课，老师告诉说，小孔成像时，像是倒立的。视网膜成像的原理同此类似，意即我们看到的事物首先是倒立地显示在我们的视网膜上，再经由大脑的处理过后，成为正立着的。那时，愣头青虽然只想着如何去玩，可我依旧会对这样的阐述表示兴趣，又或者说，是更多的怀疑。为什么我们能相信我们首先看到了倒立的事物却又能将事物还原成它本来的模样？这个世界的本来面目到底应该是怎样的？是它原本就是倒立的？我是正立着的？是它是正立着的，只是我眼中的它却是倒立的？如此的疑惑曾经持续了一段时间，以一种虚无的想法去看待这个仓皇的世界，我更进一步的想法便是，我们眼中的世界到底是不是所谓真实的世界，真实的世界是存在于真实当中呢，还只是存在我们的想象当中？  </p>
 <p>这几天翻看《天才在左 疯子在右》一书时，发现某个精神病患者对于世界的想法的出发点，怀疑的开始其实和我曾经相似，因为对于一个倒立的世界的感兴趣，衍生了对于他人的兴趣，于是她开始借由模仿他人甚至声称自己能够由此读懂他人到底在想些什么，读罢我不禁倒吸一口凉气，亏得当初我适可而止了，否则再深究下去，我岂不也因过度偏执于自己可能违反常理的想法而成了众人眼中所谓的精神病了？可是，无论如何，真实的世界不偏不倚，时间哗哗流淌当中，它的每一层伪装不断地被褪去，剩下的是被称之为记忆的东西，像陈腐的尸体一样，散发着关于过去的味道。  </p>
 <p>毋庸置疑，我们每个人都是带着局限去看待这个世界的，我们很容易因为自信过度，对自己的偏执而认为自己所认知的世界观是唯一正确的。马克思贵为律师之子，恩格斯身为富商之子，他们皆不属于无产阶级，可他们又自称自己发现了历史发展的规律，资本主义必然灭亡，无产阶级是资产阶级是掘墓人。搞笑的是，无产阶级的崇高历史地位，是这两个贵为资产阶级后代的伟大的思想家们赋予的。有人说，这是所谓辩证唯物主义的局限性所在，在我看来则是，我们极为容易因为一个自己幻想的观念竭力去坚持，马恩未必不能看到自己身上所存在的悖谬之处，兴许他们有其他自己能够自圆其说的阐述，兴许简单而言，他们只是觉得，这一切非如此不可。  </p>

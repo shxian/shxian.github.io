@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">下一站，帝都南站幸福路</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">下一站，帝都南站幸福路</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2011年08月05日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>陈冠中写过一篇文章叫做《波西米亚的北京》，波西米亚是浪漫的是文艺的是关于梦想的，帝都聚集了来自全国各地的怀揣着出人头地的梦想的画家音乐家以及各种其他家，从圆明园附近到如今的宋庄，不可否认的是，帝都有其实现梦想的极大可能性的，而如此可能在我看来是依靠其权力和政治中心的地位所取得的，利用权力和政治衍生成的可能性在这层意义上让我很排斥。当然，它为那些追梦的人提供了一个平台，一条路径，这是它在我看来唯一的好处。而帝都本身并非浪漫或者艺术化，它所具有的在陈冠中眼中的波西米亚的一面 ，并非它自身所散发的独立的气质，而是一群人赋予它的，他们在这里创造在这里表演，也在这里生活，漂泊过后来到这里只为了自己有朝一日得到赏识发挥自己所谓的才华。很奇幻的是，帝都就这样用权力和政治制造了关于多元的诠释，多元则产生差距和比较。天上人间意乱情迷，勾魂交魄，高级饭店居住着或政要或显赫，转头路过某个不知名的小酒吧，你则会看到一群人聚集轰轰，台上的歌手卖力演唱，这是他们的世界。高楼大厦，道路宽阔，建筑物或醒目或宏大或畸形，或因宏大畸形而特别醒目。但置身于其中，我除了能在意识当中提醒自己这是帝都之外，再无其他可以让我的心情激荡，它早已俗烂了，比符号和符号，比虚无还虚无，在匆忙和宏大中，这个城市让我无法感觉到它的任何生气和魅力。尤其当你通过角落和细节去真正观察了解这个城市。  </p>
 <p>帝都南站据说是亚洲最大的火车站，如果算占地面积的话，在网上搜了一下发现，如果要数人流量的话还是那未有地铁直达的西站，最大与否不过是未了满足那娇滴滴的虚荣心罢了，当然还有其他，比如那所谓的三峡好大坝。来来回回跑过许多次帝都南站了，印象最深的除了它的空旷就是它的高大，无他。估计心里满足感稍强点的人将要因此而倍感幸福，不挤的火车站，梦里千百回萦绕终目睹，感动是必须的，不感动就是拒绝相信国家幸福美好罪，不然就是非正常精神病患者。而那不知道某某局的官员们也相当敏感和正确，把帝都南站旁某条路命名为南站幸福路，真实可信准确地勾画出了南站给广大的老百姓带来的真切感受，幸福，幸福何其有哉。这让我走在那条路上时，感觉压力倍增，因为我走在一条称之为幸福路的路上，却总要去见一群不幸福的人，每踏一步都让我感觉远离幸福，而我却又踏踏实实地脚踩在幸福路上，我感到害怕的是我不知道是自己精神分裂还是他们精神分裂了。  </p>
 <p>我在寒冷的冬夜闯进了那幸福路边的小屋，2011刚过，我们离世界末日又近了一点。昏黄的灯光下，好几张连着的床依次排开之后，房间里已经没什么空间了，只有T字型的路，他们在路边煮着我不知道学名的东西。有小孩，有老人。我感到情绪有点崩溃，不是因为我看到他们有多苦难，而是一种肃杀的氛围，仿佛哀怨，冤屈和苦难都飘散在那房间的空气当中，我不能自已，坐立难安。我无法准确地去表达我所看到的东西，不仅因为我实际上就算看到了却无法真正地体会到他们的痛苦，更在于文字是苍白的，纪录和回忆本身就是一种不完整的形式的方式，你越试图去表达，可能越偏离真相。当你体验到了，现实和文字都让你无力。而当我仅能采取这种形式时，我实际上在让自己朝着并不准确的方向前进，但这只能是折中的形式。我很不恰当地在当中局促片刻，一个中年妇女握着我的手自述苦难，并对我给予希望，她说，你可以回去以后告诉你们的同学老师校长，有更多的人关心后我们的问题可以尽快地得到解决。每个有着正常心智和良知的人真正触此情景都会感到难以逃避，却又思忖自身而觉得除了逃避再无其他，你能帮助多少人，有多少人同她一样，甚至比她拥有更大的苦难？她和儿子被丈夫抛弃了，丈夫再婚后不再理会他们，她去向丈夫要孩子的抚养费却屡遭拒绝甚至被毒打，她的兄弟因为为了她讨回公道却反遭诬陷，如今深陷牢狱。  </p>

@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">东北漫行</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">东北漫行</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年03月30日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>火车晃悠悠地终于来到了沈阳。凌晨四点多，我走出火车站时，被它处于重新时的施工的简陋所震惊，然后欣然接受。第一次在凌晨的时候来到一座城市，尽管之前曾经有过无数次的设想，到最后，发现迎接我的最多的是，整夜整夜守着一列列火车到站，为了招揽客人的小旅店店主们和各种私营的汽车司机们，其实和白天也差不了多少。地是湿的，经过整改中的火车站乱七八糟的指示牌，我抬眼望了望面前伸展开的街道，一丝寒意侵袭而来，我不知道自己是不是作了个正确的决定。但是，我立马想到自己此行的目的竟然是体验人生，于是，我淡然地在推特上写下，我想沿着街道，去认识这个凌晨陌生的城市。  </p>
 <p>雨从铁皮的屋顶上掉落下来，砸在我的脚边，砸在我的脸上。我望着眼花缭乱的各个广告牌和依旧绚烂的城市灯光，还未有太深的睡意。思绪已经飘到了下面的行程，我边查着列车时刻表，边在脑中飞快地计算到底怎样的行程才能恰到好处，躲进了售票处。人来人往，每个人都有各自的目的，各自的生活。我在售票处整整待了一个多小时用来思索，我到底是要先到长春还是先到大连，再返回。最后的结果是，我先买了张到长春的票，然后退了票，决定到大连了。我似乎潜意识里已经想到了，三天或者四天过后，我会感到厌倦，尽管，这事实上，这是我第一次真正意义上的肚子旅行。  </p>
 <p>买完票后来到了麦当劳，巨大的M字挂在火车站口旁煞是惹眼。车灯从远处的街道射来，喇叭声偶尔想起，雪堆积在路旁，融化后沾湿了整条马路，沾湿了路人的裤脚，伴着寒风而来的是凌晨将醒时的喧嚣，天空阴郁中似乎将要迸发出无限的生机，白昼在楼顶上等待，灯光好似在孕育着未知的生命。我找到了位置后，坐在M当中望着窗外，万千思绪，拿起日记本一阵乱写。M里面是各种来此等待火车的人，有活力依旧正在玩牌的年轻人，有已筋疲力竭瘫倒在桌上，地上堆了行李的中老年人们，还有那独处一桌正拿着手机细细观看的女生，搞笑的是，之前我一直以为，在M中过夜这样的方式是我自己的窘境中的一大发现，后来知道其实大家都这样做时，我确实是失落了好一阵的。我独自蜷缩在一个角落，写着日记，偶尔抬头环顾下室内，观察下各式各样的旅人和员工们脸上的喜怒哀乐，偶尔隔着玻璃再次望着窗外这个陌生的城市，这样的孤独感在当时几乎让我兴奋得抓狂，这就是我想要的状态，辛苦，但却孤独，还有比这更美妙的吗？  </p>

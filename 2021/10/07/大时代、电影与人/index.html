@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">大时代、电影与人</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">大时代、电影与人</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2021年10月07日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>昨晚睡太迟了，早上在床上挣扎着到底要不要起来去听戴老师的讲座。最后支撑我起来的原因还是，指不定什么时候就是最后一场呢，还是去吧。这种担忧并非出于时间，年纪，还是出于对那些不可描述的力量的担忧。自从音乐节上看完李志，他在不久被封杀后，我便习惯了这样的思考方式。</p>
 <p>感觉深圳的文艺老中青都来了，负一层的报告厅坐满了，一层的多媒体放映处也坐满了。因为购票迟了，只预约到了11点的入场码，靠着毫无痕迹的 PS 技术，我成功蒙混过关提前入场了。又靠着别人和保安软磨硬泡，我得以顺势进入负一层的报告厅，远远地，在斜对角清晰地见到了戴老师。虽然我不知道为什么也称她戴老师，明明和她并没有任何的关联。但唯一肯定的是，无论在视频中、在播客里，还是在现场，戴老师的讲演，魅力依旧，让我羡慕她广博的知识面，以及恰当准确的表达方式，还有不时制造的小幽默。</p>
 <p>今天讲座的主题是「大时代 电影与人——蔡楚生和他的电影」。我并没有认真看预告的推文，到了现场，听了半天，才听清楚导演蔡楚生的名字，这当然非常不好，一定程度上影响信息摄入的效率了。对电影和导演的不了解，让我没法那么直接快速地进入到戴老师的表达当中，经历了一段适应的过程，做了一些不成体系的记录。</p>

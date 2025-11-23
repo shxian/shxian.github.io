@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">时间的围墙</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">时间的围墙</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年05月20日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>怀旧是一种病。时间像带刺的玫瑰一样将过去打扮得腰肢招展以为能迷惑自己和他人，但是，拨开那虚伪的外表所见的恐怖却早已深深打上了时间的烙印。过去的夹带着理想和信仰的光环存在于人们的头脑中，不停激荡着现实。《再见列宁》既是一场告别，也是一场展望，偏狭的理想和偏执的信仰必须到此为止。影片末尾，亚历山大母亲的骨灰被航天飞机玩具送上天空，消散在风中，烟花绚烂地绽放，黑夜中的精彩以理想的死亡为开端。  </p>
 <p>亚历山大的母亲是在群众游行，看见自己的孩子被防暴警察带走时晕倒的，在晕倒之前，她大声疾呼让殴打人民的警察们住手，但并没有人理会她。等到她晕倒过后再次醒来，已经是八个月过后，柏林墙倒塌了，民主德国不见了，资本主义侵入了社会主义国家，原本水火不相容的两个国家即将重新统一。对于社会主义的遗老们来说，这无异于一场灾难，是理想的幻灭也是现实的嘲讽，这将意味着他们的过去是个可笑的错误，自欺欺人的玩笑。为了让母亲脆弱的心脏免于再次受到刺激，亚历山大竭尽所能为她构造一个理想的现实，民主德国还在，联邦德国的人民处于水深火热当中，甚至逃往民主德国了。  </p>
 <p>谎言重复了千遍也许可以变成真理，也许不是谎言成了真理，而是人民已经无所谓了真和假的区别，人民选择相信什么，什么即成为真理，而所谓选择，也不过是种惯性，在无力改变现实的情况下，只能苟延残喘地继续着过去荒谬的理想，不需要被证伪，只需要一种持续性，过去和现在之间的连接被赋予了光环，人民享受其中带来了满足感，以至于在潜意识当中依旧对其带有某种期待，即使知道这是种错误。事实上，在亚历山大的母亲去世之前，娜拉已经在病房里面告诉了她已经没有民主德国了，两个国家已经统一了的事实。但是导演并没有对此特别着墨，只是轻描淡写地扫过，而在其后，亚历山大母亲似乎也表现得并不知道这回事，仍旧津津有味地看着亚历山大为她编造的虚假的电视新闻。兴许导演是想说，对于垂死之际的母亲来说，什么是真什么是假早已不再重要了，母亲依旧怀念着东德时代，就让她带着自己的理想死去，带着谎言，不如归去。  </p>

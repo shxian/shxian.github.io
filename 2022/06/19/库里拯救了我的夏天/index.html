@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">库里拯救了我的夏天</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">库里拯救了我的夏天</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2022年06月19日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>库里拯救了我的夏天。在经历过利物浦欧冠决赛失败的苦涩之后，我用两天「电子阳痿」般的高频率消费论坛内容，躲藏在这样的喜悦之中。毫无疑问，这对库里而言，对汤普森而言，对勇士这支球队而言，都是意义重大的一个冠军。王朝球队在经历过人员重整、经历过核心球员受伤、经历过未进季后赛的低谷之后，在汤普森归来的赛季，在三年之后再次进入总决赛，收获冠军，在商业联盟中，像是个童话般的故事。</p>
 <p>固然，除了球员之外，还需要老板的坚守和投资，但这同样建立在这批球员之上，也无疑建立在库里身上。坚守一支球队，陪伴它成长、陪伴它走过低谷、陪伴它王者归来，这种陪伴，是一种对资本快速变现的反叛，而它也在资本世界里发生。如果我们认为，没有资本，这一切都无法发生，我们也必须承认，没有库里，这一切同样无法发生。把它理解为相辅相成，更是一种粗浅的理解，因为这可以轻易地解释所有的事情，但无法诠释这种陪伴的意义和价值。</p>
 <p>第四次总决赛的胜利，库里终于获得了属于他的总决赛MVP。尽管这是个由媒体人基于自己的好恶在短时间评选的奖项，但却在此前很长一段时间，成了库里身上无法被磨灭的讨论热点。2015年颁奖台上，可以看到库里刹那间略微的失望，2022年，他在比赛解释前掩面而泣，坐在地上。当他在更衣室庆祝时说出，他们还能说什么时？我相信，商业世界的利益纠葛、媒体记者的舆论纠纷、球迷之间的相互攻讦，不可能对他毫无影响，也让他背负了很大的压力。只是他此前，从不公开表达，他只是默默承受，努力训练、耐心等待，直到终于迎来属于他自己的冠军，属于他自己的MVP。</p>

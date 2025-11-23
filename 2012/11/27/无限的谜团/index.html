@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">无限的谜团</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">无限的谜团</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年11月27日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>下午心情不好，实在懒得上课，趁着《少年派》的热潮，默默地一个人到影院看了。一点十分的场，人没有想象的少，有男女组合，女女组合，偌大一个电影厅，似乎只有我是自己一个人来看电影，而且很凑巧的，我一个人占据了一排座位。想起来好久没有在电影院看电影了，好久没有一个人看电影了，灯光尽灭，电影即将开场的时候，心中竟莫名荡漾起些许波澜。有时候只是想装点13，装着装着自己也信了，也就像那么一回事了，事情可能是这样子吧。  </p>
 <p>看电影之前就看了李安在《看见》的访谈，在和柴静的对话当中，李安强调得最多的还是，自己心中也藏有的那份恐惧，害怕被淘汰，害怕自己对不起观众，害怕自己没有发挥自己的天分，拍出足够好的电影。这些好像套话，也许因为资讯的迅速传播让我自以为是得懂得太多，也许太多虚假的站着说话不腰疼的成功学宣传让我杯弓蛇影，我更好奇的是李安的整个导演生涯，他似乎属于大器完成型，有点学院派，却不迂腐，始终在尝试不同的表达方式，印象深刻的是，李安说，早年在剧组当中不得志的时候，他有时候会去干些剧务的杂活，通过打，砸，耗费体力的方式来宣泄自己心中的郁闷和不满。可能吧，真的每个人都经历过人生当中的惨淡和低谷。  </p>
 <p>老实说，电影对我来说，并没有如同之前看到的异口同声的叫好一样吸引我。可能故事本身过于平淡了，尽管当中夹杂着理性与宗教，真相和幻想，两个故事的是与非等足以激荡思考的元素，与此同时，影片的3D效果是我看过的电影当中最好的一部电影，唯美的画面，绚烂的夕阳照在坐地的老虎和站立的皮肤渐渐黝黑的Pi身上，橘黄色的阳光渲染了整个画面占据了眼睛直至脑袋，夜间平静如镜的海水，发光的章鱼和海中游动的小鱼，突然鱼跃水面的鲸鱼仿佛冲击了眼睛，成群飞过的小鸟，岛上成群的胡蒙等等，但是这对故事本身足够了吗？  </p>

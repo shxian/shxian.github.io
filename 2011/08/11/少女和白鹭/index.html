@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">少女和白鹭</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">少女和白鹭</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2011年08月11日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>司机突然踩了下刹车，出租车就那么像浮萍一样停在了半路，司机立马伸出左手摇下窗户，头伸出窗户后对着前面的车大骂，发泄了一顿后，又把窗户摇上去了，人家不搭理他。盛夏的阳光直射在马路上，蒸腾起的热气让空气中仿佛飘散了桑拿的味道，热气腾腾，这个世界就像烤炉一般，人们身居其中，品尝着不尽的水深火热。他重新往后倚靠着椅背，刚的刹车他毫无准备，差点就撞上了前面的椅背，没事吧，他关切地问道身边的她。没事。她坐在窗户旁，手靠在旁边的玻璃上拖着腮帮，头也没有转过地回答了她。长长的睫毛，深邃的眼睛，隆起的鼻子，有点深厚的嘴唇，搭配上一头乌黑的长发，阳光透过车窗照射在她身上，阳光把她的影像折射到他的眼帘中，好漂亮的一个少女，他不禁在心里暗自感叹。生命的暖流在那一刻就像下雨后被滋润了的河流一样重新注入他的身体。  </p>
 <p>他们刚从书店出来，准备各自回家。这是他第一次带她到书店，他犹豫了好久才在某个夜半的时候拿起手机又挣扎了好久才发了短信约她，倒不是因为担心被误会，而是他思虑再三，觉得这样做是对的，这样做对她来说是好的，所以才终于坚决地这样做了。她答应得很爽快，那夜半两点多的时候，她也还没睡觉，立马回了短信。她会在做什么呢？看书，还是上网和男友聊天？那时候，对着自己突然的猜测他感到莫名地玩笑。  </p>
 <p>今天是他朋友书店新开张的日子，原先的店面位于闹市区因为租金实在太贵只好搬走了，可是对于实体书店的执着他和他的朋友都未放弃，对于他们来说，即使最终网上书店全面地压倒了实体书店，实体书店依旧不会消失，那种真切地触碰到书后再决定买下的感觉和网络上冰冷的感觉是不一样的，更甚，实体书店是一个公共却又私人的场合，真正的读书人都会在里面发现自己的乐趣接触到自己可能希望接触到的人。偶尔漂在外面的日子，只要一有闲暇的时间，他总会来到书店当中，他只是单纯地喜欢那种身边充斥着书的快感，当然，能发现可观的书更再好不过了。在他们第一次单独约见面的时候便带她到书店只是他很书生气的想法，他就是喜欢在书背后存在的灵魂的涤荡，他知道这是她会喜欢的，毕竟，平时他已经提及多次了。  </p>

@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">我和《海角七号》</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">我和《海角七号》</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年05月05日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>我一直以为，对于不通晓闽南话的人来说，海角七号是种遗憾，因为台词的精彩只能借由你直接地明白它所表达的意思才显得更加富有韵味，片中代表和茂伯说台语时的神情和动作浑然天成，老戏骨的风采展现无遗，就像在表现自己的生活一般，这或许是海角七号在台湾电影市场极为低迷的情况下能够取得巨大成功的原因之一，不仅是片中凄美分离的爱情，更是因为台湾人在语言中找到的自我认同感，一想到语言被搬上荧幕之后，以艺术的方式表现竟然能够展现出如此的魔力，让熟知者为之欢笑，为之流泪，人们在电影中找到了自己，自然也对电影着迷不已。有些电影取得好口碑是因为大制作融洽了大众抱团的毛病，有些电影是因为冷门又符合了小众的猎奇心理，而海角七号于我，因为人因为事因为电影本身都变得与众不同。  </p>
 <p>记得第一次看海角七号的时候，是在高二上学期运动会期间的某个晚上，那时候，难得不需要晚自习的晚上，有情人早已出外约会，剩下苦逼的无情人在黑夜中对着自己孤独的背影黯然神伤，而正处于地下恋的我，却已不知道到底该如何和她相处，处处小心翼翼，做贼心虚让我疲惫不堪，而我其时更是傻逼不已，脑袋中装满了浆糊和偶尔莫名的优越感，对民俗甚至对闽南语有着说不出的排斥感，现在再回想也已不晓当时的原因了，于是当我在教室屏幕上看到台湾小城的街头，没有明星和一抬眼竟然是一个老头兀自正在吹拉弹唱，几个不入流的明星正在制造笑点时，我毫无兴趣，顺带稍微鄙视了一下坐我旁边正在仔细观看的阿毛以及正在讲台上默默观看的若干人，我冷眼看了他们一下，孤傲地像以往一样独自回了宿舍。  </p>
 <p>谁曾想，运动会过后的语文课上，李谈起了那个夏天火遍台湾的海角七号，说在星期四的两堂语文课上将要播放该片，我只是心头一爽，想到又可以看电影了，懒惰的细胞再次悄悄发作。直到星期四花了两节课，又一个晚自修看完了整部电影过后，我才恍然大悟，这让我看得热血沸腾哭笑不得的电影竟然就是那个晚上我在心中暗暗鄙视的电影，于是宽慰自己道，谁年轻时候没有傻逼过，至少那天晚上我没有看，我现在可以以最为原始的心态和最新鲜的感觉看完了整部电影。而其实，可笑的是，我根本就没有看懂电影，遑论对电影有任何分析了，我甚至都不知道电影的结构到底是如何，我不知道为什么会在战时和现在穿梭来回，不知道那些信是谁要给谁的，不知道电影中的爱情是谁和谁的爱情，总之当我第一遍观影完毕之后，我只是留下了一个感觉，这电影不错嘛，那些信写的可实在是特么好啊，当初是我错了，当然我只是在心里这样悄悄地想了一下。  </p>

@@ -27,5 +27,56 @@ document.addEventListener('DOMContentLoaded', function() {
   
   setupCollapse('.year-header', '.year-content', 'data-year');
   setupCollapse('.tag-header', '.tag-content', 'data-tag');
+  
+  // 移动端抽屉式导航
+  function setupDrawer() {
+    var menuBtn = document.querySelector('.mobile-menu-btn');
+    var closeBtn = document.querySelector('.drawer-close-btn');
+    var drawer = document.querySelector('.mobile-drawer');
+    var overlay = document.querySelector('.drawer-overlay');
+    var drawerNavItems = document.querySelectorAll('.drawer-nav-item');
+    var body = document.body;
+    
+    function openDrawer() {
+      if (drawer) drawer.classList.add('drawer-open');
+      if (overlay) overlay.classList.add('overlay-visible');
+      body.classList.add('drawer-open');
+    }
+    
+    function closeDrawer() {
+      if (drawer) drawer.classList.remove('drawer-open');
+      if (overlay) overlay.classList.remove('overlay-visible');
+      body.classList.remove('drawer-open');
+    }
+    
+    if (menuBtn) {
+      menuBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        openDrawer();
+      });
+    }
+    
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        closeDrawer();
+      });
+    }
+    
+    if (overlay) {
+      overlay.addEventListener('click', function(e) {
+        e.preventDefault();
+        closeDrawer();
+      });
+    }
+    
+    drawerNavItems.forEach(function(item) {
+      item.addEventListener('click', function() {
+        closeDrawer();
+      });
+    });
+  }
+  
+  setupDrawer();
 });
 

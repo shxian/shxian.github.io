@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">山海关掠影</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">山海关掠影</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年04月07日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>列车抵达山海关之前，雪便开始下了。不知道是在哪 ，兴许是在龙家营，列车呼啸而过时，窗外的黄色灯光照射进火车里，我朦朦胧胧地从睡眠中醒来抬起头，刚好撞见灯光下，雪花像刀片一样坠落，似乎在鞭打着这个依旧沉睡不醒的黑夜。我半睡半醒，但也意识到了这说到底竟然是我第一次亲眼见到如此巨大的雪花，情不自禁地叫出了声。  </p>
 <p>下火车之前，我调整了呼吸节奏，去迎接我人生当中的第一场雪。雪花漫无目的地撞在我的身上，站台上也已到处飘满了雪花，它们从天而降，去往何处却不能自主，它们带着雪白的身躯却在同大地接触的一刹那被尘土污染，无法自拔。车上的人望着窗外的雪景，伸长了脖子，意外的是，愚人节已经过去，山海关却下了今年入冬之后的第一场雪。我赶忙撑起了伞，顺着人群开始寻找出站口。就像无法阻挡雨一样，雨伞也无法抵挡斜风吹着雪花不断地附着在我的身上，然后转眼融化，又附上一层。我的背包上，衣服上，头发上，全沾满了那可怜的雪花，但我却是兴奋的，黑暗中看着雪花飘落如同一场梦幻，我伸出手看着它们掉落在我的手上，那样轻柔地，仿佛担心伤了我的手般。  </p>
 <p>天已经快亮了，风卷着雪却有越下越大的势头，我躲进了候车室当中，稍作休整，坐在椅子上望着窗外黑暗中飘散着的雪花，这样的情境似乎从来没有梦见过，却在现在这样真实地发生在我的面前，我从未想过的是，它如此突兀，又坦然于这就是所谓的人生。不断地有人从外面跑进候车室当中，他们身上早已沾满了雪花，抖落了一阵过后，地上便湿透了。  </p>

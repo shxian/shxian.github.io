@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">写在22岁</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">写在22岁</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2013年02月27日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>想起来已经好久没有正经码过字了，这个寒假行将结束的时候，终于熬到了生日，终于再不敢有任何借口给自己，可是碰触键盘的时候力不从心的感觉还是从指头和思绪的生硬当中显现了出来。值得开心的是，零点的时候收到了27的短信，早在一个多月前就提醒她说，今年的生日刚好在27号，到时候要记得和我说生日快乐，她还没忘记，这就足够了。  </p>
 <p>一个一如既往颓废的毫无亮点的假期又过去了，我总是为自己的拖沓和懒惰制造太过的借口，曾有很多想法一闪而过，我琢磨着自己可以把它记录下来，可以想象，可以天马行空，最终它们都随着时间消逝，而我也再提不起任何兴趣。太多的琐碎分散着自己，我依旧是那个自怨自艾的我，等待着命运的审判，信奉者船到桥头自然直的谬论，自以为是地认为我会在这团泥沼当中脱身，却连往下蹬脚的力气都不曾使过。  </p>
 <p>我试图假借外力来辅助我，我想，我必须在李的忌日那天记录下这两年来匆匆的改变，我想，我会在柑今生日的那天记录下这么些年荒唐情感路中的坎坷屈辱或者是幸福。可是，我终究没能做到，我从一个泥潭当中掉落到虚无的海市蜃楼的幻想里，在那当中，这二十多年来始终充斥着我的自恋和无能，因无能转而自恋，因自恋更加无能。这几乎是大学以来我对自己说过的最多的话，使用过的最多的词语，至今未有改变。我又开始假期结束之前的纠结，太多的场景重现，太多的哀怨反复。  </p>

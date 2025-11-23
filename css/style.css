@@ -48,7 +48,8 @@
   }
   
   .prose pre {
-    @apply bg-gray-100 p-4 rounded-lg overflow-x-auto;
+    @apply bg-gray-100 p-4 md:p-4 rounded-lg overflow-x-auto;
+    @apply -mx-4 md:mx-0;
   }
   
   .prose pre code {
@@ -60,7 +61,7 @@
   }
   
   .prose p {
-    @apply mb-4 leading-relaxed;
+    @apply mb-6 md:mb-4 leading-relaxed;
   }
   
   .prose ul, .prose ol {
@@ -96,7 +97,7 @@
   .pagination-previous,
   .pagination-next,
   .pagination-ellipsis {
-    @apply inline-flex items-center justify-center h-9 w-9 text-sm font-medium text-black transition-colors;
+    @apply inline-flex items-center justify-center h-10 w-10 md:h-9 md:w-9 text-sm font-medium text-black transition-colors;
   }
   
   .pagination-link {
@@ -126,7 +127,7 @@
   }
   
   .tab-item {
-    @apply px-0 py-1.5 text-sm md:text-base font-medium text-gray-500 transition-colors;
+    @apply px-0 py-2 text-sm md:text-base font-medium text-gray-500 transition-colors min-h-[44px] flex items-center;
   }
   
   .tab-item:hover {
@@ -151,9 +152,9 @@
   
   .year-header,
   .tag-header {
-    @apply w-full flex items-center justify-between py-2 text-left bg-transparent border-none cursor-pointer;
+    @apply w-full flex items-center justify-between py-3 text-left bg-transparent border-none cursor-pointer;
     @apply text-sm md:text-base font-semibold text-black;
-    @apply hover:text-gray-600 transition-colors;
+    @apply hover:text-gray-600 transition-colors min-h-[44px];
   }
   
   .year-title,
@@ -175,6 +176,40 @@
   .tag-content {
     @apply overflow-hidden;
     transition: all 0.3s ease-in-out;
+  }
+  
+  /* 移动端抽屉式导航 */
+  .mobile-menu-btn {
+    @apply cursor-pointer hover:text-gray-600 transition-colors;
+  }
+  
+  .drawer-overlay {
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .drawer-overlay.overlay-visible {
+    @apply block;
+  }
+  
+  .mobile-drawer {
+    @apply overflow-y-auto;
+  }
+  
+  .mobile-drawer.drawer-open {
+    @apply translate-x-0;
+  }
+  
+  .drawer-close-btn {
+    @apply cursor-pointer hover:text-gray-600 transition-colors;
+  }
+  
+  .drawer-nav-item {
+    @apply block w-full text-left;
+  }
+  
+  /* 抽屉打开时锁定 body 滚动 */
+  body.drawer-open {
+    @apply overflow-hidden;
   }
 }
 

@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">巴萨提的颜色</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">巴萨提的颜色</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年04月12日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>最近总和印度不期而遇，百度生活大爆炸贴吧里的印度农村生活实录看得我浑身发凉，深感作为天朝屁民已属不易，不多多感谢国家，再有过多奢求简直是不知好歹。也曾亲耳听闻从印度归来的老师说，转了一圈回来，发现还是会咱们中国好啊，说罢，他仰天一笑似在暗自得意，我低头心中一紧略感无力。未到过印度的人，稍有常识或许便会知道，印度交通落后，环境肮脏，政府贪污腐败盛行，种族歧视严重，民族冲突剧烈，虽不是帝国主义国家却也生活在水深火热当中。但是如此印象在我遇到了《巴萨提的颜色》过后已被彻底颠覆。  </p>
 <p>电影讲述的是，英国年轻女导演苏，在看了爷爷留下的英国殖民印度时期的日记之后，到印度拍摄当初印度青年反抗英国殖民统治争取民族独立的历史，由于资金匮乏，她找到了几个年轻人作为演员，但是在拍摄过程当中，他们的朋友山杰驾着破旧的老飞机不幸坠机死亡，却被政府指责是其自身技术问题造成。年轻的朋友们为了替朋友讨回公道，得到应有的尊严到广场上静坐，却遭遇警察的毒打。于是他们决定报复，暗杀了国防部长。可腐败的国防部长却被国家表彰嘉奖。他们奋而决定说出真相，占领了广播电台，却也难免被政府射杀的命运。  </p>
 <p>一段话其实难以说清电影的详细发展，只能说个大概。但是电影比《三傻》给了我更多观影的感动和思考。如果说三傻将更多的矛头指向僵化的教育制度的话，巴萨提的颜色则更锐利地直指社会制度的本身，戳中了政府贪污腐败的要害。电影在印度青年反抗英国殖民统治和政府腐败统治这两条主线之间来回进行，英国殖民者对印度人民的剥削和压榨和政府不作为且腐败导致人民无辜死去如出一辙。电影最初的用意是为悼念那些因为政府的腐败而驾驶不合格的飞机不幸牺牲的飞行员们，但导演在其中倾注的思想和想表达的意思远不及此，身为天朝屁民的我对其也自然多有揣测，不知能中几何。  </p>

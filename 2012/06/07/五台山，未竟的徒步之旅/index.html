@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">五台山，未竟的徒步之旅</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">五台山，未竟的徒步之旅</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年06月07日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>五月十八号，天气阴。天津的天空像以往一样不那么澄净，一股呆滞的气息飘散在空气中。和舍友决定去五台山是一早就做好的决定，只是在等待一个合适的时机，比如刚好很闲，比如五台山上已经不那么冷了。五月中下旬，天津已经开始炎热了起来，于是出发，计划周五从北京直接搭K601的火车到五台山。查了下天气预报，周六降雨概率是百分之三十，周日是个大晴天，因为懒得再继续等待下去，于是和舍友一商量决定碰碰运气，如果周六真的下雨没法徒步的话也就认了。收拾了春夏秋冬四季的衣服，五台山上在零度左右，天津已经三十度上下，带上了雨伞（其实山上那么大的风带上了也没用），手电筒，貌似已没有其他重要的设备了。</p>
 <p>从天津西站出发到北京是在十八号下午。这是第一次到天津西站搭火车，很大很空人很少火车车次很少，不知今后是否会有改善，总之，假大空，风采依旧。到达北京即使普通火车也就一个半小时，离晚上十点钟的火车还有很长一段时间。北京已来过那么多次，虽说没有把自己想去的地方都去过，但也未有心情在北京闲逛，在这个城市拜访过南站周围的访民，也见识过高楼大厦的狂妄，无话可说。莫名想起史铁生，于是决定到地坛一趟。从北京站出来到马路对过即有直达的公交车。  </p>
 <p>空旷旷的地坛公园里面，貌似是按照五行之类的东西排布的，未太在意，想象着史铁生当年可能在哪个地方，看到那个经常在这里跑步的年轻人，却也无聊，毕竟景致只是一般，游客三三两两也未见中意之人。遂起离意。  </p>

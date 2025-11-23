@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">那些关于死亡的回忆</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">那些关于死亡的回忆</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年06月03日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>十多年前的时候，我还在上小学，具体已经忘记了到底是哪个年级，某天回到家的时候，老妈告诉说，某某某堂伯逝世了，某天要给他出殡。那是在电视上看过那么多的悲欢离合之后第一次在现实当中经历，只是因为并未有多亲近，对堂伯也未留下任何印象，现在也根本无法想起到底他长得什么样子，或许我从来都没有见过他吧，因为也未有多少悲伤。堂伯是因为渔船失事去世的，同船的几个人都顺利获救了，唯独他连尸体都没有找到，若干天后，终于放弃了希望而宣告失踪，意即死亡。出殡的那天，从沙滩上开始，送葬的队伍饶了整个村子，最后到了山上的灵堂。已经忘了季节，忘了当时自己的模样，只记得我似乎曾经在海滩上待过，听着周围人的哭泣声，哀嚎声，莫名地期待也许这一切都只是场闹剧，失去的人会戏剧般地重新回到我们的生活当中，当然，生活并不会让我这样称心如意。  </p>
 <p>在我们家搬家过后，离堂伯家就只有几十米的距离，每天我到学校都要经过堂伯家。堂伯逝世过后，堂伯母有很长一段时间都待在自己的房间里面不停地哭泣，很少出门，每天几乎都回有附近的邻居或者亲戚朋友到她房间劝慰她。从早上上学到下午放学回家，经过他们家的时候，我都会听到伯母撕心裂肺的哭泣声音，这让我感到恐惧，我不知道房间里面切实在放生什么，失去一个人的痛苦到底是怎样的，我本能地走在道路的另一侧，远离那个房间。那里面沉浸的悲痛是当时的我无法理解的，可是我却排斥它，害怕它。有段时间因为某个培训的事情，我要到晚上才能回家，尽管那段路并不是什么羊肠小路，但我总是飞奔而过，担心那里面逃出来的鬼魂会把我带走，仿佛黑暗中孕育着意图对我不利的事物，从小我就对黑暗有着比他人更深的恐惧。  </p>
 <p>不知道过了多久，也许几个月，也许几年，堂伯母终于渡过了那段最为艰难的时候，开始重新出来工作，交际。毕竟再沉郁的悲痛即使伴随着人一生，也不应该让生者完全脱离了自己的生活轨道，用死一样的哭声和眼泪度过那失去爱人的日日夜夜。这么多年过去了，堂伯母家中一切已恢复正常，几个孩子也已各自成家。再见到堂伯母的时候，我也甚少能回忆起那段我感到恐惧的时光，也许生者因为哭泣和眼泪得以和逝者取得某种联系，生生死死之间让我撞见了人间离合的悲剧，不忍卒睹，只剩下了恐惧。  </p>

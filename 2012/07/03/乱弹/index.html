@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">乱弹</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">乱弹</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年07月03日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>聊了一下午天，看了集《新闻编辑室》，睡了一会儿，吃了晚饭，便理发去了回家两天还未出过家门，生活和在学校没有不同，只是上网的地点变成了家里。傍晚的时候起了风，云层在高空聚集，我以为将要下雨了。晚上出门一看，月明星稀，不知今天十几。想起白天透过大门的缝隙往外看的时候，天空中蓝得像被涂抹过一样，想来是万里无云。突然想起，原来欧洲杯的决赛不过是凌晨才结束的。时间在刹那恍惚，阳光的炙热和刺眼炙烤着大地，仿佛将它带回了八分钟以前。地球上的生物，在一片真实当中始终披散着无法逃离的表面的虚假。时间是个绝对的概念，回到过去或者身处于未来都未曾改变他的属性，因为时间就是过去，现在，将来的随意组合。生命是没有规律的，只有命定的巧合，时间的组合。  </p>
 <p>理发店还在原来那个地方，估计已经好几年了，理发师还是那个，看起来也未显老，女主人仍旧没有变，脸上却写满了忧郁和沧桑。这样一个小小的店面已经支撑了好几年，店面里的设备也在不停地更新换代和进步当中，空调有了，滑门有了。今晚我去过之后，发现，一打开门还有了欢迎的铃声。“你好，欢迎光临。”老板似乎竭力用心地想把店经营好。当然，不算成功也不算失败，总算十几年就那么熬了下来。理发师和理发者的关系是微妙的，因为让别人拿着把剪刀或者其他可能伤害到自己身体的工具在自己的脑袋之上颐指气使，如果没有对理发师的绝对信任，那么这样的交易将无法构成。对于成年人来说，理发已经成了一种常态，一种融入血液当中的生活，那些先天的原始的恐惧可能随着习惯渐渐淡去。但是小孩仍旧难以适应这样的行为，于是理发的时候只能用哭泣来宣泄自己原始的恐惧。我记得小时候每次理发，老妈都得口苦婆心劝导我许久。  </p>
 <p>近视镜的悲伤就是当你理发的时候取下鼻梁上的眼睛，你已经完全看不到镜子里面的那个人长得是什么样子，你只能模糊的看到里面有个人，你在动的时候他也在动。理发店相对的两面墙上都挂上了镜子，你只见在镜子里面的里面的里面的无数个里面当中，都有一个人坐在椅子上，一动不动，接受另一个人的摆布。图像传导到你的思绪和眼界都无法达到的地方，你只能轻轻地闭上眼睛，感受着理发师手起刀落的时候的干脆，仿佛你虽然闭上了眼睛，却比你睁开双眼的时候还看得更加清楚。你会看到在无穷处，有个人的裸体当中披上了一块无关紧要的布料，旁边一个面色安详的老头正在默默地发笑。反正你也什么都看不清楚。理发完毕，打开门准备离开的时候，期待它发出谢谢光临的语句的时候，铃声响起，如同鹦鹉学舌，欢迎光临。你进门的时候即知道你将要失去身体的一部分，等到你离开的时候真正地失去了身体的一部分，门里门外，或得或失，都是无法逃离的生活。欢迎光临。  </p>

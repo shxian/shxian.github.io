@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">关于计划生育</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">关于计划生育</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2022年03月09日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>军队在巨大的广场上昂首挺胸地走队列，踢着正步；婴儿被引产后作为医疗垃圾被丢弃，而后成为瓶子里的艺术品，蜷缩着，微笑离去。纪录片开头，影像在大国力量的呈现和刚出生的婴儿之间来回切换，音乐柔和而凄凉。似乎是第一次感受到，当大国力量的画面辅以凄凉的音乐，充满讽刺更让人不寒而栗。</p>
 <p>在2021年给李的信里我写道，我们从有计划地多，到有计划地少；从一种计划生育，到另一种计划生育。事实上，计划生育从未改变。但在日常的表述中，我们把计划生育等同于一胎化政策，这消解了一胎化政策的复杂性，比如一孩政策实行阶段，还有一些例外情况，比如双独二孩（夫妻均为独生子女的可以生两个孩子），一孩半（在一些地区头胎为女生的可以再生一个孩子）。提出这种复杂性，并不在于辩解政策的开放性，而更想说明政策本身可拥有的灵活性，而这种灵活性被忽略，被以宣传的方式，通过标语、节目的形式固化了我们对于计划生育等同于一孩政策的认知，这种认知是残酷的。</p>
 <p>翻看史料会发现，计划生育并不是从天而降，它在建国初期由马寅初提出，但遭到反对，那是崇拜「人多力量大」，「人有多大产，地有多大产」的年代，我们迷信劳动阶级的力量，或许避孕措施和意识也并不到位，社会保障制度不充分的情况下，养儿防老作为一种根深蒂固的思想存在，让人口越来越多。当经由大饥荒和多次政治运动后，人口激增与经济发展落后的矛盾越来越大。伴随着改革开放政策的推出，通过遏制人口减少经济、环境、社会抚养压力，则再次作为一种选择被提出。</p>

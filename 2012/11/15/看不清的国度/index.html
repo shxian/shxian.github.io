@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">看不清的国度</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">看不清的国度</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年11月15日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>说实话，到现在我依旧对《江城》如何得以出版感到好奇，因为就一个在天朝审查制度浸淫下挣扎了多年的人来说，《江城》一书中尽管稍显隐晦，但本该还是尖刻地触及了审查制度的神经的，党化的教育，意识形态的流弊，经济和体制的急功近利，尽管这些东西如今在网上反反复复被无数次渲染和讨论，但当它们作为一本书的组成部分出现在一个外国人的书中，并且能用中文版的形式出现，且据说没有删节的时候，我只能目瞪口呆地对着天朝的审查制度和出版制度。  </p>
 <p>很难说我从何伟的书当中准确地得到了什么东西，因为何伟笔下的中国并非是我经历过的中国，不论是四川的小城涪陵，长城脚下的村长，浙江和广东的工厂，甚至是长江和长城本身，我都无法大言不惭地说我曾经靠近过他们，我只是在距离它们远远的地方生活，除了我们共同生活在一片据说是同一个国家的土地之上。对我来说，它们的概念是模糊的，就像被阳光拉长了之后被我看见的地上的影子，那样抽象，那样无法触碰，我一直以来都看到了他们，但从来没有靠近过。  </p>
 <p>何伟在书中也曾怀疑过当自己以一个外国人的身份观察，描写甚至定义身边的人的时候，可能有置身事外的轻松和判断，但是否也有一种自以为是的理解在阻碍自己？就比如，当自己对涪陵县城人的好奇一开始的莫名其妙和惊讶，对学校当中廖老师的敌意的不安，可是当他以更细微和耐心地方式去和他们相处的时候，历史和现实会告诉他很多东西，那些东西他曾经忽略，后来却发现其实一开始自己到底是有多幼稚，涪陵县城人一开始的好奇会随着时间的流逝慢慢消退，而先前似乎充满了敌意的廖老师可能是一个好人，至少不那么糟糕。  </p>

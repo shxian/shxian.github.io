@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">开放与封闭：互联网停车的生与死</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">开放与封闭：互联网停车的生与死</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2017年04月18日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <h3 id="融资一流，ETCP停车的退与进"><a href="#融资一流，ETCP停车的退与进" class="headerlink" title="融资一流，ETCP停车的退与进"></a>融资一流，ETCP停车的退与进</h3><p>多年以前，爱上空姐的谭龙也许不会想到，自己之后的老板会同样是一个同样爱过空姐的少年。根据公开的工商信息显示，目前万达集团旗下的两家公司在etcp停车的认缴出资比例已高于创始人谭龙，所以以上描述应该算不上造谣吧。  </p>
 <p>当然，成功者关于成功会有各自的诉说。小目标论、不知妻美论大行其道的今天，在互联网停车的行业微信群里曾有过万达投资而etcp老板不自知的故事。这都是往事了，如今坐拥飞凡万达15.5亿人民币B轮融资的ETCP停车，已是事实上的互联网停车行业的老大，但关于它将何去何从，难言明了。  </p>
 <p>在去年WISE峰会上，谭龙颇为诚实地谈及创业历程和心得，说他因为全国免费赠送的错误战略如何浪费了A轮融资，最后回到了北上广深四大城市。而谭龙也在多次公开采访中谈及资本的重要性，描述他如何辛苦融资最终有如今的局面。谭龙的信仰合情合理，毕竟有人在5000万美元的折腾之后，选择继续投资。  </p>

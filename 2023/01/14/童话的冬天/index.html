@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">童话的冬天</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">童话的冬天</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2023年01月14日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>就像大多数人期待的那样，梅西赢得了冠军。在这个冬天，大多数人期盼一个圆满的故事，尤其在中国。人们需要在所有糟糕的消息之外，寻找一个童话，抵消所有的负面。而它就这样，不可思议地、真实地发生了。在一个多月之后，还会不断在时间线上看到有些人重复提及，再次回味起那时的美好。对梅西而言，尽管有颇多坎坷，比如小时候身体的问题，比如在巴萨时的俱乐部动荡，甚至以一种不那么美好的方式离开，在阿根廷，据说足协长期以来也是负担。梅西有国家的期待、人民的期待，也有对自己的期待，关于第三代球王、关于在大荣誉小荣誉的比拼当中超越 C罗——这是当代唯一球王之争。过往所有的争议在他获得冠军的那一刻，彻底烟消云散了。</p>
 <p>我对梅西向来没有偏好，或许在于，在他出道惊艳世人的时候，我早已喜欢上了利物浦，也因此无法喜欢上其他球队的球员。或许因为，那时候，他确实已经过于耀眼了，我并不觉得需要增添我的一份喜欢。在观看体育比赛时，我本能地将自己的喜欢投射到了第二梯队的球队，或者第二名的球员身上——尽管他可能是第一名，只是仍然充满了争议，比如德约科维奇，他来自一个小国，他曾经不是大多数球迷认为的球王人选，但在费纳的格局中，他拥有自己的坚持，打磨自己的球技，最终获得了更甚于他们的成绩。所以，梅西是否获得冠军，对我并没有任何的影响。我不会对此感到欣喜，我也能理解那些喜欢他的人的兴奋。</p>
 <p>在整个世界杯期间，随着赛程的进行，当熟悉了世界杯的节奏之后，我感到了疲惫，甚至厌倦。因为没有主队，对胜负也并没那么在意。比赛，也逐渐地成为了可有可无的存在。直到，真实的比赛——哪怕决赛充满了戏剧性，几番反转，也并不如纪录片让我兴奋，甚至为之揪心。我正是在这样的背景下，在微博上看到了有人推荐「最后机会大学：篮球」。</p>

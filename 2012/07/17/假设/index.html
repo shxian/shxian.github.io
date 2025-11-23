@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">假设</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">假设</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年07月17日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>每踏出一步之前都会有无数种版本的生活，就像西西弗不停循环地往山顶上搬石头一样，即使他重复出现在同一段路上，但不会有完全相同的两次路程和行进方式。故事在未终结之前也是如此，没人能够确切地明白到底它会怎样结束，或好或坏，有时候不是由人简单地控制，但有时候人确实能够改变点什么，比如你今天用功了一天和你又懈怠了一天对将来的影响可能会是不一样的。所以在现在展望将来的时候，你会开始做无数的假设。  </p>
 <p>根据第一种假设，十年后你仍旧一贫如洗，终日面对邻居亲戚的闲言碎语，讥讽遗憾毫不在意，你回到这个保留了儒理纲常伦理几千年几乎不变甚至在现代社会的冲击下更加疯狂异化的小城市已经十年。十年的光阴足以让你渡尽一切生理上的好奇和生疏，终于成长成一位生理上足够成熟的男人，但心理的成长是个漫长的过程，所以加缪论证到后来发现，唯一严肃的哲学命题就是自杀。为什么活着，忍受着周遭这荒谬的一切，它们看来同你完全格格不入的，你并不必要去接受它们，为了它们而妥协，但潜移默化当中，你也无法完全地杜绝它们。  </p>
 <p>看来当初你似乎曾经是个有过文艺梦想的人，你曾经以为你拥有足够勇气抛弃一切在梦想的火车上做一次彻底的长时间的长距离的单身旅行，后来你发现这是个过去严重的误会，你唯一的理想放逐地是离你仅几公里之遥的早已被工厂浓烟，垃圾异味所占据的海边；你曾经以为你会在一家有理想有担当的报社或者杂志当中实现自己关于文字的梦想，后来惊恐地堕落到无力去承受这个社会的现实和荒诞后，你象征性地扔掉了自己的笔，从此不再启用；你曾经以为抗争和不妥协是你最佳的品质，后来才悲哀地察觉到那只是因为自己尚未经历过真正的恐怖和痛苦，当它们如黑白无常一样到来的时候，你惊慌失措只求一切淡然如初，梦想和原则不过是一种臆想。  </p>

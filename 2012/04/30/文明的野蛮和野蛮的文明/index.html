@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">文明的野蛮和野蛮的文明</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">文明的野蛮和野蛮的文明</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年04月30日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>“我们不是在杀人，是在血祭祖灵。”看完《赛德克巴莱》，这是给我留下印象最深的台词。而印象最深的场景，就是在血祭祖灵的现场，莫那鲁多的妻子在族人终于奋起反抗伤害日本人的操场上，放声疾呼，问道，孩子们，你们在干什么啊。操场上血祭祖灵时的凶残和野蛮是电影对上下集的一个过渡，却也是在我看来，整部电影当中最为精华的部分，它集中表达了人性与兽性，野蛮与文明，原始与现代之间的冲突。当赛德克人的刺刀一刀刀刺进日本人的胸脯肚肠，割下他们的脑袋，捍卫自己的图腾和族群的骄傲的时候，却以平民日本人的死亡为代价。血祭祖灵的最后，莫那鲁东身背着从日本人兵器库盗来的十几把枪，走上原本将要升起日本国旗的旗台上，镜头俯视下，除了他即是那操场上倒在血泊当中的日本人。  </p>
 <p>用暴力和鲜血，用视死如归的态度，赛德克人在蛰伏数十年后，决定反抗，这是文明试图同化野蛮却无法用文明的方式去实现自己的目的的悲哀。就像出草前夜坐在火堆旁边，那个赛德克人所说的，他的父亲不过杀死了一个日本人，却导致了除了他之外整个家族的灭亡。日本人给赛德克人带来了铁路，邮局，医院，学校，甚至原住民已经被开始同化得能说日语了，可是他们在给予赛德克人现代化的物质文明的时候，却无法给他们精神上的自主和文化上的自尊，赛德克人在日本监工的压榨下，每日辛苦砍伐自己祖先留下来的猎场上的树木，却无法得到自己的正常报酬，凭借着武力上的威慑，日本人甚至可以肆无忌惮地对赛德克人进行身体上的鞭笞和精神上的侮辱。当殖民者带着殖民者的骄傲同被征服着的骄傲相遇，当文明用野蛮的方式同野蛮相遇，暴力，鲜血和死亡是对他们二者最好的祭奠。而牺牲者也多是无辜者和情非得已，就如那平民日本人和被动的赛德克妇女们。  </p>
 <p>莫那鲁多见识过日本人的坚船利炮，他和族人也知道此番出草必败无疑，可是，他们视死如归，因为，也许再过数十年，先祖留下来的猎场即将被殖民者用征服的方式强迫他们自己砍伐殆尽，先祖传承下来的在每一个成年的男人上所应有的图腾也即将不复存在。对于莫拉鲁多来说，这是他几十年来忍辱负重，收集火药的必然结果，在被日本人丢弃他所拥有的敌人的头颅，用以证明他英勇的象征物时，他就已经坚定的告诉了自己和敌人，他不甘心。对于大部分的男性族人来说，在日本人的欺压下生活几十年，受过无数的苦难和屈辱过后，反抗和宣泄也是正常之举。  </p>

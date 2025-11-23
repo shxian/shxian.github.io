@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">车位共享的理想和现实</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">车位共享的理想和现实</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2016年05月02日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <h3 id="一些并不成功的车位共享尝试"><a href="#一些并不成功的车位共享尝试" class="headerlink" title="一些并不成功的车位共享尝试"></a>一些并不成功的车位共享尝试</h3><p>共享经济让uber和airbnb成为了百亿级美元的公司，但到目前为止也止于uber和airbnb，从08年到现在，共享经济的热潮终于不再如之前那般被频繁提醒，在熟悉了这个词汇之后，新鲜感消失，剩下的是一次次重复。  </p>
 <p>就在uber和airbnb相继成立后的2010年，google曾推出了一款实验性的产品叫google open spot，这款产品旨在对城市当中停车难的问题进行一次探索性的解决，鼓励人们在停车或停车离开的时候标记停车场空位，分享可获得一定奖励，但不久之后，该产品便黯然下线了。其实可以很简单地看到这款产品的问题，停车空位的众包分享的效率和准确性都太低了，而要获得准确的实时空位需要的是远比车主分享更为复杂的技术模式和设备方式。  </p>
 <p>除此之外，在美国曾有一款名为parking money的产品试图用同样的方式进行停车位共享方面的努力，但最终却因为停车位产权和收益的不匹配和遭到了城市管理者的拒绝。有别于uber和airbnb在闲置物品上更为清晰的产权，停车位共享在一开始似乎并没有想清楚这些问题。  </p>

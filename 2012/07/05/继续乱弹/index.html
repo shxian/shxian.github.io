@@ -24,16 +24,62 @@
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+  <!-- 博客标题区域，添加菜单按钮 -->
+  <div class="flex items-center justify-between mb-6 md:mb-8">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+      妩媚楼日记
+    </a>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- 遮罩层 -->
+  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  
+  <!-- 移动端抽屉导航 -->
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <div class="p-6">
+      <div class="flex items-center justify-end mb-8">
+        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 items-end">
+        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
+        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
+        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
+        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 桌面端导航（保持原样） -->
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
+    <a href="/" class="tab-item">首页</a>
+    <a href="/archives" class="tab-item">归档</a>
+    <a href="/tags" class="tab-item">标签</a>
+    <a href="/about" class="tab-item">关于</a>
+  </div>
+  
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-lg md:text-2xl font-semibold mb-3 text-black">继续乱弹</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">继续乱弹</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年07月05日</div>
       
     </header>
     
-    <div class="prose text-sm md:text-base max-w-none">
+    <div class="prose text-base md:text-base max-w-none">
       <p>下午六点多，太阳正缓缓落山，天还未暗，院子里已经出现了一片阴影。阳光在邻居家中的院子里面依依不舍，我躺在吊床上闭上眼睛再睁开眼睛，抬头只看见一片蓝色的天，几朵白色的云和院子里面，葱绿的却没有一朵花朵的玉兰树。蓝色是自然的，白色是自然的，绿色是自然的，没有经过人工调和，他们随处可见，他们是自然的。一瞬间我想起来这可能是我喜欢他们的原因，不是因为天是蓝的，海是蓝的，树是绿的，只是因为它们没有任何的矫揉造作，只是因为这就是它们本来的面目。花是五颜六色的，只是太过繁琐了，只有天的蓝和树的绿是常见的，纯粹的，你只要想到他们就能看到它们透露出的那股新鲜，在它们还未被人类彻底破坏之前。  </p>
 <p>昨天，准确的说是前天傍晚，大姐提前回家了。我骑着她的电动车照例到海边沿着村子的边缘转了一圈，只要几分钟就能转完的村子，却已经持续了几百年。根据祠堂里的说法，建村的时间始于元代。这么多年，村子的变化自然是巨大的。当沿海大道和防潮堤一起建立之后，海滩上的乐趣就被彻底剥夺了。日复一日，刺耳的车辆的通过声伴随着海浪响起，仿佛他们正在和时间赛跑，在和生命博弈。奔跑在路上的是经济的动脉，停留在海堤上的文明的耻辱。海堤在建成后的短时间内成了人们的公共厕所，大堤上随处可见的是人粪，狗粪和堆放的垃圾，随处可闻的是尿骚味夹杂着海水的腥味。当然，就是在这样的情况之下，每到晚上的时候，这里仍旧会有螺仔摊，仍旧会有人来到这里度过他们无聊的夏夜。  </p>
 <p>我们村就像个汉堡包当中的夹层一样，前靠伍堡工业区，背依大堡工业区，要么我们村被同这俩工业区一起吃掉，要么它会在重压之下被默默挤压掉。曾经有谣言说，我们村在未来将会集体搬迁，也许吧。一个个沿海扩建的漂染厂迫不及待地往海里排泄着自己的毒物，光看着海你是无法辨别今天到底是星期几的，因为他们作业的每天都能将近海处染成紫黑色，哦，也许唯一一天正常的该是星期天，如果这些血汗工厂也有星期天的话。在某些特殊的时候，天空中总会飘散着一股漂染厂异样的味道，夹带着各种化学物质的浓烟在空中肆无忌惮的随风飘散。以至于，当我看到那蓝色的天空依旧在我村上空存在的时候，我一面惊叹于自然惊人的净化能力，也担忧它随时可能都会被触破极限。  </p>
