@@ -10,28 +10,30 @@
   
   <!-- Tailwind CSS (构建后的文件) -->
   <link rel="stylesheet" href="/css/tailwind.css">
+  <link rel="preconnect" href="https://unpkg.com" />
+  <script defer src="https://unpkg.com/lucide@latest"></script>
   
   <!-- RSS 和代码高亮功能已移除，如需使用请自行添加相应的 Hexo 插件 -->
 <meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="妩媚楼日记" type="application/atom+xml">
 </head>
 
 
-<body class="bg-white text-black min-h-screen flex flex-col">
-  <header class="sticky top-0 bg-white z-50">
+<body class="bg-white dark:bg-gray-900 text-black dark:text-gray-100 min-h-screen flex flex-col">
+  <header class="sticky top-0 bg-white dark:bg-gray-900 z-50">
   <!-- 导航已移除，Tab 切换在内容区域 -->
 </header>
 
 
   
   <main class="flex-grow">
-    <div class="max-w-3xl mx-auto px-6 md:px-4 py-8 md:py-12">
+    <div class="max-w-4xl mx-auto px-6 md:px-4 py-8 md:py-12">
   <!-- 博客标题区域，添加菜单按钮 -->
   <div class="flex items-center justify-between mb-6 md:mb-8">
-    <a href="/" class="text-2xl md:text-3xl font-semibold text-black hover:text-gray-700 transition-colors cursor-pointer leading-tight">
+    <a href="/" class="text-2xl md:text-3xl font-semibold text-black dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300 transition-colors cursor-pointer leading-tight">
       妩媚楼日记
     </a>
     <!-- 移动端菜单按钮 -->
-    <button class="mobile-menu-btn md:hidden p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
+    <button class="mobile-menu-btn md:hidden p-2 text-black dark:text-gray-100 min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <line x1="3" y1="6" x2="21" y2="6"></line>
         <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -44,8 +46,8 @@
   <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
   
   <!-- 移动端抽屉导航 -->
-  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
-    <div class="p-6">
+  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg overflow-y-auto">
+    <div class="flex flex-col h-full p-6">
       <div class="flex items-center justify-end mb-8">
         <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -54,26 +56,74 @@
           </svg>
         </button>
       </div>
-      <div class="flex flex-col space-y-2 items-end">
-        <a href="/" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">首页</a>
-        <a href="/archives" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">归档</a>
-        <a href="/tags" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">标签</a>
-        <a href="/about" class="drawer-nav-item tab-item py-3 px-4 min-h-[44px] text-right">关于</a>
+      <div class="flex flex-col space-y-1 w-full flex-1 overflow-y-auto">
+        <a href="/" class="drawer-nav-item tab-item flex items-center gap-2 justify-center py-3 px-4 min-h-[44px] w-full">
+          <i data-lucide="home" class="w-4 h-4"></i>
+          <span>首页</span>
+        </a>
+        <a href="/archives" class="drawer-nav-item tab-item flex items-center gap-2 justify-center py-3 px-4 min-h-[44px] w-full">
+          <i data-lucide="archive" class="w-4 h-4"></i>
+          <span>归档</span>
+        </a>
+        <a href="/tags" class="drawer-nav-item tab-item flex items-center gap-2 justify-center py-3 px-4 min-h-[44px] w-full">
+          <i data-lucide="tags" class="w-4 h-4"></i>
+          <span>标签</span>
+        </a>
+        <a href="/about" class="drawer-nav-item tab-item flex items-center gap-2 justify-center py-3 px-4 min-h-[44px] w-full">
+          <i data-lucide="user-round" class="w-4 h-4"></i>
+          <span>关于</span>
+        </a>
+      </div>
+      <!-- 移动端设置按钮 -->
+      <div class="w-full pt-3 pb-4 mt-auto border-t border-gray-200 dark:border-gray-700 sticky bottom-0 left-0 bg-white dark:bg-gray-900">
+        <button class="settings-btn tab-item flex items-center gap-2 justify-center w-full" aria-label="打开设置" title="设置">
+          <i data-lucide="settings" class="w-4 h-4"></i>
+          <span>设置</span>
+        </button>
       </div>
     </div>
   </nav>
   
   <!-- 桌面端导航（保持原样） -->
-  <div class="tab-container mb-6 md:mb-8 hidden md:flex">
-    <a href="/" class="tab-item">首页</a>
-    <a href="/archives" class="tab-item">归档</a>
-    <a href="/tags" class="tab-item">标签</a>
-    <a href="/about" class="tab-item">关于</a>
+  <div class="tab-container mb-6 md:mb-8 hidden md:flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <a href="/" class="tab-item">
+        <span class="inline-flex items-center gap-2">
+          <i data-lucide="home" class="w-4 h-4"></i>
+          <span>首页</span>
+        </span>
+      </a>
+      <a href="/archives" class="tab-item">
+        <span class="inline-flex items-center gap-2">
+          <i data-lucide="archive" class="w-4 h-4"></i>
+          <span>归档</span>
+        </span>
+      </a>
+      <a href="/tags" class="tab-item">
+        <span class="inline-flex items-center gap-2">
+          <i data-lucide="tags" class="w-4 h-4"></i>
+          <span>标签</span>
+        </span>
+      </a>
+      <a href="/about" class="tab-item">
+        <span class="inline-flex items-center gap-2">
+          <i data-lucide="user-round" class="w-4 h-4"></i>
+          <span>关于</span>
+        </span>
+      </a>
+    </div>
+    <!-- 设置按钮 -->
+    <button class="settings-btn tab-item" aria-label="打开设置" title="设置">
+      <span class="inline-flex items-center gap-2">
+        <i data-lucide="settings" class="w-4 h-4"></i>
+        <span>设置</span>
+      </span>
+    </button>
   </div>
   
   <article>
     <header class="mb-6 md:mb-8">
-      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black leading-tight">小说的扯淡</h1>
+      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black dark:text-gray-100 leading-tight">小说的扯淡</h1>
       
         <div class="text-xs md:text-sm text-gray-500 mt-2">2012年05月27日</div>
       
@@ -102,13 +152,13 @@
     
     <nav class="mt-8 md:mt-12 flex flex-col md:flex-row justify-between gap-4 text-sm md:text-base">
       
-        <a href="/2012/05/31/%E5%85%B3%E4%BA%8E%E5%BA%B7%E7%BA%B3%E5%88%A9/" class="text-black hover:text-gray-600 transition-colors truncate">
+        <a href="/2012/05/31/%E5%85%B3%E4%BA%8E%E5%BA%B7%E7%BA%B3%E5%88%A9/" class="text-black dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 transition-colors truncate">
           ← 关于康纳利
         </a>
       
       
       
-        <a href="/2012/05/23/%E6%AC%A1%E5%A4%A7%E9%99%86%E5%9B%BD%E5%BA%A6/" class="text-black hover:text-gray-600 transition-colors truncate text-right md:text-left">
+        <a href="/2012/05/23/%E6%AC%A1%E5%A4%A7%E9%99%86%E5%9B%BD%E5%BA%A6/" class="text-black dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 transition-colors truncate text-right md:text-left">
           次大陆国度 →
         </a>
       
@@ -138,6 +188,99 @@
 </footer>
 
 
+  
+  <!-- 设置面板遮罩层 -->
+  <div class="settings-overlay"></div>
+  
+  <!-- 设置面板 -->
+  <div class="settings-panel">
+    <div class="settings-panel-header">
+      <h2 class="settings-panel-title">设置</h2>
+      <button class="settings-panel-close-btn" aria-label="关闭设置">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="settings-panel-content">
+      <!-- 主题设置 -->
+      <div class="settings-item">
+        <label class="settings-item-label">主题模式</label>
+        <p class="settings-item-description">选择浅色、暗色或跟随系统设置</p>
+        <div class="theme-options">
+          <div class="theme-option" data-theme="light">
+            <div class="theme-option-label">
+              <svg class="theme-option-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+              <span>浅色</span>
+            </div>
+            <svg class="theme-option-check" style="display: none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <div class="theme-option" data-theme="dark">
+            <div class="theme-option-label">
+              <svg class="theme-option-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+              <span>暗色</span>
+            </div>
+            <svg class="theme-option-check" style="display: none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <div class="theme-option" data-theme="system">
+            <div class="theme-option-label">
+              <svg class="theme-option-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              <span>跟随系统</span>
+            </div>
+            <svg class="theme-option-check" style="display: none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 视图设置 -->
+      <div class="settings-item">
+        <label class="settings-item-label">文章视图</label>
+        <p class="settings-item-description">选择列表或卡片视图</p>
+        <div class="view-options">
+          <div class="view-option" data-view="list">
+            <svg class="view-option-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="2" y1="4" x2="14" y2="4"></line>
+              <line x1="2" y1="8" x2="14" y2="8"></line>
+              <line x1="2" y1="12" x2="14" y2="12"></line>
+            </svg>
+            <span>列表</span>
+          </div>
+          <div class="view-option" data-view="card">
+            <svg class="view-option-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1">
+              <rect x="2" y="2" width="5" height="5" rx="1"></rect>
+              <rect x="9" y="2" width="5" height="5" rx="1"></rect>
+              <rect x="2" y="9" width="5" height="5" rx="1"></rect>
+              <rect x="9" y="9" width="5" height="5" rx="1"></rect>
+            </svg>
+            <span>卡片</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   
   <!-- JavaScript -->
   <script src="/js/main.js"></script>
