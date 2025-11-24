@@ -293,6 +293,13 @@
     min-height: 44px;
   }
   
+  /* 确保移动端抽屉中的设置按钮可见 */
+  .mobile-drawer .settings-btn {
+    @apply flex w-full text-center;
+    display: flex !important;
+    width: 100% !important;
+  }
+  
   /* 设置面板遮罩层 */
   .settings-overlay {
     position: fixed;

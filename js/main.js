@@ -30,66 +30,64 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // 移动端抽屉式导航
   function setupDrawer() {
-    var menuBtns = document.querySelectorAll('.mobile-menu-btn');
-    var closeBtns = document.querySelectorAll('.drawer-close-btn');
-    var drawers = document.querySelectorAll('.mobile-drawer');
-    var overlays = document.querySelectorAll('.drawer-overlay');
+    var menuBtn = document.querySelector('.mobile-menu-btn');
+    var closeBtn = document.querySelector('.drawer-close-btn');
+    var drawer = document.querySelector('.mobile-drawer');
+    var overlay = document.querySelector('.drawer-overlay');
     var drawerNavItems = document.querySelectorAll('.drawer-nav-item');
     var body = document.body;
-    var animationDuration = 300;
+    var fallbackTimer = null;
     
-    function openDrawer(drawer, overlay) {
-      if (drawer) drawer.classList.add('drawer-open');
-      if (overlay) overlay.classList.add('overlay-visible');
-      if (drawer) drawer.setAttribute('aria-hidden', 'false');
+    if (!drawer || !overlay || !menuBtn || !closeBtn) {
+      return;
+    }
+    
+    function onTransitionEnd(event) {
+      if (event && (event.target !== drawer || event.propertyName !== 'transform')) {
+        return;
+      }
+      drawer.removeEventListener('transitionend', onTransitionEnd);
+      body.classList.remove('drawer-open');
+      if (fallbackTimer) {
+        clearTimeout(fallbackTimer);
+        fallbackTimer = null;
+      }
+    }
+    
+    function openDrawer() {
+      drawer.classList.add('drawer-open');
+      overlay.classList.add('overlay-visible');
+      drawer.setAttribute('aria-hidden', 'false');
       body.classList.add('drawer-open');
     }
     
-    function closeDrawer(drawer, overlay) {
-      requestAnimationFrame(function() {
-      if (drawer) drawer.classList.remove('drawer-open');
-      if (overlay) overlay.classList.remove('overlay-visible');
-        if (drawer) drawer.setAttribute('aria-hidden', 'true');
-        setTimeout(function() {
-          if (![...drawers].some(function(d) { return d.classList.contains('drawer-open'); })) {
-      body.classList.remove('drawer-open');
-          }
-        }, animationDuration);
-      });
+    function closeDrawer() {
+      drawer.classList.remove('drawer-open');
+      overlay.classList.remove('overlay-visible');
+      drawer.setAttribute('aria-hidden', 'true');
+      drawer.removeEventListener('transitionend', onTransitionEnd);
+      drawer.addEventListener('transitionend', onTransitionEnd);
+      fallbackTimer = setTimeout(onTransitionEnd, 350);
     }
     
-    drawers.forEach(function(drawer, index) {
-      var overlay = overlays[index];
-      var menuBtn = menuBtns[index];
-      var closeBtn = closeBtns[index];
+    menuBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      openDrawer();
+    });
     
-    if (menuBtn) {
-      menuBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-          openDrawer(drawer, overlay);
-      });
-    }
+    closeBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      closeDrawer();
+    });
     
-    if (closeBtn) {
-      closeBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-          closeDrawer(drawer, overlay);
-      });
-    }
-    
-    if (overlay) {
-      overlay.addEventListener('click', function(e) {
-        e.preventDefault();
-          closeDrawer(drawer, overlay);
-      });
-    }
+    overlay.addEventListener('click', function(e) {
+      e.preventDefault();
+      closeDrawer();
     });
     
     drawerNavItems.forEach(function(item) {
       item.addEventListener('click', function() {
-        var drawer = item.closest('.mobile-drawer');
-        var overlay = drawer ? drawer.previousElementSibling : null;
-        closeDrawer(drawer, overlay);
+        closeDrawer();
       });
     });
   }
@@ -98,62 +96,20 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // 设置面板管理
   function setupSettingsPanel() {
-    console.log('设置面板初始化开始');
-    
     var settingsBtns = document.querySelectorAll('.settings-btn');
     var closeBtn = document.querySelector('.settings-panel-close-btn');
     var panel = document.querySelector('.settings-panel');
     var overlay = document.querySelector('.settings-overlay');
     var body = document.body;
     
-    // 调试：输出元素查找结果
-    console.log('找到设置按钮数量:', settingsBtns.length);
-    console.log('设置面板元素:', panel ? '找到' : '未找到');
-    console.log('设置遮罩层元素:', overlay ? '找到' : '未找到');
-    console.log('关闭按钮元素:', closeBtn ? '找到' : '未找到');
-    
-    // 如果找不到设置按钮，输出警告
-    if (settingsBtns.length === 0) {
-      console.warn('警告：未找到任何设置按钮元素 (.settings-btn)');
-      console.warn('请检查 HTML 中是否包含设置按钮');
-    }
-    
-    // 如果找不到面板或遮罩层，输出警告
-    if (!panel) {
-      console.warn('警告：未找到设置面板元素 (.settings-panel)');
-    }
-    if (!overlay) {
-      console.warn('警告：未找到设置遮罩层元素 (.settings-overlay)');
+    if (settingsBtns.length === 0 || !panel || !overlay || !closeBtn) {
+      return;
     }
     
     function openSettings() {
-      console.log('openSettings() 函数被调用');
-      
-      if (panel) {
-        panel.classList.add('panel-open');
-        console.log('设置面板已添加 panel-open 类');
-        // 检查计算后的样式
-        var computedStyle = window.getComputedStyle(panel);
-        console.log('设置面板 transform:', computedStyle.transform);
-        console.log('设置面板 display:', computedStyle.display);
-        console.log('设置面板 visibility:', computedStyle.visibility);
-        console.log('设置面板 z-index:', computedStyle.zIndex);
-        console.log('设置面板 width:', computedStyle.width);
-        console.log('设置面板 right:', computedStyle.right);
-      } else {
-        console.error('设置面板元素未找到');
-      }
-      if (overlay) {
-        overlay.classList.add('overlay-visible');
-        console.log('设置遮罩层已添加 overlay-visible 类');
-        var overlayStyle = window.getComputedStyle(overlay);
-        console.log('设置遮罩层 display:', overlayStyle.display);
-        console.log('设置遮罩层 z-index:', overlayStyle.zIndex);
-      } else {
-        console.error('设置遮罩层元素未找到');
-      }
+      panel.classList.add('panel-open');
+      overlay.classList.add('overlay-visible');
       body.classList.add('settings-open');
-      // 关闭移动端抽屉（如果打开）
       var drawer = document.querySelector('.mobile-drawer');
       var drawerOverlay = document.querySelector('.drawer-overlay');
       if (drawer) drawer.classList.remove('drawer-open');
@@ -162,56 +118,36 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function closeSettings() {
-      console.log('closeSettings() 函数被调用');
-      if (panel) panel.classList.remove('panel-open');
-      if (overlay) overlay.classList.remove('overlay-visible');
+      panel.classList.remove('panel-open');
+      overlay.classList.remove('overlay-visible');
       body.classList.remove('settings-open');
     }
     
-    // 为所有设置按钮绑定事件
-    var boundCount = 0;
-    settingsBtns.forEach(function(btn, index) {
+    settingsBtns.forEach(function(btn) {
       btn.addEventListener('click', function(e) {
-        console.log('设置按钮被点击 (按钮索引:', index + ')');
         e.preventDefault();
         e.stopPropagation();
         openSettings();
       });
-      boundCount++;
-      console.log('设置按钮事件绑定成功 (按钮索引:', index + ')');
     });
     
-    console.log('总共绑定了', boundCount, '个设置按钮的事件监听器');
+    closeBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      closeSettings();
+    });
     
-    if (closeBtn) {
-      closeBtn.addEventListener('click', function(e) {
-        console.log('关闭按钮被点击');
-        e.preventDefault();
-        e.stopPropagation();
-        closeSettings();
-      });
-      console.log('关闭按钮事件绑定成功');
-    }
+    overlay.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      closeSettings();
+    });
     
-    if (overlay) {
-      overlay.addEventListener('click', function(e) {
-        console.log('遮罩层被点击');
-        e.preventDefault();
-        e.stopPropagation();
-        closeSettings();
-      });
-      console.log('遮罩层事件绑定成功');
-    }
-    
-    // 按 ESC 键关闭设置面板
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && panel && panel.classList.contains('panel-open')) {
-        console.log('ESC 键被按下，关闭设置面板');
+      if (e.key === 'Escape' && panel.classList.contains('panel-open')) {
         closeSettings();
       }
     });
-    
-    console.log('设置面板初始化完成');
   }
   
   setupSettingsPanel();
