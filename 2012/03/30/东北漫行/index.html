@@ -10,8 +10,9 @@
   
   <!-- Tailwind CSS (构建后的文件) -->
   <link rel="stylesheet" href="/css/tailwind.css">
-  <link rel="preconnect" href="https://unpkg.com" />
-  <script defer src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Lucide Icons (本地化，提升加载速度) -->
+  <script defer src="/js/lucide.min.js"></script>
   
   <!-- RSS 和代码高亮功能已移除，如需使用请自行添加相应的 Hexo 插件 -->
 <meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="妩媚楼日记" type="application/atom+xml">
@@ -34,11 +35,7 @@
     </a>
     <!-- 移动端菜单按钮 -->
     <button class="mobile-menu-btn md:hidden p-2 text-black dark:text-gray-100 min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="3" y1="6" x2="21" y2="6"></line>
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
-      </svg>
+      <i data-lucide="menu" class="w-6 h-6"></i>
     </button>
   </div>
   
@@ -50,10 +47,7 @@
     <div class="flex flex-col h-full p-6">
       <div class="flex items-center justify-end mb-8">
         <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
+          <i data-lucide="x" class="w-6 h-6"></i>
         </button>
       </div>
       <div class="flex flex-col space-y-1 w-full flex-1 overflow-y-auto">
@@ -226,10 +220,7 @@
     <div class="settings-panel-header">
       <h2 class="settings-panel-title">设置</h2>
       <button class="settings-panel-close-btn" aria-label="关闭设置">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
+        <i data-lucide="x" class="w-6 h-6"></i>
       </button>
     </div>
     <div class="settings-panel-content">
@@ -240,46 +231,24 @@
         <div class="theme-options">
           <div class="theme-option" data-theme="light">
             <div class="theme-option-label">
-              <svg class="theme-option-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-              </svg>
+              <i data-lucide="sun" class="theme-option-icon w-4 h-4"></i>
               <span>浅色</span>
             </div>
-            <svg class="theme-option-check" style="display: none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
+            <i data-lucide="check" class="theme-option-check w-5 h-5" style="display: none;"></i>
           </div>
           <div class="theme-option" data-theme="dark">
             <div class="theme-option-label">
-              <svg class="theme-option-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-              </svg>
+              <i data-lucide="moon" class="theme-option-icon w-4 h-4"></i>
               <span>暗色</span>
             </div>
-            <svg class="theme-option-check" style="display: none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
+            <i data-lucide="check" class="theme-option-check w-5 h-5" style="display: none;"></i>
           </div>
           <div class="theme-option" data-theme="system">
             <div class="theme-option-label">
-              <svg class="theme-option-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-                <line x1="12" y1="17" x2="12" y2="21"></line>
-              </svg>
+              <i data-lucide="monitor" class="theme-option-icon w-4 h-4"></i>
               <span>跟随系统</span>
             </div>
-            <svg class="theme-option-check" style="display: none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
+            <i data-lucide="check" class="theme-option-check w-5 h-5" style="display: none;"></i>
           </div>
         </div>
       </div>
@@ -290,20 +259,11 @@
         <p class="settings-item-description">选择列表或卡片视图</p>
         <div class="view-options">
           <div class="view-option" data-view="list">
-            <svg class="view-option-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="2" y1="4" x2="14" y2="4"></line>
-              <line x1="2" y1="8" x2="14" y2="8"></line>
-              <line x1="2" y1="12" x2="14" y2="12"></line>
-            </svg>
+            <i data-lucide="list" class="view-option-icon w-4 h-4"></i>
             <span>列表</span>
           </div>
           <div class="view-option" data-view="card">
-            <svg class="view-option-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1">
-              <rect x="2" y="2" width="5" height="5" rx="1"></rect>
-              <rect x="9" y="2" width="5" height="5" rx="1"></rect>
-              <rect x="2" y="9" width="5" height="5" rx="1"></rect>
-              <rect x="9" y="9" width="5" height="5" rx="1"></rect>
-            </svg>
+            <i data-lucide="layout-grid" class="view-option-icon w-4 h-4"></i>
             <span>卡片</span>
           </div>
         </div>

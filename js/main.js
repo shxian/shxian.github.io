@@ -319,9 +319,35 @@ document.addEventListener('DOMContentLoaded', function() {
   
   setupViewToggle();
 
-  // 初始化图标
-  if (window.lucide && typeof window.lucide.createIcons === 'function') {
-    window.lucide.createIcons();
+  // 初始化图标 - 优化加载体验
+  function initIcons() {
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+      window.lucide.createIcons();
+    }
+  }
+
+  // 使用 requestIdleCallback 在浏览器空闲时初始化图标，提升首屏体验
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(function() {
+      initIcons();
+    }, { timeout: 1000 });
+  } else {
+    // 降级处理：延迟初始化，确保 lucide 脚本已加载
+    setTimeout(function() {
+      // 等待 lucide 脚本加载完成
+      var checkLucide = setInterval(function() {
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+          clearInterval(checkLucide);
+          initIcons();
+        }
+      }, 50);
+      
+      // 超时保护
+      setTimeout(function() {
+        clearInterval(checkLucide);
+        initIcons();
+      }, 3000);
+    }, 100);
   }
 });
 

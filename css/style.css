@@ -191,6 +191,8 @@
   .year-icon {
     @apply transition-transform duration-200 text-gray-500 dark:text-gray-400;
     transform: rotate(0deg);
+    display: inline-block;
+    flex-shrink: 0;
   }
   
   .year-header[aria-expanded="true"] .year-icon,
@@ -397,10 +399,14 @@
   
   .theme-option-icon {
     @apply w-4 h-4;
+    display: inline-block;
+    flex-shrink: 0;
   }
   
   .theme-option-check {
     @apply w-5 h-5 text-black dark:text-gray-100;
+    display: inline-block;
+    flex-shrink: 0;
   }
   
   /* 视图切换按钮组 */
@@ -423,6 +429,14 @@
   
   .view-option-icon {
     @apply w-4 h-4;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+  
+  /* 确保所有 lucide 图标正确显示 */
+  [data-lucide] {
+    display: inline-block;
+    flex-shrink: 0;
   }
   
   /* 设置面板打开时锁定 body 滚动 */
