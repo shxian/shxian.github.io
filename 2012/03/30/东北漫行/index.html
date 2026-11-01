@@ -1,130 +1,124 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hans">
-<head>
+  <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="妩媚楼日记">
   <meta name="author" content="shxian">
-  
+  <meta name="theme-color" content="#faf9f6">
   <title>东北漫行 | 妩媚楼日记</title>
-  
-  <!-- Tailwind CSS (构建后的文件) -->
-  <link rel="stylesheet" href="/css/tailwind.css">
-  
-  <!-- Lucide Icons (本地化，提升加载速度) -->
-  <script defer src="/js/lucide.min.js"></script>
-  
-  <!-- RSS 和代码高亮功能已移除，如需使用请自行添加相应的 Hexo 插件 -->
+  <link rel="stylesheet" href="/css/style.css">
 <meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="妩媚楼日记" type="application/atom+xml">
 </head>
 
 
-<body class="bg-white dark:bg-gray-900 text-black dark:text-gray-100 min-h-screen flex flex-col">
-  <header class="sticky top-0 bg-white dark:bg-gray-900 z-50">
-  <!-- 导航已移除，Tab 切换在内容区域 -->
+  <body class="mumei page-post" data-palette="ink" data-theme="light" data-mode="system" data-body-font="sans" data-heading-font="serif">
+    <script>
+      (function () {
+        try {
+          var saved = JSON.parse(localStorage.getItem('mumei-style') || '{}');
+          var mode = ['system', 'light', 'dark'].indexOf(saved.mode) > -1 ? saved.mode : 'system';
+          var palettes = ['ink', 'clay', 'forest', 'ocean', 'plum'];
+          document.body.dataset.mode = mode;
+          document.body.dataset.theme = mode === 'system'
+            ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+            : mode;
+          if (palettes.indexOf(saved.palette) > -1) document.body.dataset.palette = saved.palette;
+          if (['sans', 'serif', 'mono'].indexOf(saved.bodyFont) > -1) document.body.dataset.bodyFont = saved.bodyFont;
+          if (['sans', 'serif', 'mono'].indexOf(saved.headingFont) > -1) document.body.dataset.headingFont = saved.headingFont;
+        } catch (_) {}
+      }());
+    </script>
+    <a class="skip-link" href="#content">跳到内容</a>
+    <div class="site-shell">
+      
+<header class="site-header">
+  <div class="identity">
+    <a class="brand" href="/">
+      妩媚楼日记<span class="brand-dot" aria-hidden="true"></span>
+    </a>
+    <div class="style-actions">
+      <details class="palette-picker" id="palette-picker">
+        <summary aria-label="选择配色" title="选择配色">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3a9 9 0 1 0 0 18h1a2 2 0 0 0 1.6-3.2 1.8 1.8 0 0 1 1.4-2.9h1A4 4 0 0 0 21 11a9 9 0 0 0-9-8Z"/>
+            <circle cx="7.5" cy="10" r=".7"/><circle cx="11" cy="7" r=".7"/><circle cx="15.5" cy="8" r=".7"/>
+          </svg>
+        </summary>
+        <div class="palette-panel" role="group" aria-label="配色">
+          <div class="mobile-sheet-head">
+            <span>配色</span>
+            <button type="button" data-close-panel="palette-picker" aria-label="关闭配色面板">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg>
+            </button>
+          </div>
+          
+            <button type="button" class="palette-option" data-palette-choice="ink" aria-pressed="false" style="--swatch:#56534f">
+              <span class="palette-swatch" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.7"><path d="m3 8 3 3 7-7"/></svg>
+              </span>
+              <span>墨灰</span>
+            </button>
+          
+            <button type="button" class="palette-option" data-palette-choice="clay" aria-pressed="false" style="--swatch:#995032">
+              <span class="palette-swatch" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.7"><path d="m3 8 3 3 7-7"/></svg>
+              </span>
+              <span>陶土</span>
+            </button>
+          
+            <button type="button" class="palette-option" data-palette-choice="forest" aria-pressed="false" style="--swatch:#2f6653">
+              <span class="palette-swatch" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.7"><path d="m3 8 3 3 7-7"/></svg>
+              </span>
+              <span>苔绿</span>
+            </button>
+          
+            <button type="button" class="palette-option" data-palette-choice="ocean" aria-pressed="false" style="--swatch:#315f9b">
+              <span class="palette-swatch" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.7"><path d="m3 8 3 3 7-7"/></svg>
+              </span>
+              <span>海蓝</span>
+            </button>
+          
+            <button type="button" class="palette-option" data-palette-choice="plum" aria-pressed="false" style="--swatch:#775181">
+              <span class="palette-swatch" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.7"><path d="m3 8 3 3 7-7"/></svg>
+              </span>
+              <span>梅紫</span>
+            </button>
+          
+        </div>
+      </details>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="当前跟随系统，切换为浅色"></button>
+    </div>
+  </div>
+  <nav class="primary-nav" aria-label="主导航">
+    
+      <a href="/archives/" >归档</a>
+    
+      <a href="/tags/" >标签</a>
+    
+      <a href="/about/" >关于</a>
+    
+  </nav>
 </header>
 
 
-  
-  <main class="flex-grow">
-    <div class="max-w-4xl mx-auto px-6 md:px-4 py-8 md:py-12">
-  <!-- 博客标题区域，添加菜单按钮 -->
-  <div class="flex items-center justify-between mb-6 md:mb-8">
-    <a href="/" class="text-2xl md:text-3xl font-semibold text-black dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300 transition-colors cursor-pointer leading-tight">
-      妩媚楼日记
-    </a>
-    <!-- 移动端菜单按钮 -->
-    <button class="mobile-menu-btn md:hidden p-2 text-black dark:text-gray-100 min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
-      <i data-lucide="menu" class="w-6 h-6"></i>
-    </button>
-  </div>
-  
-  <!-- 遮罩层 -->
-  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
-  
-  <!-- 移动端抽屉导航 -->
-  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg overflow-y-auto">
-    <div class="flex flex-col h-full p-6">
-      <div class="flex items-center justify-end mb-8">
-        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
-          <i data-lucide="x" class="w-6 h-6"></i>
-        </button>
-      </div>
-      <div class="flex flex-col space-y-1 w-full flex-1 overflow-y-auto">
-        <a href="/" class="drawer-nav-item tab-item flex items-center gap-2 justify-center py-3 px-4 min-h-[44px] w-full">
-          <i data-lucide="home" class="w-4 h-4"></i>
-          <span>首页</span>
-        </a>
-        <a href="/archives" class="drawer-nav-item tab-item flex items-center gap-2 justify-center py-3 px-4 min-h-[44px] w-full">
-          <i data-lucide="archive" class="w-4 h-4"></i>
-          <span>归档</span>
-        </a>
-        <a href="/tags" class="drawer-nav-item tab-item flex items-center gap-2 justify-center py-3 px-4 min-h-[44px] w-full">
-          <i data-lucide="tags" class="w-4 h-4"></i>
-          <span>标签</span>
-        </a>
-        <a href="/about" class="drawer-nav-item tab-item flex items-center gap-2 justify-center py-3 px-4 min-h-[44px] w-full">
-          <i data-lucide="user-round" class="w-4 h-4"></i>
-          <span>关于</span>
-        </a>
-      </div>
-      <!-- 移动端设置按钮 -->
-      <div class="w-full pt-3 pb-4 mt-auto border-t border-gray-200 dark:border-gray-700 sticky bottom-0 left-0 bg-white dark:bg-gray-900">
-        <button class="settings-btn tab-item flex items-center gap-2 justify-center w-full" aria-label="打开设置" title="设置">
-          <i data-lucide="settings" class="w-4 h-4"></i>
-          <span>设置</span>
-        </button>
-      </div>
-    </div>
-  </nav>
-  
-  <!-- 桌面端导航（保持原样） -->
-  <div class="tab-container mb-6 md:mb-8 hidden md:flex items-center justify-between">
-    <div class="flex items-center gap-4">
-      <a href="/" class="tab-item">
-        <span class="inline-flex items-center gap-2">
-          <i data-lucide="home" class="w-4 h-4"></i>
-          <span>首页</span>
-        </span>
-      </a>
-      <a href="/archives" class="tab-item">
-        <span class="inline-flex items-center gap-2">
-          <i data-lucide="archive" class="w-4 h-4"></i>
-          <span>归档</span>
-        </span>
-      </a>
-      <a href="/tags" class="tab-item">
-        <span class="inline-flex items-center gap-2">
-          <i data-lucide="tags" class="w-4 h-4"></i>
-          <span>标签</span>
-        </span>
-      </a>
-      <a href="/about" class="tab-item">
-        <span class="inline-flex items-center gap-2">
-          <i data-lucide="user-round" class="w-4 h-4"></i>
-          <span>关于</span>
-        </span>
-      </a>
-    </div>
-    <!-- 设置按钮 -->
-    <button class="settings-btn tab-item" aria-label="打开设置" title="设置">
-      <span class="inline-flex items-center gap-2">
-        <i data-lucide="settings" class="w-4 h-4"></i>
-        <span>设置</span>
-      </span>
-    </button>
-  </div>
-  
-  <article>
-    <header class="mb-6 md:mb-8">
-      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black dark:text-gray-100 leading-tight">东北漫行</h1>
+      <span id="appearance-status" class="sr-only" role="status"></span>
+      <main id="content" tabindex="-1">
+        <article>
+  <header class="post-head">
+    <h1>东北漫行</h1>
+    <div class="post-meta">
+      <time datetime="2012-03-30">2012.03.30</time>
       
-        <div class="text-xs md:text-sm text-gray-500 mt-2">2012年03月30日</div>
+        <a href="/tags/%E6%B8%B8%E8%AE%B0/">游记</a>
       
-    </header>
-    
-    <div class="prose text-base md:text-base max-w-none">
-      <p>火车晃悠悠地终于来到了沈阳。凌晨四点多，我走出火车站时，被它处于重新时的施工的简陋所震惊，然后欣然接受。第一次在凌晨的时候来到一座城市，尽管之前曾经有过无数次的设想，到最后，发现迎接我的最多的是，整夜整夜守着一列列火车到站，为了招揽客人的小旅店店主们和各种私营的汽车司机们，其实和白天也差不了多少。地是湿的，经过整改中的火车站乱七八糟的指示牌，我抬眼望了望面前伸展开的街道，一丝寒意侵袭而来，我不知道自己是不是作了个正确的决定。但是，我立马想到自己此行的目的竟然是体验人生，于是，我淡然地在推特上写下，我想沿着街道，去认识这个凌晨陌生的城市。  </p>
+    </div>
+  </header>
+  <div class="prose">
+    <p>火车晃悠悠地终于来到了沈阳。凌晨四点多，我走出火车站时，被它处于重新时的施工的简陋所震惊，然后欣然接受。第一次在凌晨的时候来到一座城市，尽管之前曾经有过无数次的设想，到最后，发现迎接我的最多的是，整夜整夜守着一列列火车到站，为了招揽客人的小旅店店主们和各种私营的汽车司机们，其实和白天也差不了多少。地是湿的，经过整改中的火车站乱七八糟的指示牌，我抬眼望了望面前伸展开的街道，一丝寒意侵袭而来，我不知道自己是不是作了个正确的决定。但是，我立马想到自己此行的目的竟然是体验人生，于是，我淡然地在推特上写下，我想沿着街道，去认识这个凌晨陌生的城市。  </p>
 <p>雨从铁皮的屋顶上掉落下来，砸在我的脚边，砸在我的脸上。我望着眼花缭乱的各个广告牌和依旧绚烂的城市灯光，还未有太深的睡意。思绪已经飘到了下面的行程，我边查着列车时刻表，边在脑中飞快地计算到底怎样的行程才能恰到好处，躲进了售票处。人来人往，每个人都有各自的目的，各自的生活。我在售票处整整待了一个多小时用来思索，我到底是要先到长春还是先到大连，再返回。最后的结果是，我先买了张到长春的票，然后退了票，决定到大连了。我似乎潜意识里已经想到了，三天或者四天过后，我会感到厌倦，尽管，这事实上，这是我第一次真正意义上的肚子旅行。  </p>
 <p>买完票后来到了麦当劳，巨大的M字挂在火车站口旁煞是惹眼。车灯从远处的街道射来，喇叭声偶尔想起，雪堆积在路旁，融化后沾湿了整条马路，沾湿了路人的裤脚，伴着寒风而来的是凌晨将醒时的喧嚣，天空阴郁中似乎将要迸发出无限的生机，白昼在楼顶上等待，灯光好似在孕育着未知的生命。我找到了位置后，坐在M当中望着窗外，万千思绪，拿起日记本一阵乱写。M里面是各种来此等待火车的人，有活力依旧正在玩牌的年轻人，有已筋疲力竭瘫倒在桌上，地上堆了行李的中老年人们，还有那独处一桌正拿着手机细细观看的女生，搞笑的是，之前我一直以为，在M中过夜这样的方式是我自己的窘境中的一大发现，后来知道其实大家都这样做时，我确实是失落了好一阵的。我独自蜷缩在一个角落，写着日记，偶尔抬头环顾下室内，观察下各式各样的旅人和员工们脸上的喜怒哀乐，偶尔隔着玻璃再次望着窗外这个陌生的城市，这样的孤独感在当时几乎让我兴奋得抓狂，这就是我想要的状态，辛苦，但却孤独，还有比这更美妙的吗？  </p>
 <p>在我趴在桌上累得不行却又无法完全入睡，再次抬起头时，外面天已经大亮了，我在心中惊呼自己的错过了那城市的复苏，倍感遗憾。收拾了行囊赶忙出发，掉了一地的雪水在不停地阻拦着我，天空更是阴沉着个脑袋毫无喜色。没有特色的城市，这是当初我对它的第一眼印象。尽管，现在看来，这样的判断确实是武断了的。我看到了雪落在地上之后被扫在路旁堆积起来时的污秽，可是我却没有看到它们从天而降飘飘如仙时的绚丽。  </p>
@@ -164,115 +158,50 @@
 <p>到了回去的时候，旅程走到了终点时，没有遗憾，该回去了，我欣然接受。就像一开始想到的，我并非一个能够坚持流浪的人，心思再多不过为了遮蔽自己一直空虚着的心，一旦得到了短暂的满足之后，便能够给自己更为长久的理由去继续放纵自己。听人说，年轻时多花些时间在旅途上，到老来时将会收益颇多，对此我不置可否。  </p>
 <p>我在凌晨时到达沈阳，又在凌晨时回到天津，可我已无力去想像我将要在天津重新遇到些什么。躲进了偌大的火车站埋葬自己。回学校的公交车上坐过了站，我想我确实是太累了。顶着寒风往回走，边走边觉得好笑。回宿舍时看到那冰冷的开水瓶的碎片，我觉得自己好像已经离开了很久很久。</p>
 
-    </div>
-    
-    
-      <div class="mt-6 md:mt-8 text-xs md:text-sm text-gray-500">
-        
-        <span>标签：游记</span>
+  </div>
+  <nav class="post-navigation" aria-label="相邻文章">
+    <span><a href="/2012/04/07/%E5%B1%B1%E6%B5%B7%E5%85%B3%E6%8E%A0%E5%BD%B1/">← 山海关掠影</a></span>
+    <span><a href="/2012/02/16/%E8%A7%82%E5%BF%B5%E7%9A%84%E9%AD%94%E6%96%B9/">观念的魔方 →</a></span>
+  </nav>
+</article>
+
+
+      </main>
+      <footer class="site-footer">
+  <div class="footer-line">
+    <span>&copy; 2026 shxian</span>
+    <details class="appearance" id="appearance">
+      <summary>字体</summary>
+      <div class="appearance-panel">
+        <div class="mobile-sheet-head">
+          <span>字体</span>
+          <button type="button" data-close-panel="appearance" aria-label="关闭字体面板">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg>
+          </button>
+        </div>
+        <label>正文
+          <select id="body-font">
+            <option value="sans">无衬线</option>
+            <option value="serif">衬线</option>
+            <option value="mono">等宽</option>
+          </select>
+        </label>
+        <label>标题
+          <select id="heading-font">
+            <option value="sans">无衬线</option>
+            <option value="serif">衬线</option>
+            <option value="mono">等宽</option>
+          </select>
+        </label>
+        <button id="reset-fonts" type="button">重置字体</button>
       </div>
-    
-    
-    <nav class="mt-8 md:mt-12 flex flex-col md:flex-row justify-between gap-4 text-sm md:text-base">
-      
-        <a href="/2012/04/07/%E5%B1%B1%E6%B5%B7%E5%85%B3%E6%8E%A0%E5%BD%B1/" class="text-black dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 transition-colors truncate">
-          ← 山海关掠影
-        </a>
-      
-      
-      
-        <a href="/2012/02/16/%E8%A7%82%E5%BF%B5%E7%9A%84%E9%AD%94%E6%96%B9/" class="text-black dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 transition-colors truncate text-right md:text-left">
-          观念的魔方 →
-        </a>
-      
-    </nav>
-    
-    <!-- 导航按钮 -->
-    <div class="mt-6 md:mt-8 text-center w-full">
-      <a href="/" 
-         class="text-xs md:text-sm text-gray-500 hover:text-gray-600 transition-colors cursor-pointer" 
-         title="回到首页">
-        回到首页
-      </a>
-    </div>
-  </article>
-</div>
-
-
-  </main>
-  
-  <footer class="mt-12 md:mt-16 py-6 md:py-8">
-  <div class="container mx-auto px-4">
-    <div class="text-center text-xs md:text-sm text-gray-600">
-      <p>&copy; 2025 shxian. All rights reserved.</p>
-      <p class="mt-2">Powered by <a href="https://hexo.io" target="_blank" class="text-black hover:text-gray-600 transition-colors">Hexo</a></p>
-    </div>
+    </details>
   </div>
 </footer>
 
 
-  
-  <!-- 设置面板遮罩层 -->
-  <div class="settings-overlay"></div>
-  
-  <!-- 设置面板 -->
-  <div class="settings-panel">
-    <div class="settings-panel-header">
-      <h2 class="settings-panel-title">设置</h2>
-      <button class="settings-panel-close-btn" aria-label="关闭设置">
-        <i data-lucide="x" class="w-6 h-6"></i>
-      </button>
     </div>
-    <div class="settings-panel-content">
-      <!-- 主题设置 -->
-      <div class="settings-item">
-        <label class="settings-item-label">主题模式</label>
-        <p class="settings-item-description">选择浅色、暗色或跟随系统设置</p>
-        <div class="theme-options">
-          <div class="theme-option" data-theme="light">
-            <div class="theme-option-label">
-              <i data-lucide="sun" class="theme-option-icon w-4 h-4"></i>
-              <span>浅色</span>
-            </div>
-            <i data-lucide="check" class="theme-option-check w-5 h-5" style="display: none;"></i>
-          </div>
-          <div class="theme-option" data-theme="dark">
-            <div class="theme-option-label">
-              <i data-lucide="moon" class="theme-option-icon w-4 h-4"></i>
-              <span>暗色</span>
-            </div>
-            <i data-lucide="check" class="theme-option-check w-5 h-5" style="display: none;"></i>
-          </div>
-          <div class="theme-option" data-theme="system">
-            <div class="theme-option-label">
-              <i data-lucide="monitor" class="theme-option-icon w-4 h-4"></i>
-              <span>跟随系统</span>
-            </div>
-            <i data-lucide="check" class="theme-option-check w-5 h-5" style="display: none;"></i>
-          </div>
-        </div>
-      </div>
-      
-      <!-- 视图设置 -->
-      <div class="settings-item">
-        <label class="settings-item-label">文章视图</label>
-        <p class="settings-item-description">选择列表或卡片视图</p>
-        <div class="view-options">
-          <div class="view-option" data-view="list">
-            <i data-lucide="list" class="view-option-icon w-4 h-4"></i>
-            <span>列表</span>
-          </div>
-          <div class="view-option" data-view="card">
-            <i data-lucide="layout-grid" class="view-option-icon w-4 h-4"></i>
-            <span>卡片</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- JavaScript -->
-  <script src="/js/main.js"></script>
-</body>
+    <script src="/js/main.js"></script>
+  </body>
 </html>
 

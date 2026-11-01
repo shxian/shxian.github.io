@@ -1,130 +1,124 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hans">
-<head>
+  <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="妩媚楼日记">
   <meta name="author" content="shxian">
-  
+  <meta name="theme-color" content="#faf9f6">
   <title>悲情历史叙事 | 妩媚楼日记</title>
-  
-  <!-- Tailwind CSS (构建后的文件) -->
-  <link rel="stylesheet" href="/css/tailwind.css">
-  
-  <!-- Lucide Icons (本地化，提升加载速度) -->
-  <script defer src="/js/lucide.min.js"></script>
-  
-  <!-- RSS 和代码高亮功能已移除，如需使用请自行添加相应的 Hexo 插件 -->
+  <link rel="stylesheet" href="/css/style.css">
 <meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="妩媚楼日记" type="application/atom+xml">
 </head>
 
 
-<body class="bg-white dark:bg-gray-900 text-black dark:text-gray-100 min-h-screen flex flex-col">
-  <header class="sticky top-0 bg-white dark:bg-gray-900 z-50">
-  <!-- 导航已移除，Tab 切换在内容区域 -->
+  <body class="mumei page-post" data-palette="ink" data-theme="light" data-mode="system" data-body-font="sans" data-heading-font="serif">
+    <script>
+      (function () {
+        try {
+          var saved = JSON.parse(localStorage.getItem('mumei-style') || '{}');
+          var mode = ['system', 'light', 'dark'].indexOf(saved.mode) > -1 ? saved.mode : 'system';
+          var palettes = ['ink', 'clay', 'forest', 'ocean', 'plum'];
+          document.body.dataset.mode = mode;
+          document.body.dataset.theme = mode === 'system'
+            ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+            : mode;
+          if (palettes.indexOf(saved.palette) > -1) document.body.dataset.palette = saved.palette;
+          if (['sans', 'serif', 'mono'].indexOf(saved.bodyFont) > -1) document.body.dataset.bodyFont = saved.bodyFont;
+          if (['sans', 'serif', 'mono'].indexOf(saved.headingFont) > -1) document.body.dataset.headingFont = saved.headingFont;
+        } catch (_) {}
+      }());
+    </script>
+    <a class="skip-link" href="#content">跳到内容</a>
+    <div class="site-shell">
+      
+<header class="site-header">
+  <div class="identity">
+    <a class="brand" href="/">
+      妩媚楼日记<span class="brand-dot" aria-hidden="true"></span>
+    </a>
+    <div class="style-actions">
+      <details class="palette-picker" id="palette-picker">
+        <summary aria-label="选择配色" title="选择配色">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3a9 9 0 1 0 0 18h1a2 2 0 0 0 1.6-3.2 1.8 1.8 0 0 1 1.4-2.9h1A4 4 0 0 0 21 11a9 9 0 0 0-9-8Z"/>
+            <circle cx="7.5" cy="10" r=".7"/><circle cx="11" cy="7" r=".7"/><circle cx="15.5" cy="8" r=".7"/>
+          </svg>
+        </summary>
+        <div class="palette-panel" role="group" aria-label="配色">
+          <div class="mobile-sheet-head">
+            <span>配色</span>
+            <button type="button" data-close-panel="palette-picker" aria-label="关闭配色面板">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg>
+            </button>
+          </div>
+          
+            <button type="button" class="palette-option" data-palette-choice="ink" aria-pressed="false" style="--swatch:#56534f">
+              <span class="palette-swatch" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.7"><path d="m3 8 3 3 7-7"/></svg>
+              </span>
+              <span>墨灰</span>
+            </button>
+          
+            <button type="button" class="palette-option" data-palette-choice="clay" aria-pressed="false" style="--swatch:#995032">
+              <span class="palette-swatch" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.7"><path d="m3 8 3 3 7-7"/></svg>
+              </span>
+              <span>陶土</span>
+            </button>
+          
+            <button type="button" class="palette-option" data-palette-choice="forest" aria-pressed="false" style="--swatch:#2f6653">
+              <span class="palette-swatch" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.7"><path d="m3 8 3 3 7-7"/></svg>
+              </span>
+              <span>苔绿</span>
+            </button>
+          
+            <button type="button" class="palette-option" data-palette-choice="ocean" aria-pressed="false" style="--swatch:#315f9b">
+              <span class="palette-swatch" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.7"><path d="m3 8 3 3 7-7"/></svg>
+              </span>
+              <span>海蓝</span>
+            </button>
+          
+            <button type="button" class="palette-option" data-palette-choice="plum" aria-pressed="false" style="--swatch:#775181">
+              <span class="palette-swatch" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.7"><path d="m3 8 3 3 7-7"/></svg>
+              </span>
+              <span>梅紫</span>
+            </button>
+          
+        </div>
+      </details>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="当前跟随系统，切换为浅色"></button>
+    </div>
+  </div>
+  <nav class="primary-nav" aria-label="主导航">
+    
+      <a href="/archives/" >归档</a>
+    
+      <a href="/tags/" >标签</a>
+    
+      <a href="/about/" >关于</a>
+    
+  </nav>
 </header>
 
 
-  
-  <main class="flex-grow">
-    <div class="max-w-4xl mx-auto px-6 md:px-4 py-8 md:py-12">
-  <!-- 博客标题区域，添加菜单按钮 -->
-  <div class="flex items-center justify-between mb-6 md:mb-8">
-    <a href="/" class="text-2xl md:text-3xl font-semibold text-black dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300 transition-colors cursor-pointer leading-tight">
-      妩媚楼日记
-    </a>
-    <!-- 移动端菜单按钮 -->
-    <button class="mobile-menu-btn md:hidden p-2 text-black dark:text-gray-100 min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
-      <i data-lucide="menu" class="w-6 h-6"></i>
-    </button>
-  </div>
-  
-  <!-- 遮罩层 -->
-  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
-  
-  <!-- 移动端抽屉导航 -->
-  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg overflow-y-auto">
-    <div class="flex flex-col h-full p-6">
-      <div class="flex items-center justify-end mb-8">
-        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
-          <i data-lucide="x" class="w-6 h-6"></i>
-        </button>
-      </div>
-      <div class="flex flex-col space-y-1 w-full flex-1 overflow-y-auto">
-        <a href="/" class="drawer-nav-item tab-item flex items-center gap-2 justify-center py-3 px-4 min-h-[44px] w-full">
-          <i data-lucide="home" class="w-4 h-4"></i>
-          <span>首页</span>
-        </a>
-        <a href="/archives" class="drawer-nav-item tab-item flex items-center gap-2 justify-center py-3 px-4 min-h-[44px] w-full">
-          <i data-lucide="archive" class="w-4 h-4"></i>
-          <span>归档</span>
-        </a>
-        <a href="/tags" class="drawer-nav-item tab-item flex items-center gap-2 justify-center py-3 px-4 min-h-[44px] w-full">
-          <i data-lucide="tags" class="w-4 h-4"></i>
-          <span>标签</span>
-        </a>
-        <a href="/about" class="drawer-nav-item tab-item flex items-center gap-2 justify-center py-3 px-4 min-h-[44px] w-full">
-          <i data-lucide="user-round" class="w-4 h-4"></i>
-          <span>关于</span>
-        </a>
-      </div>
-      <!-- 移动端设置按钮 -->
-      <div class="w-full pt-3 pb-4 mt-auto border-t border-gray-200 dark:border-gray-700 sticky bottom-0 left-0 bg-white dark:bg-gray-900">
-        <button class="settings-btn tab-item flex items-center gap-2 justify-center w-full" aria-label="打开设置" title="设置">
-          <i data-lucide="settings" class="w-4 h-4"></i>
-          <span>设置</span>
-        </button>
-      </div>
-    </div>
-  </nav>
-  
-  <!-- 桌面端导航（保持原样） -->
-  <div class="tab-container mb-6 md:mb-8 hidden md:flex items-center justify-between">
-    <div class="flex items-center gap-4">
-      <a href="/" class="tab-item">
-        <span class="inline-flex items-center gap-2">
-          <i data-lucide="home" class="w-4 h-4"></i>
-          <span>首页</span>
-        </span>
-      </a>
-      <a href="/archives" class="tab-item">
-        <span class="inline-flex items-center gap-2">
-          <i data-lucide="archive" class="w-4 h-4"></i>
-          <span>归档</span>
-        </span>
-      </a>
-      <a href="/tags" class="tab-item">
-        <span class="inline-flex items-center gap-2">
-          <i data-lucide="tags" class="w-4 h-4"></i>
-          <span>标签</span>
-        </span>
-      </a>
-      <a href="/about" class="tab-item">
-        <span class="inline-flex items-center gap-2">
-          <i data-lucide="user-round" class="w-4 h-4"></i>
-          <span>关于</span>
-        </span>
-      </a>
-    </div>
-    <!-- 设置按钮 -->
-    <button class="settings-btn tab-item" aria-label="打开设置" title="设置">
-      <span class="inline-flex items-center gap-2">
-        <i data-lucide="settings" class="w-4 h-4"></i>
-        <span>设置</span>
-      </span>
-    </button>
-  </div>
-  
-  <article>
-    <header class="mb-6 md:mb-8">
-      <h1 class="text-xl md:text-lg md:text-2xl font-semibold mb-3 text-black dark:text-gray-100 leading-tight">悲情历史叙事</h1>
+      <span id="appearance-status" class="sr-only" role="status"></span>
+      <main id="content" tabindex="-1">
+        <article>
+  <header class="post-head">
+    <h1>悲情历史叙事</h1>
+    <div class="post-meta">
+      <time datetime="2022-04-03">2022.04.03</time>
       
-        <div class="text-xs md:text-sm text-gray-500 mt-2">2022年04月03日</div>
+        <a href="/tags/%E5%BD%B1%E8%AF%84/">影评</a>
       
-    </header>
-    
-    <div class="prose text-base md:text-base max-w-none">
-      <p><strong>侯氏电影</strong></p>
+    </div>
+  </header>
+  <div class="prose">
+    <p><strong>侯氏电影</strong></p>
 <p>侯孝贤的电影并没有那么容易进入。这种不容易体现在，大量的长镜头和时不时的空镜头。在长镜头中，人的形象在自然中包含，成为了自然的一部分，人或者在山间行走，成为山林的一部分，或者在海滩站立，望向大海，成为大海的一部分。在空镜中，你总必须想象出某种寓意。</p>
 <p>与此同时，电影中刻意的留白和偶尔的跳脱，使得影片没有那么强的戏剧性和连续性。这也电影提供了很多阐述的空间，这种阐述的空间既是属于导演的，也是属于观众的。观众需要在这种空间中，拼贴属于自己的故事、获得属于自己的想象、收获属于自己的理解。</p>
 <p>侯孝贤追求的关于电影的艺术表达，通过影像、动作、剪辑，以直接的呈现。但它也制造了某种障碍，关于理解的障碍，对于有些人来说，这种障碍是思维的乐趣，是导演和观众之间的默契，对有些人来说，这种障碍，便限制了个人进入电影的可能。</p>
@@ -157,115 +151,50 @@
 <p>经历不断变化的统治过后，岛屿的身份认同在重新构建。外省人和本省人的身份纠结，更多属于上一个世代的人们。如今岛屿的年轻人，在重新追寻、构建属于自己的身份。这种身份，哪怕在如今特殊的现实中，也无比强烈。不安全感，没有让人们就此丧失，反而让人们更加笃定。</p>
 <p>历史成了过去，它映照现实，但无法预测现实，也无法决定现实。但二二事件作为历史的伤痕，永远地留在岛屿人民的记忆中，直到现在，或许它通过以不同的形式呈现。尽管岛屿内部仍旧有着政治观念上的巨大差异，因为特殊的地理位置和历史因素，岛屿只能努力在大国关系中，努力寻求微妙的平衡。但此时，他们以共同的身份，面向世界。</p>
 
-    </div>
-    
-    
-      <div class="mt-6 md:mt-8 text-xs md:text-sm text-gray-500">
-        
-        <span>标签：影评</span>
+  </div>
+  <nav class="post-navigation" aria-label="相邻文章">
+    <span><a href="/2022/04/05/%E7%BB%93%E5%A9%9A%E5%BF%AB%E4%B9%90%EF%BC%8C%E5%94%90%E5%B0%8F%E5%A7%90&%E4%B8%96%E7%94%B2%E5%90%8C%E5%AD%A6/">← 结婚快乐，唐小姐&amp;世甲同学</a></span>
+    <span><a href="/2022/03/09/%E5%85%B3%E4%BA%8E%E8%AE%A1%E5%88%92%E7%94%9F%E8%82%B2/">关于计划生育 →</a></span>
+  </nav>
+</article>
+
+
+      </main>
+      <footer class="site-footer">
+  <div class="footer-line">
+    <span>&copy; 2026 shxian</span>
+    <details class="appearance" id="appearance">
+      <summary>字体</summary>
+      <div class="appearance-panel">
+        <div class="mobile-sheet-head">
+          <span>字体</span>
+          <button type="button" data-close-panel="appearance" aria-label="关闭字体面板">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg>
+          </button>
+        </div>
+        <label>正文
+          <select id="body-font">
+            <option value="sans">无衬线</option>
+            <option value="serif">衬线</option>
+            <option value="mono">等宽</option>
+          </select>
+        </label>
+        <label>标题
+          <select id="heading-font">
+            <option value="sans">无衬线</option>
+            <option value="serif">衬线</option>
+            <option value="mono">等宽</option>
+          </select>
+        </label>
+        <button id="reset-fonts" type="button">重置字体</button>
       </div>
-    
-    
-    <nav class="mt-8 md:mt-12 flex flex-col md:flex-row justify-between gap-4 text-sm md:text-base">
-      
-        <a href="/2022/04/05/%E7%BB%93%E5%A9%9A%E5%BF%AB%E4%B9%90%EF%BC%8C%E5%94%90%E5%B0%8F%E5%A7%90&%E4%B8%96%E7%94%B2%E5%90%8C%E5%AD%A6/" class="text-black dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 transition-colors truncate">
-          ← 结婚快乐，唐小姐&amp;世甲同学
-        </a>
-      
-      
-      
-        <a href="/2022/03/09/%E5%85%B3%E4%BA%8E%E8%AE%A1%E5%88%92%E7%94%9F%E8%82%B2/" class="text-black dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 transition-colors truncate text-right md:text-left">
-          关于计划生育 →
-        </a>
-      
-    </nav>
-    
-    <!-- 导航按钮 -->
-    <div class="mt-6 md:mt-8 text-center w-full">
-      <a href="/" 
-         class="text-xs md:text-sm text-gray-500 hover:text-gray-600 transition-colors cursor-pointer" 
-         title="回到首页">
-        回到首页
-      </a>
-    </div>
-  </article>
-</div>
-
-
-  </main>
-  
-  <footer class="mt-12 md:mt-16 py-6 md:py-8">
-  <div class="container mx-auto px-4">
-    <div class="text-center text-xs md:text-sm text-gray-600">
-      <p>&copy; 2025 shxian. All rights reserved.</p>
-      <p class="mt-2">Powered by <a href="https://hexo.io" target="_blank" class="text-black hover:text-gray-600 transition-colors">Hexo</a></p>
-    </div>
+    </details>
   </div>
 </footer>
 
 
-  
-  <!-- 设置面板遮罩层 -->
-  <div class="settings-overlay"></div>
-  
-  <!-- 设置面板 -->
-  <div class="settings-panel">
-    <div class="settings-panel-header">
-      <h2 class="settings-panel-title">设置</h2>
-      <button class="settings-panel-close-btn" aria-label="关闭设置">
-        <i data-lucide="x" class="w-6 h-6"></i>
-      </button>
     </div>
-    <div class="settings-panel-content">
-      <!-- 主题设置 -->
-      <div class="settings-item">
-        <label class="settings-item-label">主题模式</label>
-        <p class="settings-item-description">选择浅色、暗色或跟随系统设置</p>
-        <div class="theme-options">
-          <div class="theme-option" data-theme="light">
-            <div class="theme-option-label">
-              <i data-lucide="sun" class="theme-option-icon w-4 h-4"></i>
-              <span>浅色</span>
-            </div>
-            <i data-lucide="check" class="theme-option-check w-5 h-5" style="display: none;"></i>
-          </div>
-          <div class="theme-option" data-theme="dark">
-            <div class="theme-option-label">
-              <i data-lucide="moon" class="theme-option-icon w-4 h-4"></i>
-              <span>暗色</span>
-            </div>
-            <i data-lucide="check" class="theme-option-check w-5 h-5" style="display: none;"></i>
-          </div>
-          <div class="theme-option" data-theme="system">
-            <div class="theme-option-label">
-              <i data-lucide="monitor" class="theme-option-icon w-4 h-4"></i>
-              <span>跟随系统</span>
-            </div>
-            <i data-lucide="check" class="theme-option-check w-5 h-5" style="display: none;"></i>
-          </div>
-        </div>
-      </div>
-      
-      <!-- 视图设置 -->
-      <div class="settings-item">
-        <label class="settings-item-label">文章视图</label>
-        <p class="settings-item-description">选择列表或卡片视图</p>
-        <div class="view-options">
-          <div class="view-option" data-view="list">
-            <i data-lucide="list" class="view-option-icon w-4 h-4"></i>
-            <span>列表</span>
-          </div>
-          <div class="view-option" data-view="card">
-            <i data-lucide="layout-grid" class="view-option-icon w-4 h-4"></i>
-            <span>卡片</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- JavaScript -->
-  <script src="/js/main.js"></script>
-</body>
+    <script src="/js/main.js"></script>
+  </body>
 </html>
 

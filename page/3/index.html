@@ -1,512 +1,242 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hans">
-<head>
+  <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="妩媚楼日记">
   <meta name="author" content="shxian">
-  
+  <meta name="theme-color" content="#faf9f6">
   <title>妩媚楼日记</title>
-  
-  <!-- Tailwind CSS (构建后的文件) -->
-  <link rel="stylesheet" href="/css/tailwind.css">
-  
-  <!-- Lucide Icons (本地化，提升加载速度) -->
-  <script defer src="/js/lucide.min.js"></script>
-  
-  <!-- RSS 和代码高亮功能已移除，如需使用请自行添加相应的 Hexo 插件 -->
+  <link rel="stylesheet" href="/css/style.css">
 <meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="妩媚楼日记" type="application/atom+xml">
 </head>
 
 
-<body class="bg-white dark:bg-gray-900 text-black dark:text-gray-100 min-h-screen flex flex-col">
-  <header class="sticky top-0 bg-white dark:bg-gray-900 z-50">
-  <!-- 导航已移除，Tab 切换在内容区域 -->
+  <body class="mumei page-index" data-palette="ink" data-theme="light" data-mode="system" data-body-font="sans" data-heading-font="serif">
+    <script>
+      (function () {
+        try {
+          var saved = JSON.parse(localStorage.getItem('mumei-style') || '{}');
+          var mode = ['system', 'light', 'dark'].indexOf(saved.mode) > -1 ? saved.mode : 'system';
+          var palettes = ['ink', 'clay', 'forest', 'ocean', 'plum'];
+          document.body.dataset.mode = mode;
+          document.body.dataset.theme = mode === 'system'
+            ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+            : mode;
+          if (palettes.indexOf(saved.palette) > -1) document.body.dataset.palette = saved.palette;
+          if (['sans', 'serif', 'mono'].indexOf(saved.bodyFont) > -1) document.body.dataset.bodyFont = saved.bodyFont;
+          if (['sans', 'serif', 'mono'].indexOf(saved.headingFont) > -1) document.body.dataset.headingFont = saved.headingFont;
+        } catch (_) {}
+      }());
+    </script>
+    <a class="skip-link" href="#content">跳到内容</a>
+    <div class="site-shell">
+      
+<header class="site-header">
+  <div class="identity">
+    <a class="brand" href="/">
+      妩媚楼日记<span class="brand-dot" aria-hidden="true"></span>
+    </a>
+    <div class="style-actions">
+      <details class="palette-picker" id="palette-picker">
+        <summary aria-label="选择配色" title="选择配色">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3a9 9 0 1 0 0 18h1a2 2 0 0 0 1.6-3.2 1.8 1.8 0 0 1 1.4-2.9h1A4 4 0 0 0 21 11a9 9 0 0 0-9-8Z"/>
+            <circle cx="7.5" cy="10" r=".7"/><circle cx="11" cy="7" r=".7"/><circle cx="15.5" cy="8" r=".7"/>
+          </svg>
+        </summary>
+        <div class="palette-panel" role="group" aria-label="配色">
+          <div class="mobile-sheet-head">
+            <span>配色</span>
+            <button type="button" data-close-panel="palette-picker" aria-label="关闭配色面板">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg>
+            </button>
+          </div>
+          
+            <button type="button" class="palette-option" data-palette-choice="ink" aria-pressed="false" style="--swatch:#56534f">
+              <span class="palette-swatch" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.7"><path d="m3 8 3 3 7-7"/></svg>
+              </span>
+              <span>墨灰</span>
+            </button>
+          
+            <button type="button" class="palette-option" data-palette-choice="clay" aria-pressed="false" style="--swatch:#995032">
+              <span class="palette-swatch" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.7"><path d="m3 8 3 3 7-7"/></svg>
+              </span>
+              <span>陶土</span>
+            </button>
+          
+            <button type="button" class="palette-option" data-palette-choice="forest" aria-pressed="false" style="--swatch:#2f6653">
+              <span class="palette-swatch" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.7"><path d="m3 8 3 3 7-7"/></svg>
+              </span>
+              <span>苔绿</span>
+            </button>
+          
+            <button type="button" class="palette-option" data-palette-choice="ocean" aria-pressed="false" style="--swatch:#315f9b">
+              <span class="palette-swatch" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.7"><path d="m3 8 3 3 7-7"/></svg>
+              </span>
+              <span>海蓝</span>
+            </button>
+          
+            <button type="button" class="palette-option" data-palette-choice="plum" aria-pressed="false" style="--swatch:#775181">
+              <span class="palette-swatch" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.7"><path d="m3 8 3 3 7-7"/></svg>
+              </span>
+              <span>梅紫</span>
+            </button>
+          
+        </div>
+      </details>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="当前跟随系统，切换为浅色"></button>
+    </div>
+  </div>
+  <nav class="primary-nav" aria-label="主导航">
+    
+      <a href="/archives/" >归档</a>
+    
+      <a href="/tags/" >标签</a>
+    
+      <a href="/about/" >关于</a>
+    
+  </nav>
 </header>
 
 
+      <span id="appearance-status" class="sr-only" role="status"></span>
+      <main id="content" tabindex="-1">
+        <section class="home-page">
+  <h1 class="sr-only">妩媚楼日记</h1>
   
-  <main class="flex-grow">
-    <div class="max-w-4xl mx-auto px-6 md:px-4 py-8 md:py-12 space-y-6 md:space-y-10">
-  <!-- 博客标题区域，添加菜单按钮 -->
-  <div class="flex items-center justify-between">
-    <a href="/" class="text-2xl md:text-3xl font-semibold text-black dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300 transition-colors cursor-pointer leading-tight">
-      妩媚楼日记
-    </a>
-    <!-- 移动端菜单按钮 -->
-    <button class="mobile-menu-btn md:hidden p-2 text-black dark:text-gray-100 min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="打开菜单">
-      <i data-lucide="menu" class="w-6 h-6"></i>
-    </button>
-  </div>
-  
-  <!-- 遮罩层 -->
-  <div class="drawer-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
-  
-  <!-- 移动端抽屉导航 -->
-  <nav class="mobile-drawer fixed top-0 right-0 h-full w-[147px] bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg overflow-y-auto">
-    <div class="flex flex-col h-full p-6">
-      <div class="flex items-center justify-end mb-8">
-        <button class="drawer-close-btn p-2 text-black min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="关闭菜单">
-          <i data-lucide="x" class="w-6 h-6"></i>
-        </button>
-      </div>
-      <div class="flex flex-col space-y-1 w-full flex-1 overflow-y-auto">
-        <a href="/" class="drawer-nav-item tab-item tab-active flex items-center gap-2 justify-center py-3 px-4 min-h-[44px] w-full">
-          <i data-lucide="home" class="w-4 h-4"></i>
-          <span>首页</span>
-        </a>
-        <a href="/archives" class="drawer-nav-item tab-item flex items-center gap-2 justify-center py-3 px-4 min-h-[44px] w-full">
-          <i data-lucide="archive" class="w-4 h-4"></i>
-          <span>归档</span>
-        </a>
-        <a href="/tags" class="drawer-nav-item tab-item flex items-center gap-2 justify-center py-3 px-4 min-h-[44px] w-full">
-          <i data-lucide="tags" class="w-4 h-4"></i>
-          <span>标签</span>
-        </a>
-        <a href="/about" class="drawer-nav-item tab-item flex items-center gap-2 justify-center py-3 px-4 min-h-[44px] w-full">
-          <i data-lucide="user-round" class="w-4 h-4"></i>
-          <span>关于</span>
-        </a>
-      </div>
-      <!-- 移动端设置按钮 -->
-      <div class="w-full pt-3 pb-4 mt-auto border-t border-gray-200 dark:border-gray-700 sticky bottom-0 left-0 bg-white dark:bg-gray-900">
-        <button class="settings-btn tab-item flex items-center gap-2 justify-center w-full" aria-label="打开设置" title="设置">
-          <i data-lucide="settings" class="w-4 h-4"></i>
-          <span>设置</span>
-        </button>
-      </div>
-    </div>
-  </nav>
-  
-  <!-- 桌面端导航（保持原样） -->
-  <div class="tab-container mt-3 hidden md:flex items-center justify-between">
-    <div class="flex items-center gap-4">
-      <a href="/" class="tab-item tab-active">
-        <span class="inline-flex items-center gap-2">
-          <i data-lucide="home" class="w-4 h-4"></i>
-          <span>首页</span>
-        </span>
-      </a>
-      <a href="/archives" class="tab-item">
-        <span class="inline-flex items-center gap-2">
-          <i data-lucide="archive" class="w-4 h-4"></i>
-          <span>归档</span>
-        </span>
-      </a>
-      <a href="/tags" class="tab-item">
-        <span class="inline-flex items-center gap-2">
-          <i data-lucide="tags" class="w-4 h-4"></i>
-          <span>标签</span>
-        </span>
-      </a>
-      <a href="/about" class="tab-item">
-        <span class="inline-flex items-center gap-2">
-          <i data-lucide="user-round" class="w-4 h-4"></i>
-          <span>关于</span>
-        </span>
-      </a>
-    </div>
-    <!-- 设置按钮 -->
-    <button class="settings-btn tab-item" aria-label="打开设置" title="设置">
-      <span class="inline-flex items-center gap-2">
-        <i data-lucide="settings" class="w-4 h-4"></i>
-        <span>设置</span>
-      </span>
-    </button>
-  </div>
-  
-  <!-- 文章列表容器 -->
-  <div class="posts-container">
-    <!-- 卡片视图 -->
-    <div class="posts-grid grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4" style="display: none;">
-      
-        
-          <article class="post-card">
-            <a href="/2022/01/27/%E6%8A%93%E4%BD%8F%E7%AB%A5%E5%B9%B4/" class="block h-full">
-              <h2 class="text-base md:text-sm font-semibold text-black dark:text-gray-100 leading-relaxed mb-2 truncate">
-                抓住童年
-              </h2>
-              <time class="text-xs md:text-xs text-gray-500 tracking-wide uppercase" datetime="2022-01-27">
-                2022.01.27
-              </time>
-            </a>
-          </article>
-        
-          <article class="post-card">
-            <a href="/2021/12/12/%E6%A2%85%E6%B2%99%E7%A7%91%E6%8A%80%E5%BE%80%E4%BA%8B/" class="block h-full">
-              <h2 class="text-base md:text-sm font-semibold text-black dark:text-gray-100 leading-relaxed mb-2 truncate">
-                梅沙科技往事
-              </h2>
-              <time class="text-xs md:text-xs text-gray-500 tracking-wide uppercase" datetime="2021-12-12">
-                2021.12.12
-              </time>
-            </a>
-          </article>
-        
-          <article class="post-card">
-            <a href="/2021/11/25/%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%8F%B0%E6%B9%BE/" class="block h-full">
-              <h2 class="text-base md:text-sm font-semibold text-black dark:text-gray-100 leading-relaxed mb-2 truncate">
-                何以为台湾
-              </h2>
-              <time class="text-xs md:text-xs text-gray-500 tracking-wide uppercase" datetime="2021-11-25">
-                2021.11.25
-              </time>
-            </a>
-          </article>
-        
-          <article class="post-card">
-            <a href="/2021/11/13/%E5%BF%AB%E9%80%92%E6%97%A5%E8%AE%B0/" class="block h-full">
-              <h2 class="text-base md:text-sm font-semibold text-black dark:text-gray-100 leading-relaxed mb-2 truncate">
-                快递日记
-              </h2>
-              <time class="text-xs md:text-xs text-gray-500 tracking-wide uppercase" datetime="2021-11-13">
-                2021.11.13
-              </time>
-            </a>
-          </article>
-        
-          <article class="post-card">
-            <a href="/2021/10/31/%E5%A4%9C%E7%9A%84%E6%B6%88%E9%80%9D/" class="block h-full">
-              <h2 class="text-base md:text-sm font-semibold text-black dark:text-gray-100 leading-relaxed mb-2 truncate">
-                夜的消逝
-              </h2>
-              <time class="text-xs md:text-xs text-gray-500 tracking-wide uppercase" datetime="2021-10-31">
-                2021.10.31
-              </time>
-            </a>
-          </article>
-        
-          <article class="post-card">
-            <a href="/2021/10/10/%E6%AD%A6%E6%B1%89%E8%AE%B0%E5%BD%95/" class="block h-full">
-              <h2 class="text-base md:text-sm font-semibold text-black dark:text-gray-100 leading-relaxed mb-2 truncate">
-                武汉记录
-              </h2>
-              <time class="text-xs md:text-xs text-gray-500 tracking-wide uppercase" datetime="2021-10-10">
-                2021.10.10
-              </time>
-            </a>
-          </article>
-        
-          <article class="post-card">
-            <a href="/2021/10/07/%E5%A4%A7%E6%97%B6%E4%BB%A3%E3%80%81%E7%94%B5%E5%BD%B1%E4%B8%8E%E4%BA%BA/" class="block h-full">
-              <h2 class="text-base md:text-sm font-semibold text-black dark:text-gray-100 leading-relaxed mb-2 truncate">
-                大时代、电影与人
-              </h2>
-              <time class="text-xs md:text-xs text-gray-500 tracking-wide uppercase" datetime="2021-10-07">
-                2021.10.07
-              </time>
-            </a>
-          </article>
-        
-          <article class="post-card">
-            <a href="/2021/10/05/%E9%97%AF%E5%85%A5%E6%AD%A6%E6%B1%89%E4%B8%AD%E5%B1%B1%E5%85%AC%E5%9B%AD/" class="block h-full">
-              <h2 class="text-base md:text-sm font-semibold text-black dark:text-gray-100 leading-relaxed mb-2 truncate">
-                闯入武汉中山公园
-              </h2>
-              <time class="text-xs md:text-xs text-gray-500 tracking-wide uppercase" datetime="2021-10-05">
-                2021.10.05
-              </time>
-            </a>
-          </article>
-        
-          <article class="post-card">
-            <a href="/2021/10/05/%E5%A4%A7%E6%AD%A6%E6%B1%89-PARADISE/" class="block h-full">
-              <h2 class="text-base md:text-sm font-semibold text-black dark:text-gray-100 leading-relaxed mb-2 truncate">
-                大武汉 PARADISE
-              </h2>
-              <time class="text-xs md:text-xs text-gray-500 tracking-wide uppercase" datetime="2021-10-05">
-                2021.10.05
-              </time>
-            </a>
-          </article>
-        
-          <article class="post-card">
-            <a href="/2021/10/02/%E5%8F%AA%E6%98%AF%E5%BD%93%E6%97%B6%E5%B7%B2%E6%83%98%E7%84%B6/" class="block h-full">
-              <h2 class="text-base md:text-sm font-semibold text-black dark:text-gray-100 leading-relaxed mb-2 truncate">
-                只是当时已惘然
-              </h2>
-              <time class="text-xs md:text-xs text-gray-500 tracking-wide uppercase" datetime="2021-10-02">
-                2021.10.02
-              </time>
-            </a>
-          </article>
-        
-      
-    </div>
+
+  <ul class="post-list">
     
-    <!-- 列表视图 -->
-    <div class="posts-list space-y-4 md:space-y-3">
-      
-        
-          <article class="pb-3">
-            <div class="flex flex-col md:flex-row md:items-baseline md:gap-3 space-y-1 md:space-y-0">
-              <h2 class="order-1 md:order-2 text-base md:text-sm font-semibold text-black dark:text-gray-100 leading-relaxed">
-                <a href="/2022/01/27/%E6%8A%93%E4%BD%8F%E7%AB%A5%E5%B9%B4/" class="text-black dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300 transition-colors py-1">
-                  抓住童年
-                </a>
-              </h2>
-              <time class="order-2 md:order-1 text-sm md:text-xs text-gray-500 tracking-wide uppercase md:min-w-[110px]" datetime="2022-01-27">
-                2022.01.27
-              </time>
-            </div>
-          </article>
-        
-          <article class="pb-3">
-            <div class="flex flex-col md:flex-row md:items-baseline md:gap-3 space-y-1 md:space-y-0">
-              <h2 class="order-1 md:order-2 text-base md:text-sm font-semibold text-black dark:text-gray-100 leading-relaxed">
-                <a href="/2021/12/12/%E6%A2%85%E6%B2%99%E7%A7%91%E6%8A%80%E5%BE%80%E4%BA%8B/" class="text-black dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300 transition-colors py-1">
-                  梅沙科技往事
-                </a>
-              </h2>
-              <time class="order-2 md:order-1 text-sm md:text-xs text-gray-500 tracking-wide uppercase md:min-w-[110px]" datetime="2021-12-12">
-                2021.12.12
-              </time>
-            </div>
-          </article>
-        
-          <article class="pb-3">
-            <div class="flex flex-col md:flex-row md:items-baseline md:gap-3 space-y-1 md:space-y-0">
-              <h2 class="order-1 md:order-2 text-base md:text-sm font-semibold text-black dark:text-gray-100 leading-relaxed">
-                <a href="/2021/11/25/%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%8F%B0%E6%B9%BE/" class="text-black dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300 transition-colors py-1">
-                  何以为台湾
-                </a>
-              </h2>
-              <time class="order-2 md:order-1 text-sm md:text-xs text-gray-500 tracking-wide uppercase md:min-w-[110px]" datetime="2021-11-25">
-                2021.11.25
-              </time>
-            </div>
-          </article>
-        
-          <article class="pb-3">
-            <div class="flex flex-col md:flex-row md:items-baseline md:gap-3 space-y-1 md:space-y-0">
-              <h2 class="order-1 md:order-2 text-base md:text-sm font-semibold text-black dark:text-gray-100 leading-relaxed">
-                <a href="/2021/11/13/%E5%BF%AB%E9%80%92%E6%97%A5%E8%AE%B0/" class="text-black dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300 transition-colors py-1">
-                  快递日记
-                </a>
-              </h2>
-              <time class="order-2 md:order-1 text-sm md:text-xs text-gray-500 tracking-wide uppercase md:min-w-[110px]" datetime="2021-11-13">
-                2021.11.13
-              </time>
-            </div>
-          </article>
-        
-          <article class="pb-3">
-            <div class="flex flex-col md:flex-row md:items-baseline md:gap-3 space-y-1 md:space-y-0">
-              <h2 class="order-1 md:order-2 text-base md:text-sm font-semibold text-black dark:text-gray-100 leading-relaxed">
-                <a href="/2021/10/31/%E5%A4%9C%E7%9A%84%E6%B6%88%E9%80%9D/" class="text-black dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300 transition-colors py-1">
-                  夜的消逝
-                </a>
-              </h2>
-              <time class="order-2 md:order-1 text-sm md:text-xs text-gray-500 tracking-wide uppercase md:min-w-[110px]" datetime="2021-10-31">
-                2021.10.31
-              </time>
-            </div>
-          </article>
-        
-          <article class="pb-3">
-            <div class="flex flex-col md:flex-row md:items-baseline md:gap-3 space-y-1 md:space-y-0">
-              <h2 class="order-1 md:order-2 text-base md:text-sm font-semibold text-black dark:text-gray-100 leading-relaxed">
-                <a href="/2021/10/10/%E6%AD%A6%E6%B1%89%E8%AE%B0%E5%BD%95/" class="text-black dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300 transition-colors py-1">
-                  武汉记录
-                </a>
-              </h2>
-              <time class="order-2 md:order-1 text-sm md:text-xs text-gray-500 tracking-wide uppercase md:min-w-[110px]" datetime="2021-10-10">
-                2021.10.10
-              </time>
-            </div>
-          </article>
-        
-          <article class="pb-3">
-            <div class="flex flex-col md:flex-row md:items-baseline md:gap-3 space-y-1 md:space-y-0">
-              <h2 class="order-1 md:order-2 text-base md:text-sm font-semibold text-black dark:text-gray-100 leading-relaxed">
-                <a href="/2021/10/07/%E5%A4%A7%E6%97%B6%E4%BB%A3%E3%80%81%E7%94%B5%E5%BD%B1%E4%B8%8E%E4%BA%BA/" class="text-black dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300 transition-colors py-1">
-                  大时代、电影与人
-                </a>
-              </h2>
-              <time class="order-2 md:order-1 text-sm md:text-xs text-gray-500 tracking-wide uppercase md:min-w-[110px]" datetime="2021-10-07">
-                2021.10.07
-              </time>
-            </div>
-          </article>
-        
-          <article class="pb-3">
-            <div class="flex flex-col md:flex-row md:items-baseline md:gap-3 space-y-1 md:space-y-0">
-              <h2 class="order-1 md:order-2 text-base md:text-sm font-semibold text-black dark:text-gray-100 leading-relaxed">
-                <a href="/2021/10/05/%E9%97%AF%E5%85%A5%E6%AD%A6%E6%B1%89%E4%B8%AD%E5%B1%B1%E5%85%AC%E5%9B%AD/" class="text-black dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300 transition-colors py-1">
-                  闯入武汉中山公园
-                </a>
-              </h2>
-              <time class="order-2 md:order-1 text-sm md:text-xs text-gray-500 tracking-wide uppercase md:min-w-[110px]" datetime="2021-10-05">
-                2021.10.05
-              </time>
-            </div>
-          </article>
-        
-          <article class="pb-3">
-            <div class="flex flex-col md:flex-row md:items-baseline md:gap-3 space-y-1 md:space-y-0">
-              <h2 class="order-1 md:order-2 text-base md:text-sm font-semibold text-black dark:text-gray-100 leading-relaxed">
-                <a href="/2021/10/05/%E5%A4%A7%E6%AD%A6%E6%B1%89-PARADISE/" class="text-black dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300 transition-colors py-1">
-                  大武汉 PARADISE
-                </a>
-              </h2>
-              <time class="order-2 md:order-1 text-sm md:text-xs text-gray-500 tracking-wide uppercase md:min-w-[110px]" datetime="2021-10-05">
-                2021.10.05
-              </time>
-            </div>
-          </article>
-        
-          <article class="pb-3">
-            <div class="flex flex-col md:flex-row md:items-baseline md:gap-3 space-y-1 md:space-y-0">
-              <h2 class="order-1 md:order-2 text-base md:text-sm font-semibold text-black dark:text-gray-100 leading-relaxed">
-                <a href="/2021/10/02/%E5%8F%AA%E6%98%AF%E5%BD%93%E6%97%B6%E5%B7%B2%E6%83%98%E7%84%B6/" class="text-black dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300 transition-colors py-1">
-                  只是当时已惘然
-                </a>
-              </h2>
-              <time class="order-2 md:order-1 text-sm md:text-xs text-gray-500 tracking-wide uppercase md:min-w-[110px]" datetime="2021-10-02">
-                2021.10.02
-              </time>
-            </div>
-          </article>
-        
-      
-    </div>
-  </div>
-  
-  
-  
-  
-    <nav class="pagination-wrapper">
-      <ul class="pagination-content">
-        <!-- Previous -->
-        <li class="pagination-item">
-          
-            <a href="/page/2/" class="pagination-previous" aria-label="上一页">
-              <i data-lucide="chevron-left" class="w-[15px] h-[15px]"></i>
-            </a>
-          
-        </li>
-        
-        <!-- Page Numbers -->
-        
-          <li class="pagination-item">
-            
-              <a href="/" class="pagination-link">1</a>
-            
-          </li>
-        
-          <li class="pagination-item">
-            
-              <a href="/page/2/" class="pagination-link">2</a>
-            
-          </li>
-        
-          <li class="pagination-item">
-            
-              <span class="pagination-link pagination-active">3</span>
-            
-          </li>
-        
-          <li class="pagination-item">
-            
-              <span class="pagination-ellipsis">…</span>
-            
-          </li>
-        
-          <li class="pagination-item">
-            
-              <a href="/page/12/" class="pagination-link">12</a>
-            
-          </li>
-        
-        
-        <!-- Next -->
-        <li class="pagination-item">
-          
-            <a href="/page/4/" class="pagination-next" aria-label="下一页">
-              <i data-lucide="chevron-right" class="w-[15px] h-[15px]"></i>
-            </a>
-          
-        </li>
-      </ul>
-    </nav>
-  
-</div>
+      <li>
+        <a class="post-row" href="/2022/01/27/%E6%8A%93%E4%BD%8F%E7%AB%A5%E5%B9%B4/">
+          <span class="post-row__title">抓住童年</span>
+          <time datetime="2022-01-27">2022.01.27</time>
+          <span class="row-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+    
+      <li>
+        <a class="post-row" href="/2021/12/12/%E6%A2%85%E6%B2%99%E7%A7%91%E6%8A%80%E5%BE%80%E4%BA%8B/">
+          <span class="post-row__title">梅沙科技往事</span>
+          <time datetime="2021-12-12">2021.12.12</time>
+          <span class="row-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+    
+      <li>
+        <a class="post-row" href="/2021/11/25/%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%8F%B0%E6%B9%BE/">
+          <span class="post-row__title">何以为台湾</span>
+          <time datetime="2021-11-25">2021.11.25</time>
+          <span class="row-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+    
+      <li>
+        <a class="post-row" href="/2021/11/13/%E5%BF%AB%E9%80%92%E6%97%A5%E8%AE%B0/">
+          <span class="post-row__title">快递日记</span>
+          <time datetime="2021-11-13">2021.11.13</time>
+          <span class="row-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+    
+      <li>
+        <a class="post-row" href="/2021/10/31/%E5%A4%9C%E7%9A%84%E6%B6%88%E9%80%9D/">
+          <span class="post-row__title">夜的消逝</span>
+          <time datetime="2021-10-31">2021.10.31</time>
+          <span class="row-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+    
+      <li>
+        <a class="post-row" href="/2021/10/10/%E6%AD%A6%E6%B1%89%E8%AE%B0%E5%BD%95/">
+          <span class="post-row__title">武汉记录</span>
+          <time datetime="2021-10-10">2021.10.10</time>
+          <span class="row-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+    
+      <li>
+        <a class="post-row" href="/2021/10/07/%E5%A4%A7%E6%97%B6%E4%BB%A3%E3%80%81%E7%94%B5%E5%BD%B1%E4%B8%8E%E4%BA%BA/">
+          <span class="post-row__title">大时代、电影与人</span>
+          <time datetime="2021-10-07">2021.10.07</time>
+          <span class="row-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+    
+      <li>
+        <a class="post-row" href="/2021/10/05/%E9%97%AF%E5%85%A5%E6%AD%A6%E6%B1%89%E4%B8%AD%E5%B1%B1%E5%85%AC%E5%9B%AD/">
+          <span class="post-row__title">闯入武汉中山公园</span>
+          <time datetime="2021-10-05">2021.10.05</time>
+          <span class="row-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+    
+      <li>
+        <a class="post-row" href="/2021/10/05/%E5%A4%A7%E6%AD%A6%E6%B1%89-PARADISE/">
+          <span class="post-row__title">大武汉 PARADISE</span>
+          <time datetime="2021-10-05">2021.10.05</time>
+          <span class="row-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+    
+      <li>
+        <a class="post-row" href="/2021/10/02/%E5%8F%AA%E6%98%AF%E5%BD%93%E6%97%B6%E5%B7%B2%E6%83%98%E7%84%B6/">
+          <span class="post-row__title">只是当时已惘然</span>
+          <time datetime="2021-10-02">2021.10.02</time>
+          <span class="row-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+    
+  </ul>
 
 
-  </main>
-  
-  <footer class="mt-12 md:mt-16 py-6 md:py-8">
-  <div class="container mx-auto px-4">
-    <div class="text-center text-xs md:text-sm text-gray-600">
-      <p>&copy; 2025 shxian. All rights reserved.</p>
-      <p class="mt-2">Powered by <a href="https://hexo.io" target="_blank" class="text-black hover:text-gray-600 transition-colors">Hexo</a></p>
-    </div>
+
+  <a class="all-posts" href="/archives/">全部文章 <span aria-hidden="true">→</span></a>
+</section>
+
+
+      </main>
+      <footer class="site-footer">
+  <div class="footer-line">
+    <span>&copy; 2026 shxian</span>
+    <details class="appearance" id="appearance">
+      <summary>字体</summary>
+      <div class="appearance-panel">
+        <div class="mobile-sheet-head">
+          <span>字体</span>
+          <button type="button" data-close-panel="appearance" aria-label="关闭字体面板">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg>
+          </button>
+        </div>
+        <label>正文
+          <select id="body-font">
+            <option value="sans">无衬线</option>
+            <option value="serif">衬线</option>
+            <option value="mono">等宽</option>
+          </select>
+        </label>
+        <label>标题
+          <select id="heading-font">
+            <option value="sans">无衬线</option>
+            <option value="serif">衬线</option>
+            <option value="mono">等宽</option>
+          </select>
+        </label>
+        <button id="reset-fonts" type="button">重置字体</button>
+      </div>
+    </details>
   </div>
 </footer>
 
 
-  
-  <!-- 设置面板遮罩层 -->
-  <div class="settings-overlay"></div>
-  
-  <!-- 设置面板 -->
-  <div class="settings-panel">
-    <div class="settings-panel-header">
-      <h2 class="settings-panel-title">设置</h2>
-      <button class="settings-panel-close-btn" aria-label="关闭设置">
-        <i data-lucide="x" class="w-6 h-6"></i>
-      </button>
     </div>
-    <div class="settings-panel-content">
-      <!-- 主题设置 -->
-      <div class="settings-item">
-        <label class="settings-item-label">主题模式</label>
-        <p class="settings-item-description">选择浅色、暗色或跟随系统设置</p>
-        <div class="theme-options">
-          <div class="theme-option" data-theme="light">
-            <div class="theme-option-label">
-              <i data-lucide="sun" class="theme-option-icon w-4 h-4"></i>
-              <span>浅色</span>
-            </div>
-            <i data-lucide="check" class="theme-option-check w-5 h-5" style="display: none;"></i>
-          </div>
-          <div class="theme-option" data-theme="dark">
-            <div class="theme-option-label">
-              <i data-lucide="moon" class="theme-option-icon w-4 h-4"></i>
-              <span>暗色</span>
-            </div>
-            <i data-lucide="check" class="theme-option-check w-5 h-5" style="display: none;"></i>
-          </div>
-          <div class="theme-option" data-theme="system">
-            <div class="theme-option-label">
-              <i data-lucide="monitor" class="theme-option-icon w-4 h-4"></i>
-              <span>跟随系统</span>
-            </div>
-            <i data-lucide="check" class="theme-option-check w-5 h-5" style="display: none;"></i>
-          </div>
-        </div>
-      </div>
-      
-      <!-- 视图设置 -->
-      <div class="settings-item">
-        <label class="settings-item-label">文章视图</label>
-        <p class="settings-item-description">选择列表或卡片视图</p>
-        <div class="view-options">
-          <div class="view-option" data-view="list">
-            <i data-lucide="list" class="view-option-icon w-4 h-4"></i>
-            <span>列表</span>
-          </div>
-          <div class="view-option" data-view="card">
-            <i data-lucide="layout-grid" class="view-option-icon w-4 h-4"></i>
-            <span>卡片</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- JavaScript -->
-  <script src="/js/main.js"></script>
-</body>
+    <script src="/js/main.js"></script>
+  </body>
 </html>
 
